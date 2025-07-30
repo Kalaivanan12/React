@@ -22,7 +22,7 @@ const CarouselComponent = () => {
           alt="Second slide"
         />
         <Carousel.Caption>
-          <p>My Boy</p>
+          <p>My Boyz</p>
         </Carousel.Caption>
       </Carousel.Item>
 
