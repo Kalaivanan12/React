@@ -1,0 +1,38 @@
+
+.bgs{
+  background-image: url('/vite.svg');
+  width: 100%;
+  overflow: auto;
+}
+.bg{
+  width: 45%;
+  background-color: yellow;
+  margin: 5px;
+  border:1px red solid;
+  float: left;
+  padding: 10px;
+}
+.btn {
+  padding: 8px 16px;
+  background-color: blue;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: darkblue;
+}
+
+.bg ul {
+  margin-top: 10px;
+  padding-left: 20px;
+}
+
+.bg li {
+  margin-bottom: 5px;
+}
