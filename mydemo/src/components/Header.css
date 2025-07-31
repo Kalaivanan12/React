@@ -1,5 +1,6 @@
 header {
-  background-color: #860fc2;
+  background-color:aquamarine;
+  background-image: linear-gradient(rgb(101, 40, 163),aquamarine);
   color: white;
   padding: 20px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
