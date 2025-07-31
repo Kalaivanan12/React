@@ -2,6 +2,7 @@ import React from 'react';
 import Header from './components/Header';
 import FilterSection from "./components/FilterSection";
 import CarouselComponent from './components/CarouselComponent';
+import CardGroupComponent from './components/CardGroupComponent';
 import { Carousel } from 'react-bootstrap';
 
 function App() {
@@ -9,6 +10,7 @@ function App() {
     <div>
       <Header />
        <FilterSection />
+        <CardGroupComponent />
        <CarouselComponent />
       <footer className="text-center py-4">
         <p>&copy; 2024 Car Makes. All rights reserved.</p>
