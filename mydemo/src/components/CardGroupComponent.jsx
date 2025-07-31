@@ -9,7 +9,7 @@ const CardGroupComponent = () => {
         <Card className="m-2 shadow rounded-4">
           <Card.Img variant="top" src="/src/assets/babe1.png" />
           <Card.Body>
-            <Card.Title>Maruti Swift</Card.Title>
+            <Card.Title>Maruti Swift(Modified)</Card.Title>
             <Card.Text>Sporty hatchback with great mileage.</Card.Text>
             <h5 className="text-success">₹11,00,000</h5>
             <Button variant="primary">View</Button>
