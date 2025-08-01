@@ -6,31 +6,31 @@ const feedbacks = [
     name: 'Kalai K.',
     comment: 'Great car selection and smooth buying experience!',
     date: 'July 2025',
-    image: '/src/assets/user1.jpg',
+    image: '/src/assets/c3.png',
   },
   {
     name: 'Kamalu.',
     comment: 'Customer service was very helpful. Loved it!',
     date: 'June 2025',
-    image: '/src/assets/user2.jpg',
+    image: '/src/assets/c1.png',
   },
   {
     name: 'Harshu.',
     comment: 'Affordable prices and fast delivery!',
     date: 'May 2025',
-    image: '/src/assets/user3.jpg',
+    image: '/src/assets/c2.png',
   },
   {
     name: 'Vini.',
     comment: 'Affordable prices and fast delivery!',
     date: 'May 2025',
-    image: '/src/assets/user3.jpg',
+    image: '/src/assets/c2.png',
   },
   {
     name: 'Vicky S.',
     comment: 'Affordable prices and fast delivery!',
     date: 'May 2025',
-    image: '/src/assets/user3.jpg',
+    image: '/src/assets/c3.png',
   },
 ];
 
