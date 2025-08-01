@@ -3,12 +3,12 @@ import './BrandLogos.css';
 
 const BrandLogos = () => {
   const logos = [
-    { src: '/assets/br1.png', alt: 'Hyundai' },
-    { src: '/assets/br2.png', alt: 'Dish' },
-    { src: '/assets/br3.png', alt: 'Acer' },
-    { src: '/assets/br4.png', alt: 'HSBC' },
-    { src: '/assets/br5.png', alt: 'CNN' },
-    { src: '/assets/br6.png', alt: 'Honda' }
+    { src: './public/br1.png', alt: 'Hyundai'},
+    { src: './public/br2.png', alt: 'Dish' },
+    { src: './public/br3.png', alt: 'Acer' },
+    { src: './public/br4.png', alt: 'HSBC' },
+    { src: './public/br5.png', alt: 'CNN' },
+    { src: './public/br6.png', alt: 'Honda' }
   ];
 
   return (
