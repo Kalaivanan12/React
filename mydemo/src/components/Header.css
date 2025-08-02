@@ -28,6 +28,9 @@ header {
   color: #333 !important;
   font-family: 'Segoe UI', sans-serif;
 }
+.nav-link{
+  cursor: pointer;
+}
 
 /* Hover effect */
 .navbar-light .navbar-nav .nav-link:hover {
