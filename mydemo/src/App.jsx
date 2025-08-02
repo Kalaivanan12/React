@@ -14,14 +14,14 @@ function App() {
       <Header />
        <FilterSection />
         <CardGroupComponent />
-       <CarouselComponent />
-      <FeedbackCards />
-      <BrandLogos />
-      <Footer />
-      <footer className="text-center py-4">
-        <p>&copy; 2024 Car Makes. All rights reserved.</p>
-      </footer>
-    </div>
+         <CarouselComponent />
+          <FeedbackCards />
+           <BrandLogos />
+            <Footer />
+             <footer className="text-center py-4">
+              <p>&copy; 2024 Car Makes. All rights reserved.</p>
+            </footer>
+          </div>
   );
 }
 
