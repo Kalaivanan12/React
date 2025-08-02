@@ -29,6 +29,7 @@
 .footer li:hover {
   color: #007bff; 
   cursor: pointer;
+  transform: scale(1.05);
 }
 
 .footer-brands {
