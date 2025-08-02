@@ -6,11 +6,13 @@ import CardGroupComponent from './components/CardGroupComponent';
 import FeedbackCards from './components/FeedbackCards';
 import BrandLogos from './components/BrandLogos';
 import Footer from './components/Footer';
+import DarkModeToggle from "./components/DarkModeToggle";
 import { Carousel } from 'react-bootstrap';
 
 function App() {
   return (
     <div>
+      {/* <DarkModeToggle /> */}
       <Header />
        <FilterSection />
         <CardGroupComponent />
