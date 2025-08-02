@@ -1,7 +1,7 @@
 /* Top banner heading */
 header {
   background-color: aquamarine;
-  background-image: linear-gradient(to right, rgb(101, 40, 163), aquamarine);
+  background-image: linear-gradient(to right, aquamarine,rgb(101, 40, 163),rgb(77, 7, 77));
   color: white;
   padding: 20px 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
