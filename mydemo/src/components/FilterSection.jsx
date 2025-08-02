@@ -1,5 +1,6 @@
 import React from "react";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
+import './FilterSection.css'; // Assuming you have a CSS file for styling
 
 const FilterSection = () => {
   return (

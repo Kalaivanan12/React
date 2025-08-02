@@ -1,0 +1,82 @@
+/* Image styling */
+main img {
+  max-width: 90%;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+/* Filter container */
+.filter-box {
+  background-color: #ffffff;
+  border: 2px dashed #4caf50;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Form styling */
+.filter-box label {
+  font-weight: 600;
+  font-size: 16px;
+  color: #333;
+}
+
+.filter-box select {
+  font-size: 15px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+/* Search button styling */
+.search-btn {
+  padding: 12px 28px;
+  font-size: 16px;
+  font-weight: 500;
+  background-color: #007bff;
+  border: none;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+}
+
+.search-btn:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .filter-box {
+    padding: 20px 15px;
+  }
+
+  .filter-box label {
+    font-size: 14px;
+  }
+
+  .filter-box select {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .search-btn {
+    width: 100%;
+    font-size: 18px;
+    padding: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .filter-box {
+    padding: 15px 10px;
+  }
+
+  main img {
+    max-width: 100%;
+    margin-bottom: 15px;
+  }
+
+  .search-btn {
+    font-size: 16px;
+  }
+}
