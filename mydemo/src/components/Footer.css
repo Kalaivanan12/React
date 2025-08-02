@@ -26,6 +26,10 @@
   color: #fff;
   margin-right: 5px;
 }
+.footer li:hover {
+  color: #007bff; 
+  cursor: pointer;
+}
 
 .footer-brands {
   display: flex;
