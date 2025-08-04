@@ -32,6 +32,10 @@ button {
   color: white;
   border: none;
   cursor: pointer;
+    border-radius: 5px;
+}
+button:hover {
+  background-color: #9e3cf4;
 }
 
 .error-text {
