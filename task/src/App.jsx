@@ -1,4 +1,5 @@
 import React from "react";
+import Work from "./components/Work";
 
 function App() {
   return (
@@ -8,3 +9,4 @@ function App() {
     </div>
   );
 }
+export default App;
