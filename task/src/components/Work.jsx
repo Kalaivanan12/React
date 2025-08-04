@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-// import Work from "./components/Work";
 import "./Work.css"; 
 
 const Work = () => {
