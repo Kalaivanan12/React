@@ -1,67 +1,96 @@
 import React, { useState } from "react";
-import "./Work.css"; 
+import "./Work.css";
 
 const Work = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    password: ""
+    phone: "",
   });
 
   const [errors, setErrors] = useState({});
 
   const handleChange = (e) => {
-    setFormData({...formData, [e.target.name]: e.target.value});
-  };
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
 
-  const validate = () => {
-    const newErrors = {};
-    if (!formData.name.trim()) newErrors.name = "Name is required";
-    if (!formData.email.includes("@")) newErrors.email = "Enter valid email";
-    if (formData.password.length < 6) newErrors.password = "Password must be 6+ characters";
-
-    return newErrors;
+    setErrors({
+      ...errors,
+      [e.target.name]: "",
+    });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const newErrors = validate();
-    if (Object.keys(newErrors).length === 0) {
-      alert("Form Submitted Successfully!");
-      console.log(formData);
-      // Reset
-      setFormData({ name: "", email: "", password: "" });
-      setErrors({});
-    } else {
-      setErrors(newErrors);
+    let formErrors = {};
+
+    if (!formData.name.trim()) {
+      formErrors.name = "Name is required";
+    }
+    if (!formData.email.trim()) {
+      formErrors.email = "Email is required";
+    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+      formErrors.email = "Email is invalid";
+    }
+    if (!formData.phone.trim()) {
+      formErrors.phone = "Phone number is required";
+    } else if (!/^\d{10}$/.test(formData.phone)) {
+      formErrors.phone = "Enter a valid 10-digit phone number";
+    }
+
+    setErrors(formErrors);
+
+    if (Object.keys(formErrors).length === 0) {
+      alert("Form submitted successfully!");
+      setFormData({ name: "", email: "", phone: "" });
     }
   };
 
   return (
     <div className="form-container">
-    <h2>Register</h2>
-    <form onSubmit={handleSubmit}>
-      <div className="form-group">
-        <label>Name:</label>
-        <input type="text" name="name" value={formData.name} onChange={handleChange} />
-        <div className="error-text">{errors.name}</div>
-      </div>
+      <h2>Contact Us</h2>
+      <form onSubmit={handleSubmit} noValidate>
+        <div className="form-group">
+          <label>Name:</label>
+          <input
+            name="name"
+            type="text"
+            value={formData.name}
+            onChange={handleChange}
+            className={errors.name ? "error-input" : ""}
+          />
+          {errors.name && <p className="error-text">{errors.name}</p>}
+        </div>
 
-      <div className="form-group">
-        <label>Email:</label>
-        <input type="email" name="email" value={formData.email} onChange={handleChange} />
-        <div className="error-text">{errors.email}</div>
-      </div>
+        <div className="form-group">
+          <label>Email:</label>
+          <input
+            name="email"
+            type="email"
+            value={formData.email}
+            onChange={handleChange}
+            className={errors.email ? "error-input" : ""}
+          />
+          {errors.email && <p className="error-text">{errors.email}</p>}
+        </div>
 
-      <div className="form-group">
-        <label>Password:</label>
-        <input type="password" name="password" value={formData.password} onChange={handleChange} />
-        <div className="error-text">{errors.password}</div>
-      </div>
+        <div className="form-group">
+          <label>Phone Number:</label>
+          <input
+            name="phone"
+            type="tel"
+            value={formData.phone}
+            onChange={handleChange}
+            className={errors.phone ? "error-input" : ""}
+          />
+          {errors.phone && <p className="error-text">{errors.phone}</p>}
+        </div>
 
-      <button type="submit">Submit</button>
-    </form>
-  </div>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
   );
 };
 
