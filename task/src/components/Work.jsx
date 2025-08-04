@@ -50,7 +50,7 @@ const Work = () => {
 
   return (
     <div className="form-container">
-      <h2>Contact Us</h2>
+      <center><h2>USER</h2></center>
       <form onSubmit={handleSubmit} noValidate>
         <div className="form-group">
           <label>Name:</label>
