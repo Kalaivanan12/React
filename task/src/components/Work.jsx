@@ -39,15 +39,7 @@ const Work = () => {
     } else if (!/^\d{10}$/.test(formData.phone)) {
       formErrors.phone = "Enter a valid 10-digit phone number";
     }
-    // if (!formData.address || !formData.address.trim()) {
-    //   formErrors.address = "Address is required";
-    // }   
-    // if (formData.address && formData.address.length < 5) {
-    //   formErrors.address = "Address must be at least 5 characters long";
-    // }else if (formData.address && formData.address.length > 100) {
-    //   formErrors.address = "Address must be less than 100 characters";
-    // }
-
+   
 
     setErrors(formErrors);
 
@@ -96,17 +88,6 @@ const Work = () => {
           />
           {errors.phone && <p className="error-text">{errors.phone}</p>}
         </div>
-        {/* <div className="form-group">
-          <label>Address:</label>
-            <input
-                name="address"
-                type="text"
-                value={formData.address || ""}
-                onChange={handleChange}
-                className={errors.address ? "error-input" : ""}
-            />
-            {errors.address && <p className="error-text">{errors.address}</p>}  
-        </div> */}
 
         <button type="submit">Submit</button>
       </form>
