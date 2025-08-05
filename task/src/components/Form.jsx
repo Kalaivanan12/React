@@ -1,57 +1,65 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Form.css";
 
-const Form = () => {
+function Form() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    phone: "",
+    phone: ""
   });
 
-  const [errors, setErrors] = useState({});
+  const [formErrors, setFormErrors] = useState({});
+  const [successMessage, setSuccessMessage] = useState("");
 
   const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+    setFormErrors({ ...formErrors, [name]: "" });
+    setSuccessMessage(""); // Clear success message when user edits
+  };
 
-    setErrors({
-      ...errors,
-      [e.target.name]: "",
-    });
+  const validate = () => {
+    const errors = {};
+    if (!formData.name.trim()) {
+      errors.name = "Name is required";
+    }
+    if (!formData.email.trim()) {
+      errors.email = "Email is required";
+    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+      errors.email = "Invalid email";
+    }
+    if (!formData.phone.trim()) {
+      errors.phone = "Phone number is required";
+    } else if (!/^\d{10}$/.test(formData.phone)) {
+      errors.phone = "Phone must be 10 digits";
+    }
+    return errors;
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    let formErrors = {};
+    const errors = validate();
+    setFormErrors(errors);
 
-    if (!formData.name.trim()) {
-      formErrors.name = "Name is required";
-    }
-    if (!formData.email.trim()) {
-      formErrors.email = "Email is required";
-    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      formErrors.email = "Email is invalid";
-    }
-    if (!formData.phone.trim()) {
-      formErrors.phone = "Phone number is required";
-    } else if (!/^\d{10}$/.test(formData.phone)) {
-      formErrors.phone = "Enter a valid 10-digit phone number";
-    }
-   
-
-    setErrors(formErrors);
-
-    if (Object.keys(formErrors).length === 0) {
-      alert("Form submitted successfully!");
+    if (Object.keys(errors).length === 0) {
+      setSuccessMessage("✅ Form submitted successfully!");
       setFormData({ name: "", email: "", phone: "" });
     }
   };
 
+  // 🔁 useEffect to auto-clear the success message after 3 seconds
+  useEffect(() => {
+    if (successMessage) {
+      const timer = setTimeout(() => {
+        setSuccessMessage("");
+      }, 3000);
+      return () => clearTimeout(timer); // Cleanup
+    }
+  }, [successMessage]);
+
   return (
     <div className="form-container">
-      <center><h2>USER</h2></center>
+      <h2>Contact Form</h2>
       <form onSubmit={handleSubmit} noValidate>
         <div className="form-group">
           <label>Name:</label>
@@ -60,9 +68,9 @@ const Form = () => {
             type="text"
             value={formData.name}
             onChange={handleChange}
-            className={errors.name ? "error-input" : ""}
+            className={formErrors.name ? "error-input" : ""}
           />
-          {errors.name && <p className="error-text">{errors.name}</p>}
+          {formErrors.name && <p className="error-text">{formErrors.name}</p>}
         </div>
 
         <div className="form-group">
@@ -72,27 +80,28 @@ const Form = () => {
             type="email"
             value={formData.email}
             onChange={handleChange}
-            className={errors.email ? "error-input" : ""}
+            className={formErrors.email ? "error-input" : ""}
           />
-          {errors.email && <p className="error-text">{errors.email}</p>}
+          {formErrors.email && <p className="error-text">{formErrors.email}</p>}
         </div>
 
         <div className="form-group">
-          <label>Phone Number:</label>
+          <label>Phone:</label>
           <input
             name="phone"
             type="tel"
             value={formData.phone}
             onChange={handleChange}
-            className={errors.phone ? "error-input" : ""}
+            className={formErrors.phone ? "error-input" : ""}
           />
-          {errors.phone && <p className="error-text">{errors.phone}</p>}
+          {formErrors.phone && <p className="error-text">{formErrors.phone}</p>}
         </div>
 
         <button type="submit">Submit</button>
+        {successMessage && <p className="success-text">{successMessage}</p>}
       </form>
     </div>
   );
-};
+}
 
 export default Form;
