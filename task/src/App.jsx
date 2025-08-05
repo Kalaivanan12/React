@@ -1,10 +1,10 @@
 import React from "react";
-import Work from "./components/Form";
+import Form from "./components/Form";
 
 function App() {
   return (
     <div>
-      <Work />
+      <From />
       
     </div>
   );
