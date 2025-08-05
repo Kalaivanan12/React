@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import "./Work.css";
+import "./Form.css";
 
-const Work = () => {
+const Form = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -95,4 +95,4 @@ const Work = () => {
   );
 };
 
-export default Work;
+export default Form;
