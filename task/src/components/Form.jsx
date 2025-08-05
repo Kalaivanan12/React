@@ -22,6 +22,8 @@ function Form() {
     const errors = {};
     if (!formData.name.trim()) {
       errors.name = "Name is required";
+    }else if (!/^[a-zA-Z\s'-]+$/.test(formData.name)){
+      errors.name = "Name can only contain letters";
     }
     if (!formData.email.trim()) {
       errors.email = "Email is required";
