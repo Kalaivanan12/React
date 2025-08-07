@@ -12,6 +12,7 @@ function Profile() {
         <p>Role: {user.role}</p>
         <p>Email: {user.email}</p>
         <p>Phone: {user.phone}</p>
+        <p>Address: {user.address}</p>
     </div>
   );
 }

@@ -19,7 +19,8 @@ function App() {
     age: 23,
     role: "Developer",
     email:"kalaivanankarthi31@gmail.com",
-    phone: "8870051316"
+    phone: "8870051316",
+    address: "Kurijinpadi, Cuddalore, Tamil Nadu, India."
   };
   return (
     <UserContext.Provider value={user}>
