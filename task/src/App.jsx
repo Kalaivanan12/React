@@ -17,7 +17,9 @@ function App() {
   const user = {
     name: "Kalaivanan", 
     age: 23,
-    role: "Developer"
+    role: "Developer",
+    email:"kalaivanankarthi31@gmail.com",
+    phone: "8870051316"
   };
   return (
     <UserContext.Provider value={user}>

@@ -9,7 +9,9 @@ function Profile() {
     <div>
       <h2>Welcome, {user.name}!</h2>
         <p>Age: {user.age}</p>
-      <p>Role: {user.role}</p>
+        <p>Role: {user.role}</p>
+        <p>Email: {user.email}</p>
+        <p>Phone: {user.phone}</p>
     </div>
   );
 }
