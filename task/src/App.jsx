@@ -20,7 +20,8 @@ function App() {
     role: "Developer",
     email:"kalaivanankarthi31@gmail.com",
     phone: "8870051316",
-    address: "Kurijinpadi, Cuddalore, Tamil Nadu, India."
+    address: "Kurijinpadi, Cuddalore, Tamil Nadu, India.",
+    pincode: "607302"
   };
   return (
     <UserContext.Provider value={user}>

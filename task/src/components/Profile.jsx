@@ -13,6 +13,7 @@ function Profile() {
         <p>Email: {user.email}</p>
         <p>Phone: {user.phone}</p>
         <p>Address: {user.address}</p>
+        <p>Pincode: {user.pincode}</p>
     </div>
   );
 }
