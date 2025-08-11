@@ -58,7 +58,7 @@ export default function App() {
             Theme 3
           </button>
 
-          {/* New Default Reset Button */}
+          {/* Default Reset Button */}
           <button
             onClick={() => setTheme(defaultTheme)}
             style={{ background: "#feffffff" }}
