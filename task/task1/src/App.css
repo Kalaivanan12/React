@@ -15,10 +15,11 @@
   border-radius: 5px;
   cursor: pointer;
   background: rgb(51, 194, 197);
-  color: white;
+  color: rgb(13, 13, 13);
   transition: 0.3s ease;
 }
 
 .button-group button:hover {
   background: #a52184;
+  color: white;
 }
