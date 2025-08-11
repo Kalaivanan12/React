@@ -61,7 +61,7 @@ export default function App() {
           {/* New Default Reset Button */}
           <button
             onClick={() => setTheme(defaultTheme)}
-            style={{ background: "#0f4a8aff" }}
+            style={{ background: "#feffffff" }}
           >
             Reset Default
           </button>

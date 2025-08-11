@@ -14,12 +14,12 @@
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  background: rgb(51, 194, 197);
+  background: rgb(243, 245, 245);
   color: rgb(13, 13, 13);
   transition: 0.3s ease;
 }
 
 .button-group button:hover {
  
-  color: white;
+  color: rgb(244, 12, 12);
 }
