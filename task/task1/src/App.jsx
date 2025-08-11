@@ -7,7 +7,7 @@ export default function App() {
   const defaultTheme = {
     bgImage: "https://via.placeholder.com/800x400?text=Default",
     color: "#333",
-    fontSize: "20px"
+    fontSize: "18px"
   };
 
   const [theme, setTheme] = useState(defaultTheme);
@@ -39,7 +39,7 @@ export default function App() {
               changeTheme(
                 "https://via.placeholder.com/800x400?text=Theme+2",
                 "orange",
-                "28px"
+                "30px"
               )
             }
           >
@@ -51,7 +51,7 @@ export default function App() {
               changeTheme(
                 "https://via.placeholder.com/800x400?text=Theme+3",
                 "lightgreen",
-                "32px"
+                "36px"
               )
             }
           >
