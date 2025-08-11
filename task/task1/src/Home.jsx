@@ -14,8 +14,8 @@ export default function Home() {
         fontSize: theme.fontSize
       }}
     >
-      <h1>Welcome to My App</h1>
-      <p>This is using useContext for theme management.</p>
+      <h1>Welcome to Theme </h1>
+      <p>Theme Changer.</p>
     </div>
   );
 }
