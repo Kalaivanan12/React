@@ -14,11 +14,11 @@
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  background: #444;
+  background: rgb(51, 194, 197);
   color: white;
   transition: 0.3s ease;
 }
 
 .button-group button:hover {
-  background: #666;
+  background: #a52184;
 }
