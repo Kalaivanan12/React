@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import ThemeContext from "./ThemeContext";
 import Home from "./Home";
 import "./App.css";
+import TaskTable from "./TaskTable"; // Import TaskTable component
 
 export default function App() {
   const defaultTheme = {
@@ -67,6 +68,7 @@ export default function App() {
           </button>
         </div>
       </div>
+<TaskTable />
     </ThemeContext.Provider>
   );
 }
