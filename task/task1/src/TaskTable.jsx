@@ -38,7 +38,7 @@ export default function TaskTable() {
 
   return (
     <div className="container">
-      <h1>📝 My To-Do List</h1>
+      <h1>My To-Do List</h1>
       <div className="input-section">
         <input
           type="text"
