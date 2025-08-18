@@ -1,15 +1,23 @@
 .container {
-  max-width: 450px;
+  max-width: 500px;
   margin: auto;
   padding: 20px;
   text-align: center;
-  background: #222;
+  background: #1e1e1e;
   color: white;
   border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 
 h1 {
-  margin-bottom: 20px;
+  margin-bottom: 15px;
+}
+
+.stats {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 15px;
+  font-weight: bold;
 }
 
 .input-section {
@@ -33,9 +41,8 @@ button {
   border-radius: 5px;
 }
 
-button:hover {
-  /* background: #218838; */
-  transform: scale(1.05);
+button.edit {
+  background: dodgerblue;
 }
 
 button.delete {
@@ -60,13 +67,18 @@ li {
   padding: 10px;
   margin-top: 5px;
   border-radius: 5px;
+  transition: all 0.2s;
+}
+
+li:hover {
+  transform: scale(1.02);
 }
 
 li.in-progress {
   border-left: 5px solid yellow;
 }
 
-li.completed {
+li.to-do {
   border-left: 5px solid blue;
 }
 
@@ -77,4 +89,12 @@ li.done {
 select {
   padding: 4px;
   border-radius: 4px;
+}
+
+.search {
+  width: 100%;
+  margin-top: 10px;
+  padding: 8px;
+  border-radius: 5px;
+  border: none;
 }
