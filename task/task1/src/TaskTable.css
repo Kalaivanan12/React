@@ -3,7 +3,7 @@
   margin: auto;
   padding: 20px;
   text-align: center;
-  background: #1e1e1e;
+  background: #47695d;
   color: white;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
@@ -63,7 +63,7 @@ li {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #333;
+  /* background-image: -moz-linear-gradient(purple, rgb(47, 129, 156)); */
   padding: 10px;
   margin-top: 5px;
   border-radius: 5px;
@@ -89,12 +89,4 @@ li.done {
 select {
   padding: 4px;
   border-radius: 4px;
-}
-
-.search {
-  width: 100%;
-  margin-top: 10px;
-  padding: 8px;
-  border-radius: 5px;
-  border: none;
 }
