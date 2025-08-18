@@ -60,13 +60,13 @@ export default function TaskTable() {
 
   return (
     <div className="container">
-      <h1>📝 My To-Do List</h1>
+      <h1>My To-Do List</h1>
 
       {/* Counters */}
       <div className="stats">
-        <span>🟡 In Progress: {inProgress}</span>
-        <span>🔵  To-Do: {todo}</span>
-        <span>🟢 Done: {done}</span>
+        <span> ► In Progress: {inProgress}</span>
+        <span> ► To-Do: {todo}</span>
+        <span> ► Done: {done}</span>
       </div>
 
       {/* Input */}
@@ -112,13 +112,13 @@ export default function TaskTable() {
                   setEditId(task.id);
                 }}
               >
-                ✏️
+              Edit
               </button>
               <button
                 className="delete"
                 onClick={() => dispatch({ type: "DELETE", payload: task.id })}
               >
-                ❌
+              Delete
               </button>
             </li>
           ))}
