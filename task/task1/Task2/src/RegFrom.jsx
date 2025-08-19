@@ -74,10 +74,6 @@ export default function RegForm() {
                         <input type="radio" value="Female" {...register("gender", { required: "Gender is required" })} />
                         Female
                     </label>
-                    <label>
-                        <input type="radio" value="Other" {...register("gender", { required: "Gender is required" })} />
-                        Other
-                    </label>
                     {errors.gender && <p className="error">{errors.gender.message}</p>}
                 </div>
 
