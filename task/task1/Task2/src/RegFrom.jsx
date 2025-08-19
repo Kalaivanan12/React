@@ -48,8 +48,7 @@ export default function RegForm() {
                     type="tel"
                     {...register("mobile", {
                         required: "Mobile number is required",
-                        minLength: { value: 10, message: "Must be 10 digits" },
-                        maxLength: { value: 10, message: "Must be 10 digits" },
+                        minLength: { value: 10, message: "Must be 10 digits" }
                     })}
                     placeholder="Enter mobile number"
                 />
