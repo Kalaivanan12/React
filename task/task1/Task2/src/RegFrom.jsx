@@ -1,6 +1,6 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import "./RegFrom.css";
+import "./RegForm.css";
 
 export default function RegForm() {
     const {
@@ -16,7 +16,7 @@ export default function RegForm() {
 
     return (
         <div className="form-container">
-            <h2>STUDENT REGISTRATION FORM</h2>
+            <h2>REGISTRATION FORM</h2>
             <form onSubmit={handleSubmit(onSubmit)}>
                 {/* Name */}
                 <label>Name:</label>
@@ -64,35 +64,43 @@ export default function RegForm() {
                 {errors.birthday && <p className="error">{errors.birthday.message}</p>}
 
                 {/* Gender */}
-                <label>Gender:</label>
-                <div className="gender-group">
+                <div className="form-group">
+                    <p>Gender:</p>
                     <label>
-                        <input type="radio" value="Male" {...register("gender", { required: true })} /> Male
+                        <input type="radio" value="Male" {...register("gender", { required: "Gender is required" })} />
+                        Male
                     </label>
                     <label>
-                        <input type="radio" value="Female" {...register("gender", { required: true })} /> Female
+                        <input type="radio" value="Female" {...register("gender", { required: "Gender is required" })} />
+                        Female
                     </label>
                     <label>
-                        <input type="radio" value="Other" {...register("gender", { required: true })} /> Other
+                        <input type="radio" value="Other" {...register("gender", { required: "Gender is required" })} />
+                        Other
                     </label>
+                    {errors.gender && <p className="error">{errors.gender.message}</p>}
                 </div>
-                {errors.gender && <p className="error">Gender is required</p>}
 
                 {/* Interests */}
-                <label>Interests:</label>
-                <div className="interest-group">
+                <div className="form-group">
+                    <p>Interests:</p>
                     <label>
-                        <input type="checkbox" value="Sports" {...register("interests")} /> Sports
+                        <input type="checkbox" value="Sports" {...register("interests", { required: "Select at least 1 interest" })} />
+                        Sports
                     </label>
                     <label>
-                        <input type="checkbox" value="Music" {...register("interests")} /> Music
+                        <input type="checkbox" value="Music" {...register("interests", { required: "Select at least 1 interest" })} />
+                        Music
                     </label>
                     <label>
-                        <input type="checkbox" value="Coding" {...register("interests")} /> Coding
+                        <input type="checkbox" value="Coding" {...register("interests", { required: "Select at least 1 interest" })} />
+                        Coding
                     </label>
                     <label>
-                        <input type="checkbox" value="Travel" {...register("interests")} /> Travel
+                        <input type="checkbox" value="Travel" {...register("interests", { required: "Select at least 1 interest" })} />
+                        Travel
                     </label>
+                    {errors.interests && <p className="error">{errors.interests.message}</p>}
                 </div>
 
                 {/* Country */}
