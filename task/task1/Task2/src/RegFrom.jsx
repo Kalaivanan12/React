@@ -10,7 +10,7 @@ export default function RegForm() {
     } = useForm();
 
     const onSubmit = (data) => {
-        console.log("Form Data ✅", data);
+        console.log("Form Data ", data);
         alert("Registration Successful!");
     };
 
