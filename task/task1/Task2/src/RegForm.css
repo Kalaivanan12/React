@@ -1,9 +1,8 @@
 body {
     font-family: Arial, sans-serif;
-    background: url('./assets/plan.png') ;
+    background: url('./assets/plan.png'), linear-gradient(to bottom, #d9f6e9, #2abfe4);
 }
 .form-container {
-    /* float: right; */
     width: 450px;
     margin: 40px auto;
     background: white;
@@ -15,7 +14,7 @@ body {
 h2 {
     text-align: center;
     margin-bottom: 20px;
-    color: #333;
+    color: #e672b2;
 }
 
 label {
