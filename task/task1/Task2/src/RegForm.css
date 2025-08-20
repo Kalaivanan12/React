@@ -1,8 +1,11 @@
 body {
     font-family: Arial, sans-serif;
-    background: url('./assets/plan.png'), linear-gradient(to bottom, #d9f6e9, #2abfe4);
+    background: url('./assets/plan.png') no-repeat left, linear-gradient(to bottom, #d9f6e9, #2abfe4);
 }
 .form-container {
+    position: relative;
+    right: 150px;
+    float: right;
     width: 450px;
     margin: 40px auto;
     background: rgb(255, 255, 255);
