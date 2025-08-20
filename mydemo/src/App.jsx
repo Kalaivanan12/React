@@ -8,6 +8,7 @@ import BrandLogos from './components/BrandLogos';
 import Footer from './components/Footer';
 import DarkModeToggle from "./components/DarkModeToggle";
 import { Carousel } from 'react-bootstrap';
+import { BrowserRouter } from 'react-router-dom';
 
 function App() {
   return (
