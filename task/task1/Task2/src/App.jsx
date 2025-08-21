@@ -9,7 +9,7 @@ import CarDetails from "./pages/CarDetails";
 
 export default function App() {
   return (
-    <>
+    <div>
       <nav className="navbar">
         <Link to="/">Home</Link>
         <Link to="/cars">Cars</Link>
@@ -19,8 +19,7 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/cars" element={<Cars />} />
         <Route path="/cars/:id" element={<CarDetails />} />
-        <Route path="*" element={<div>404 Not Found</div>} />
       </Routes>
-  </>
+    </div>
   );
 }
