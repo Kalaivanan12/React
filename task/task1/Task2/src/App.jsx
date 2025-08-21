@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import "./App.css"; // ✅ import CSS
+import "./App.css"; 
 
 // Pages
 import Home from "./pages/Home";
@@ -9,7 +9,7 @@ import CarDetails from "./pages/CarDetails";
 
 export default function App() {
   return (
-    <Router>
+    <>
       <nav className="navbar">
         <Link to="/">Home</Link>
         <Link to="/cars">Cars</Link>
@@ -19,7 +19,8 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/cars" element={<Cars />} />
         <Route path="/cars/:id" element={<CarDetails />} />
+        <Route path="*" element={<div>404 Not Found</div>} />
       </Routes>
-    </Router>
+  </>
   );
 }
