@@ -1,29 +1,25 @@
-import React from 'react'
-import { useForm } from 'react'
-import './App.css'
-import RegForm from './RegFrom'
-import { Link, Route, Routes } from 'react-router-dom'
-import Sample from './Sample'
-import Demo from './Demo'
+import React from "react";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import "./App.css"; // ✅ import CSS
 
+// Pages
+import Home from "./pages/Home";
+import Cars from "./pages/Cars";
+import CarDetails from "./pages/CarDetails";
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      {/* <Link to="/">Home</Link>
-      <Link to="/service">Service</Link>
-      <Link to="/abb">About</Link>
-      <Link to="/con">Contact</Link> */}
+    <Router>
+      <nav className="navbar">
+        <Link to="/">Home</Link>
+        <Link to="/cars">Cars</Link>
+      </nav>
 
       <Routes>
-        <Route path='/' element={<Sample />}/>
-        <Route path='/service' element={<RegForm />}/>
-        <Route path='/con' element={<Demo />}/>
-        <Route path='/abb' element={<Demo />}/>
-        <Route path='*' element={<Demo />}/>
+        <Route path="/" element={<Home />} />
+        <Route path="/cars" element={<Cars />} />
+        <Route path="/cars/:id" element={<CarDetails />} />
       </Routes>
-    </div>
-  )
+    </Router>
+  );
 }
-
-export default App
