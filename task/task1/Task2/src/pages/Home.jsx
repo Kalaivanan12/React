@@ -1,6 +1,6 @@
 import React from "react";
 
- function Home() {
+function Home() {
   return (
     <div className="home-container">
       <h1>🏠 Welcome to CarVilla</h1>

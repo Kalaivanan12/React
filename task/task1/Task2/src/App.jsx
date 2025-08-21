@@ -1,11 +1,12 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import "./App.css"; 
+import "./App.css";
 
 // Pages
 import Home from "./pages/Home";
 import Cars from "./pages/Cars";
 import CarDetails from "./pages/CarDetails";
+import UpdateCar from "./pages/UpdateCar";
 
 export default function App() {
   return (
@@ -19,6 +20,7 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/cars" element={<Cars />} />
         <Route path="/cars/:id" element={<CarDetails />} />
+        <Route path="/cars/update/:id" element={<UpdateCar />} />
       </Routes>
     </div>
   );

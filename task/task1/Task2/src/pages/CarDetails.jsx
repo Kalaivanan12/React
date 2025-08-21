@@ -23,7 +23,14 @@ export default function CarDetails() {
       <p>Price: {car.price}</p>
       <p>Car ID: {id}</p>
 
-      <Link to="/cars" className="back-btn">⬅ Back to Cars</Link>
+      <div style={{ marginTop: "20px" }}>
+        <Link to={`/cars/update/${car.id}`} state={{ car }} className="back-btn">
+          ✏ Update Car
+        </Link>
+        <Link to="/cars" className="back-btn" style={{ marginLeft: "10px" }}>
+          ⬅ Back to Cars
+        </Link>
+      </div>
     </div>
   );
 }

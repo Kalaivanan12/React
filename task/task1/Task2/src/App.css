@@ -57,7 +57,7 @@ body {
   border-radius: 12px;
   padding: 15px;
   text-align: center;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s ease-in-out;
 }
 
@@ -128,4 +128,35 @@ body {
 
 .back-btn:hover {
   background: #34495e;
+}
+
+.update-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 400px;
+  margin: 20px auto;
+}
+
+.update-form label {
+  font-weight: bold;
+}
+
+.update-form input {
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.update-form button {
+  background: #1abc9c;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.update-form button:hover {
+  background: #16a085;
 }
