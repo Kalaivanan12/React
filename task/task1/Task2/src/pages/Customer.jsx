@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const customers = [
     { id: 1, name: "John Doe", email: "john@example.com", phone: "1234567890" },
@@ -17,6 +18,7 @@ export default function Customer() {
                         <th>Name</th>
                         <th>Email</th>
                         <th>Phone</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -26,6 +28,15 @@ export default function Customer() {
                             <td>{c.name}</td>
                             <td>{c.email}</td>
                             <td>{c.phone}</td>
+                            <td>
+                                <Link
+                                    to={`/customers/${c.id}`}
+                                    state={{ customer: c }}
+                                    className="back-btn"
+                                >
+                                    Details
+                                </Link>
+                            </td>
                         </tr>
                     ))}
                 </tbody>

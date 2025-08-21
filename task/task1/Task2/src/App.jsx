@@ -9,6 +9,8 @@ import CarDetails from "./pages/CarDetails";
 import UpdateCar from "./pages/UpdateCar";
 import Services from "./pages/Services";
 import Customer from "./pages/Customer";
+import CustomerDetails from "./pages/CustomerDetails";
+import UpdateCustomer from "./pages/UpdateCustomer";
 
 export default function App() {
   return (
@@ -28,6 +30,8 @@ export default function App() {
         <Route path="/cars/update/:id" element={<UpdateCar />} />
         <Route path="/services" element={<Services />} />
         <Route path="/customers" element={<Customer />} />
+        <Route path="/customers/:id" element={<CustomerDetails />} />
+  <Route path="/customers/update/:id" element={<UpdateCustomer />} />
       </Routes>
     </div>
   );
