@@ -1,10 +1,10 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link,Outlet } from "react-router-dom";
 
 const carList = [
-  { id: 1, name: "Tesla Model S", price: "$85,000", img: "https://via.placeholder.com/300x200?text=Tesla+Model+S" },
-  { id: 2, name: "BMW M4", price: "$72,000", img: "https://via.placeholder.com/300x200?text=BMW+M4" },
-  { id: 3, name: "Audi A6", price: "$60,000", img: "https://via.placeholder.com/300x200?text=Audi+A6" }
+  { id: 1, name: "Tesla Model S", price: "$85,000", img: "./src/img/teslaa.jpg" },
+  { id: 2, name: "BMW M4", price: "$72,000", img: "./src/img/bmw.jpg" },
+  { id: 3, name: "Audi A6", price: "$60,000", img: "./src/img/audi-a6.jpg" }
 ];
 
 export default function Cars() {
@@ -23,6 +23,7 @@ export default function Cars() {
           </div>
         ))}
       </div>
+       <Outlet />
     </div>
   );
 }

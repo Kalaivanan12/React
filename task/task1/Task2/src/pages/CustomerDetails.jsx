@@ -9,8 +9,8 @@ export default function CustomerDetails() {
   if (!customer) {
     return (
       <div className="customers-container">
-        <p>❌ Customer not found.</p>
-        <Link to="/customers" className="back-btn">⬅ Back to Customers</Link>
+        <p>Customer not found.</p>
+        <Link to="/customers" className="back-btn">◄ Back to Customers</Link>
       </div>
     );
   }
@@ -23,15 +23,15 @@ export default function CustomerDetails() {
       <p><strong>Phone:</strong> {customer.phone}</p>
 
       <div style={{ marginTop: "20px" }}>
-        <Link 
-          to={`/customers/update/${customer.id}`} 
-          state={{ customer }} 
+        <Link
+          to={`/customers/update/${customer.id}`}
+          state={{ customer }}
           className="back-btn"
         >
           ✏ Update Customer
         </Link>
         <Link to="/customers" className="back-btn" style={{ marginLeft: "10px" }}>
-          ⬅ Back to Customers
+          ◄ Back to Customers
         </Link>
       </div>
     </div>

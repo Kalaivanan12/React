@@ -4,27 +4,33 @@ import { Link } from "react-router-dom";
 export default function Home() {
   return (
     <div className="home-container">
-      <h1 className="home-title">🚀 Welcome to CarVilla</h1>
-      <p className="home-subtitle">Browse premium cars and manage your customers easily</p>
+      {/* 🔥 Futuristic Banner */}
+      <section className="banner">
+        <div className="banner-content">
+          <h1>Welcome to <span>CarVilla</span></h1>
+          <p>Drive the Future 🚗✨</p>
+          <Link to="/cars" className="btn-banner">Explore Cars</Link>
+        </div>
+      </section>
 
       {/* Featured Cars */}
       <section className="featured-section">
         <h2>🔥 Featured Cars</h2>
         <div className="featured-cards">
           <div className="featured-card">
-            <img src="https://via.placeholder.com/300x150?text=Tesla+Model+S" alt="Tesla" />
+            <img src="./src/img/teslaa.jpg" alt="Tesla" />
             <h3>Tesla Model S</h3>
             <p>Price: $85,000</p>
             <Link to="/cars" className="btn-link">View Cars</Link>
           </div>
           <div className="featured-card">
-            <img src="https://via.placeholder.com/300x150?text=BMW+M4" alt="BMW" />
+            <img src="./src/img/bmw.jpg" alt="BMW" />
             <h3>BMW M4</h3>
             <p>Price: $72,000</p>
             <Link to="/cars" className="btn-link">View Cars</Link>
           </div>
           <div className="featured-card">
-            <img src="https://via.placeholder.com/300x150?text=Audi+A6" alt="Audi" />
+            <img src="./src/img/audi-a6.jpg" alt="Audi" />
             <h3>Audi A6</h3>
             <p>Price: $60,000</p>
             <Link to="/cars" className="btn-link">View Cars</Link>

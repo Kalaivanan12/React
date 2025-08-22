@@ -1,8 +1,8 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { Routes, Route, Link } from "react-router-dom";
 import "./App.css";
 
-// Pages
+// pages...
 import Home from "./pages/Home";
 import Cars from "./pages/Cars";
 import CarDetails from "./pages/CarDetails";
@@ -22,16 +22,24 @@ export default function App() {
         <Link to="/customers">Customers</Link>
       </nav>
 
-
       <Routes>
+        {/* Home */}
         <Route path="/" element={<Home />} />
-        <Route path="/cars" element={<Cars />} />
-        <Route path="/cars/:id" element={<CarDetails />} />
-        <Route path="/cars/update/:id" element={<UpdateCar />} />
+
+        {/* Cars (nested routes) */}
+        <Route path="/cars" element={<Cars />}>
+          <Route path=":id" element={<CarDetails />} />
+          <Route path="update/:id" element={<UpdateCar />} />
+        </Route>
+
+        {/* Services */}
         <Route path="/services" element={<Services />} />
-        <Route path="/customers" element={<Customer />} />
-        <Route path="/customers/:id" element={<CustomerDetails />} />
-  <Route path="/customers/update/:id" element={<UpdateCustomer />} />
+
+        {/* Customers (nested routes) */}
+        <Route path="/customers" element={<Customer />}>
+          <Route path=":id" element={<CustomerDetails />} />
+          <Route path="update/:id" element={<UpdateCustomer />} />
+        </Route>
       </Routes>
     </div>
   );

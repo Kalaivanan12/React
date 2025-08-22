@@ -18,7 +18,7 @@ export default function CarDetails() {
       <p>Price: {car.price}</p>
       <p>Car ID: {id}</p>
 
-      <Link to="/cars" className="back-btn">⬅ Back to Cars</Link>
+      <Link to="/cars" className="back-btn">◄ Back to Cars</Link>
     </div>
   );
 }
