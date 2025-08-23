@@ -1,18 +1,27 @@
 import React from "react";
 import { useParams, useLocation, Link } from "react-router-dom";
 
-// ✅ Import your image
+//  Import your images
 import teslaImg from "../img/teslaa.jpg";
+import bmwImg from "../img/bmw.jpg";
+import audiImg from "../img/audi.jpg";
 
 export default function CarDetails() {
   const { id } = useParams();
   const location = useLocation();
   const car = location.state?.car;
 
+  //  Fallback mapping for images
+  const carImages = {
+    "Tesla Model S": teslaImg,
+    "BMW M4": bmwImg,
+    "Audi A6": audiImg,
+  };
+
   if (!car) {
     return (
       <div className="car-details">
-        <p>❌ Car not found. Please go back.</p>
+        <p> Car not found. Please go back.</p>
         <Link to="/cars" className="back-btn">⬅ Back to Cars</Link>
       </div>
     );
@@ -22,9 +31,9 @@ export default function CarDetails() {
     <div className="car-details">
       <h1>Car Details</h1>
 
-      {/* ✅ Use imported image for Tesla, fallback for others */}
+      {/* Use imported images first, fallback to car.img */}
       <img
-        src={car.name === "Tesla Model S" ? teslaImg : car.img}
+        src={carImages[car.name] || car.img}
         alt={car.name}
       />
 

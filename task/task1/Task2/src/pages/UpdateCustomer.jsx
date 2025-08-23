@@ -11,7 +11,7 @@ export default function UpdateCustomer() {
   const [phone, setPhone] = useState(customer?.phone || "");
 
   if (!customer) {
-    return <p>❌Customer data not found.</p>;
+    return <p>Customer data not found.</p>;
   }
 
   const handleSubmit = (e) => {

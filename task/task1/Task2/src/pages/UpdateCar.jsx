@@ -11,7 +11,7 @@ export default function UpdateCar() {
   const [img, setImg] = useState(car?.img || "");
 
   if (!car) {
-    return <p>❌ Car data not found.</p>;
+    return <p> Car data not found.</p>;
   }
 
   const handleSubmit = (e) => {

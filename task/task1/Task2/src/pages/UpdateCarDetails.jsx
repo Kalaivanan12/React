@@ -7,7 +7,7 @@ export default function CarDetails() {
   const car = location.state?.car;
 
   if (!car) {
-    return <p className="car-details">❌ Car not found. Go back to Cars page.</p>;
+    return <p className="car-details">Car not found. Go back to Cars page.</p>;
   }
 
   return (

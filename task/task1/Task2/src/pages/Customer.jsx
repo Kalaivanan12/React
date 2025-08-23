@@ -10,7 +10,7 @@ const customers = [
 export default function Customer() {
   return (
     <div className="customers-container">
-      <h1>👥 Customer List</h1>
+      <h1> Customer List</h1>
       <table className="customer-table">
         <thead>
           <tr>
@@ -30,7 +30,7 @@ export default function Customer() {
               <td>{c.phone}</td>
               <td>
                 <Link 
-                  to={`${c.id}`}   // ✅ relative path for nested route
+                  to={`${c.id}`}   //  relative path for nested route
                   state={{ customer: c }}
                   className="back-btn"
                 >
@@ -38,7 +38,7 @@ export default function Customer() {
                 </Link>
                 {" | "}
                 <Link 
-                  to={`update/${c.id}`}  // ✅ nested update link
+                  to={`update/${c.id}`}  //  nested update link
                   state={{ customer: c }}
                   className="back-btn"
                 >
@@ -50,7 +50,7 @@ export default function Customer() {
         </tbody>
       </table>
 
-      {/* ✅ Nested Route Content (CustomerDetails / UpdateCustomer) */}
+      {/* Nested Route Content (CustomerDetails / UpdateCustomer) */}
       <Outlet />
     </div>
   );

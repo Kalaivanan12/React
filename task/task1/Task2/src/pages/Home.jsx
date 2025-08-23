@@ -4,18 +4,18 @@ import { Link } from "react-router-dom";
 export default function Home() {
   return (
     <div className="home-container">
-      {/* 🔥 Futuristic Banner */}
+      {/*  Futuristic Banner */}
       <section className="banner">
         <div className="banner-content">
-          <h1>Welcome to <span>CarVilla</span></h1>
-          <p>Drive the Future 🚗✨</p>
+          <h1>Welcome to <span>CarMakes</span></h1>
+          <p>Drive the Future </p>
           <Link to="/cars" className="btn-banner">Explore Cars</Link>
         </div>
       </section>
 
       {/* Featured Cars */}
       <section className="featured-section">
-        <h2>🔥 Featured Cars</h2>
+        <h2> Featured Cars</h2>
         <div className="featured-cards">
           <div className="featured-card">
             <img src="./src/img/teslaa.jpg" alt="Tesla" />
@@ -30,7 +30,7 @@ export default function Home() {
             <Link to="/cars" className="btn-link">View Cars</Link>
           </div>
           <div className="featured-card">
-            <img src="./src/img/audi-a6.jpg" alt="Audi" />
+            <img src="./src/img/audi.jpg" alt="Audi" />
             <h3>Audi A6</h3>
             <p>Price: $60,000</p>
             <Link to="/cars" className="btn-link">View Cars</Link>
@@ -40,7 +40,7 @@ export default function Home() {
 
       {/* Quick Stats */}
       <section className="stats-section">
-        <h2>📊 Quick Stats</h2>
+        <h2> Quick Stats</h2>
         <div className="stats-cards">
           <div className="stat-card">
             <h3>50+</h3>
@@ -59,7 +59,7 @@ export default function Home() {
 
       {/* Featured Customers */}
       <section className="featured-section">
-        <h2>👥 Featured Customers</h2>
+        <h2> Featured Customers</h2>
         <div className="featured-cards">
           <div className="featured-card">
             <h3>John Doe</h3>

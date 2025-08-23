@@ -10,7 +10,7 @@ const servicesList = [
 export default function Services() {
     return (
         <div className="services-container">
-            <h1>🛠️ Our Services</h1>
+            <h1> Our Services</h1>
             <div className="services-list">
                 {servicesList.map((service) => (
                     <div key={service.id} className="service-card">
