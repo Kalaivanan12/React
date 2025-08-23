@@ -202,7 +202,7 @@ body {
 .customers-container {
   padding: 30px;
   text-align: center;
-  
+
 }
 
 .customer-table {
@@ -223,7 +223,7 @@ body {
   color: #fff;
 }
 
-.customer-table tr:nth-child(even) {
+.customer-table tr:nth-child(odd) {
   background-color: #f4f4f4;
 }
 
