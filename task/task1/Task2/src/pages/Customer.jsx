@@ -2,9 +2,11 @@ import React from "react";
 import { Link, Outlet } from "react-router-dom";
 
 const customers = [
-  { id: 1, name: "John Doe", email: "john@example.com", phone: "1234567890" },
+  { id: 1, name: "John Doe", email: "john@example.com", phone: "987456123" },
   { id: 2, name: "Jane Smith", email: "jane@example.com", phone: "9876543210" },
-  { id: 3, name: "Mike Johnson", email: "mike@example.com", phone: "5555555555" },
+  { id: 3, name: "Mike Johnson", email: "johnson@example.com", phone: "854631972" },
+  { id: 4, name: "Mike", email: "mike@example.com", phone: "984213657" },
+  { id: 5, name: "John", email: "john@example.com", phone: "912365487" },
 ];
 
 export default function Customer() {
