@@ -2,7 +2,7 @@ import React from "react";
 import { Link, Outlet } from "react-router-dom";
 
 const customers = [
-  { id: 1, name: "John Doe", email: "john@example.com", phone: "987456123" },
+  { id: 1, name: "John Doe", email: "johndoe@example.com", phone: "987456123" },
   { id: 2, name: "Jane Smith", email: "jane@example.com", phone: "9876543210" },
   { id: 3, name: "Mike Johnson", email: "johnson@example.com", phone: "854631972" },
   { id: 4, name: "Mike", email: "mike@example.com", phone: "984213657" },
