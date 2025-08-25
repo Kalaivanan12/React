@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Routes, Route, Link } from "react-router-dom";
 import "./App.css";
 
@@ -11,8 +11,12 @@ import Services from "./pages/Services";
 import Customer from "./pages/Customer";
 import CustomerDetails from "./pages/CustomerDetails";
 import UpdateCustomer from "./pages/UpdateCustomer";
+import Cart from "./pages/Cart"; // ✅ import Cart page
+import { CartContext } from "./pages/CartContext"; // ✅ import CartContext
 
 export default function App() {
+  const { cart } = useContext(CartContext); // ✅ get cart from context
+
   return (
     <div>
       <nav className="navbar">
@@ -20,6 +24,9 @@ export default function App() {
         <Link to="/cars">Cars</Link>
         <Link to="/services">Services</Link>
         <Link to="/customers">Customers</Link>
+
+        {/* ✅ Cart with count */}
+        <Link to="/cart"> Cart ({cart.length})</Link>
       </nav>
 
       <Routes>
@@ -40,6 +47,9 @@ export default function App() {
           <Route path=":id" element={<CustomerDetails />} />
           <Route path="update/:id" element={<UpdateCustomer />} />
         </Route>
+
+        {/* ✅ Cart Page */}
+        <Route path="/cart" element={<Cart />} />
       </Routes>
     </div>
   );

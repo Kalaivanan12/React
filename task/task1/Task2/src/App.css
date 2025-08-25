@@ -8,20 +8,21 @@ body {
 
 /* Navbar */
 .navbar {
-  background: #2c3e50;
-  padding: 15px 20px;
   display: flex;
   gap: 20px;
+  padding: 12px;
+  background-color: #47696d;
 }
 
 .navbar a {
-  color: #fff;
+  color: white;
   text-decoration: none;
   font-weight: bold;
+  transition: 0.3s;
 }
 
 .navbar a:hover {
-  color: #1abc9c;
+  color: #f48148;
 }
 
 /* Home Page */
@@ -85,6 +86,8 @@ body {
   background: #1abc9c;
   color: #fff;
   padding: 8px 14px;
+  position: relative;
+  right: 10px;
   border-radius: 6px;
   text-decoration: none;
   transition: background 0.2s;
@@ -332,12 +335,13 @@ body {
 /* Futuristic Banner */
 
 .banner {
-  background: url("./src/img/banner.jpg") no-repeat center center/cover;
+  background: url("./src/img/banner1.jpg") no-repeat center center/cover;
   color: #fff;
   padding: 100px 20px;
   text-align: center;
   position: relative;
   overflow: hidden;
+  border-radius: 10px;
 }
 
 /* Optional: dark overlay for better text visibility */
@@ -393,3 +397,20 @@ body {
 .btn-banner:hover {
   background: #d35400;
 }
+.add-cart-btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 9px 22px;
+  font-weight: bold;
+  background-color: #ff6600;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.add-cart-btn:hover {
+  background-color: #e05500;
+}
+
