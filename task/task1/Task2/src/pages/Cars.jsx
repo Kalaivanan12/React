@@ -33,7 +33,7 @@ export default function Cars() {
 
             {/* ✅ Add to Cart Button */}
             <button onClick={() => addToCart(car)} className="add-cart-btn">
-               Add to Cart
+              Add to Cart
             </button>
           </div>
         ))}

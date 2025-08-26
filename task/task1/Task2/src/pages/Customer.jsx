@@ -31,7 +31,7 @@ export default function Customer() {
               <td>{c.email}</td>
               <td>{c.phone}</td>
               <td>
-                <Link 
+                <Link
                   to={`${c.id}`}   //  relative path for nested route
                   state={{ customer: c }}
                   className="back-btn"
@@ -39,7 +39,7 @@ export default function Customer() {
                   Details
                 </Link>
                 {" | "}
-                <Link 
+                <Link
                   to={`update/${c.id}`}  //  nested update link
                   state={{ customer: c }}
                   className="back-btn"
