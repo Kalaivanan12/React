@@ -2,52 +2,43 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Login.css";
 
-export default function Login() {
-  const [id, setId] = useState("");
-  const [passwd, setPasswd] = useState("");
-  const [error, setError] = useState("");
-
+export default function Login({ setIsLoggedIn }) {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
-  const handleLogin = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
 
-    // ✅ Simple hardcoded credentials (for demo)
-    const validId = "admin";
-    const validPasswd = "1234";
-
-    if (id === validId && passwd === validPasswd) {
-      // store login in localStorage
+    if (username === "admin" && password === "1234") {
       localStorage.setItem("isLoggedIn", "true");
-      localStorage.setItem("userId", id);
-
-      navigate("/"); // redirect to homepage after login
+      localStorage.setItem("username", username);
+      setIsLoggedIn(true); // ✅ updates navbar immediately
+      navigate("/");
     } else {
-      setError("Invalid ID or Password ❌");
+      alert("Invalid credentials ❌");
     }
   };
 
   return (
     <div className="login-container">
-      <h2>Login</h2>
-      {error && <p className="error">{error}</p>}
-
-      <form onSubmit={handleLogin}>
+      <form className="login-box" onSubmit={handleSubmit}>
+        <h2>Login</h2>
         <input
           type="text"
-          placeholder="Enter ID"
-          value={id}
-          onChange={(e) => setId(e.target.value)}
-          required
+          placeholder="Username"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
         />
         <input
           type="password"
-          placeholder="Enter Password"
-          value={passwd}
-          onChange={(e) => setPasswd(e.target.value)}
-          required
+          placeholder="Password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
         />
-        <button type="submit">Login</button>
+        <button type="submit" className="login-btn">
+          Login
+        </button>
       </form>
     </div>
   );

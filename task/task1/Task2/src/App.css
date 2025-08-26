@@ -7,7 +7,7 @@ body {
 }
 
 /* Navbar */
-.navbar {
+/* .navbar {
   display: flex;
   gap: 20px;
   padding: 12px;
@@ -23,7 +23,7 @@ body {
 
 .navbar a:hover {
   color: #f48148;
-}
+} */
 
 /* Home Page */
 .home-container {
@@ -424,4 +424,52 @@ body {
 
 .add-cart-btn:hover {
   background-color: #e05500;
+}
+
+.navbar {
+  background: #47696d;
+  padding: 12px 20px;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  /* font-weight: 500; */
+  font-weight: bold;
+  transition: 0.3s;
+}
+.navbar a:hover {
+  color: #f48148;
+}
+
+.navbar .login-btn,
+.navbar .logout-btn {
+  margin-left: auto;
+  padding: 6px 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.navbar .login-btn {
+  background: #007bff;
+  color: #fff;
+}
+
+.navbar .login-btn:hover {
+  background: #0056b3;
+}
+
+.navbar .logout-btn {
+  background: #dc3545;
+  color: #fff;
+}
+
+.navbar .logout-btn:hover {
+  background: #a71d2a;
 }

@@ -1,5 +1,5 @@
-import React from "react";
-import { Routes, Route, Link, Navigate } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { Routes, Route, Link, Navigate, useNavigate } from "react-router-dom";
 import "./App.css";
 
 // pages...
@@ -13,20 +13,35 @@ import CustomerDetails from "./pages/CustomerDetails";
 import UpdateCustomer from "./pages/UpdateCustomer";
 import Cart from "./pages/Cart";
 import Login from "./pages/Login";
+import Logout from "./pages/Logout";
 
-// ✅ Protected Route wrapper (only checks login)
+// ✅ Protected Route wrapper
 function ProtectedRoute({ children }) {
   const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
   return isLoggedIn ? children : <Navigate to="/login" replace />;
 }
 
 export default function App() {
-  const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
+  const [isLoggedIn, setIsLoggedIn] = useState(
+    localStorage.getItem("isLoggedIn") === "true"
+  );
+
+  const navigate = useNavigate();
+
+  // ✅ Sync state with localStorage (in case of refresh)
+  useEffect(() => {
+    const checkLogin = () => {
+      setIsLoggedIn(localStorage.getItem("isLoggedIn") === "true");
+    };
+    window.addEventListener("storage", checkLogin);
+    return () => window.removeEventListener("storage", checkLogin);
+  }, []);
 
   const handleLogout = () => {
     localStorage.removeItem("isLoggedIn");
     localStorage.removeItem("username");
-    window.location.href = "/login"; // redirect after logout
+    setIsLoggedIn(false);
+    navigate("/login");
   };
 
   return (
@@ -44,7 +59,9 @@ export default function App() {
             Logout
           </button>
         ) : (
-          <Link to="/login">Login</Link>
+          <Link className="login-btn" to="/login">
+            Login
+          </Link>
         )}
       </nav>
 
@@ -52,7 +69,8 @@ export default function App() {
       <Routes>
         {/* Public */}
         <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
+        <Route path="/login" element={<Login setIsLoggedIn={setIsLoggedIn} />} />
+        <Route path="/logout" element={<Logout />} />
 
         {/* Protected */}
         <Route

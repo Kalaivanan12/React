@@ -1,17 +1,27 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import "./Logout.css";
 
 export default function Logout() {
   const navigate = useNavigate();
 
-  const handleLogout = () => {
-    localStorage.removeItem("isAuthenticated"); // clear login state
-    navigate("/login"); // go back to login
-  };
+  useEffect(() => {
+    // Clear login session
+    localStorage.removeItem("isLoggedIn");
+    localStorage.removeItem("userId");
+
+    // Redirect to login after 2s
+    setTimeout(() => {
+      navigate("/login");
+    }, 2000);
+  }, [navigate]);
 
   return (
-    <button onClick={handleLogout} className="logout-btn">
-      Logout
-    </button>
+    <div className="logout-container">
+      <div className="logout-box">
+        <h2>You have been logged out ✅</h2>
+        <p>Redirecting to Login...</p>
+      </div>
+    </div>
   );
 }
