@@ -10,6 +10,7 @@ import audiImg from "../img/audi.jpg";
 const carList = [
   { id: 1, name: "Tesla Model S", price: "$85,000", img: teslaImg },
   { id: 2, name: "BMW M4", price: "$72,000", img: bmwImg },
+  { id: 3, name: "Audi A6", price: "$60,000", img: audiImg },
   { id: 3, name: "Audi A6", price: "$60,000", img: audiImg }
 ];
 
