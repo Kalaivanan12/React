@@ -36,7 +36,7 @@ function App() {
 
   return (
     <div>
-      {/* ✅ Navbar */}
+      {/* Navbar */}
       <nav className="navbar">
         <Link to="/">Home</Link>
         <Link to="/cars">Cars</Link>
@@ -55,7 +55,7 @@ function App() {
         )}
       </nav>
 
-      {/* ✅ Routes */}
+      {/* Routes */}
       <Routes>
         {/* Public */}
         <Route path="/" element={<Home />} />
