@@ -1,5 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Routes, Route, Link, Navigate, useNavigate } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { logout } from "./redux/authSlice";
 import "./App.css";
 
 // pages...
@@ -15,32 +17,20 @@ import Cart from "./pages/Cart";
 import Login from "./pages/Login";
 import Logout from "./pages/Logout";
 
-// ✅ Protected Route wrapper
+// ProtectedRoute using Redux
 function ProtectedRoute({ children }) {
-  const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
+  const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
   return isLoggedIn ? children : <Navigate to="/login" replace />;
 }
 
-export default function App() {
-  const [isLoggedIn, setIsLoggedIn] = useState(
-    localStorage.getItem("isLoggedIn") === "true"
-  );
-
+function App() {
+  const dispatch = useDispatch();
+  const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
+  const cartCount = useSelector((state) => state.cart.items.length);
   const navigate = useNavigate();
 
-  // ✅ Sync state with localStorage (in case of refresh)
-  useEffect(() => {
-    const checkLogin = () => {
-      setIsLoggedIn(localStorage.getItem("isLoggedIn") === "true");
-    };
-    window.addEventListener("storage", checkLogin);
-    return () => window.removeEventListener("storage", checkLogin);
-  }, []);
-
   const handleLogout = () => {
-    localStorage.removeItem("isLoggedIn");
-    localStorage.removeItem("username");
-    setIsLoggedIn(false);
+    dispatch(logout());
     navigate("/login");
   };
 
@@ -52,7 +42,7 @@ export default function App() {
         <Link to="/cars">Cars</Link>
         <Link to="/services">Services</Link>
         <Link to="/customers">Customers</Link>
-        <Link to="/cart">Cart</Link>
+        <Link to="/cart">Cart ({cartCount})</Link>
 
         {isLoggedIn ? (
           <button className="logout-btn" onClick={handleLogout}>
@@ -69,7 +59,7 @@ export default function App() {
       <Routes>
         {/* Public */}
         <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login setIsLoggedIn={setIsLoggedIn} />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/logout" element={<Logout />} />
 
         {/* Protected */}
@@ -118,3 +108,5 @@ export default function App() {
     </div>
   );
 }
+
+export default App;

@@ -1,37 +1,31 @@
 import React, { useContext } from "react";
-import { CartContext } from "./CartContext";
-import "./Cart.css";
+import { CartContext } from "../context/CartContext"; // make sure path is correct
+import "./cart.css";
 
-export default function Cart() {
+const Cart = () => {
   const { cart, removeFromCart } = useContext(CartContext);
-
-  const total = cart.reduce((sum, car) => {
-    // remove "$" and commas before converting
-    const price = parseInt(car.price.replace(/[^0-9]/g, ""));
-    return sum + price;
-  }, 0);
 
   return (
     <div className="cart-container">
-      <h1>Your Cart </h1>
-
+      <h2>Your Cart</h2>
       {cart.length === 0 ? (
-        <p className="cart-empty">Your cart is empty.</p>
+        <p>Your cart is empty</p>
       ) : (
-        <>
-          <ul className="cart-items">
-            {cart.map((car, index) => (
-              <li key={index}>
-                <span>
-                  {car.name} - {car.price}
-                </span>
-                <button onClick={() => removeFromCart(car.id)}>Remove</button>
-              </li>
-            ))}
-          </ul>
-          <div className="cart-total">Total: ${total}</div>
-        </>
+        <div className="cart-items">
+          {cart.map((item, index) => (
+            <div key={index} className="cart-item">
+              <img src={item.image} alt={item.name} />
+              <div className="cart-details">
+                <h3>{item.name}</h3>
+                <p>${item.price}</p>
+              </div>
+              <button onClick={() => removeFromCart(item.id)}>Remove</button>
+            </div>
+          ))}
+        </div>
       )}
     </div>
   );
-}
+};
+
+export default Cart;

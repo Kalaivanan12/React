@@ -1,45 +1,55 @@
 import React, { useContext } from "react";
-import { Link, Outlet } from "react-router-dom";
-import { CartContext } from "./CartContext"; // ✅ import CartContext (same folder "pages")
+import { CartContext } from "../context/CartContext"; // make sure this path is correct
+import "./cars.css";
 
-// Car list
-import teslaImg from "../img/teslaa.jpg";
-import bmwImg from "../img/bmw.jpg";
-import audiImg from "../img/audi.jpg";
+const Cars = () => {
+  const { addToCart } = useContext(CartContext);
 
-const carList = [
-  { id: 1, name: "Tesla Model S", price: "$85,000", img: teslaImg },
-  { id: 2, name: "BMW M4", price: "$72,000", img: bmwImg },
-  { id: 3, name: "Audi A6", price: "$60,000", img: audiImg },
-  { id: 3, name: "Audi A6", price: "$60,000", img: audiImg }
-];
-
-export default function Cars() {
-  const { addToCart } = useContext(CartContext); // ✅ use CartContext
+  // Sample cars data (you can replace with API later)
+  const cars = [
+    {
+      id: 1,
+      name: "Tesla Model S",
+      price: 80000,
+      image: "./src/img/teslaa.jpg",
+      description: "Luxury electric sedan with autopilot."
+    },
+    {
+      id: 2,
+      name: "BMW X5",
+      price: 60000,
+      image: "./src/img/bmw.jpg",
+      description: "Premium SUV with comfort and style."
+    },
+    {
+      id: 3,
+      name: "Audi A4",
+      price: 45000,
+      image: "./src/img/audi.jpg",
+      description: "Compact luxury sedan with powerful engine."
+    },
+  ];
 
   return (
     <div className="cars-container">
-      <h1>Car List</h1>
-      <div className="car-list">
-        {carList.map((car) => (
+      <h2>Available Cars</h2>
+      <div className="cars-list">
+        {cars.map((car) => (
           <div key={car.id} className="car-card">
-            <img src={car.img} alt={car.name} />
-            <h2>{car.name}</h2>
-            <p>{car.price}</p>
-
-            {/* View Details */}
-            <Link to={`/cars/${car.id}`} state={{ car }}>
-              View Details
-            </Link>
-
-            {/* ✅ Add to Cart Button */}
-            <button onClick={() => addToCart(car)} className="add-cart-btn">
+            <img src={car.image} alt={car.name} />
+            <div className="car-info">
+              <h3>{car.name}</h3>
+              <p>{car.description}</p>
+              <p className="price">${car.price.toLocaleString()}</p>
+            </div>
+            <button className="add-to-cart" onClick={() => addToCart(car)}>
               Add to Cart
             </button>
           </div>
         ))}
       </div>
-      <Outlet />
     </div>
   );
-}
+};
+
+export default Cars;
