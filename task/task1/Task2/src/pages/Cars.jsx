@@ -28,6 +28,13 @@ const Cars = () => {
       image: "./src/img/audi.jpg",
       description: "Compact luxury sedan with powerful engine."
     },
+    {
+      id: 3,
+      name: "Tesla Model 3",
+      price: 75000,
+      image: "./src/img/teslaa.jpg",
+      description: "Luxury electric sedan with autopilot."
+    },
   ];
 
   return (
