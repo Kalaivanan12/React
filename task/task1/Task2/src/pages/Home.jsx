@@ -73,6 +73,10 @@ export default function Home() {
             <h3>Mike Johnson</h3>
             <p>Email: mike@example.com</p>
           </div>
+          <div className="featured-card">
+            <h3>Kamalu</h3>
+            <p>Email: kamalu@example.com</p>
+          </div>
         </div>
       </section>
     </div>
