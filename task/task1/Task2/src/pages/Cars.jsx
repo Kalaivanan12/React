@@ -1,11 +1,11 @@
 import React, { useContext } from "react";
-import { CartContext } from "../context/CartContext"; // make sure this path is correct
+import { CartContext } from "../context/CartContext";
 import "./cars.css";
 
 const Cars = () => {
   const { addToCart } = useContext(CartContext);
 
-  // Sample cars data (you can replace with API later)
+  
   const cars = [
     {
       id: 1,
