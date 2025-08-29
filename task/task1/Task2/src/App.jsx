@@ -37,7 +37,7 @@ function App() {
   };
 
   return (
-    <div>
+    <div className="app-wrapper">
       {/* ✅ Navbar */}
       <nav className="navbar">
         <Link to="/">Home</Link>
@@ -58,67 +58,69 @@ function App() {
         )}
       </nav>
 
-      {/* ✅ Routes */}
-      <Routes>
-        {/* Public */}
-        <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/logout" element={<Logout />} />
+      {/* ✅ Main content */}
+      <main className="content">
+        <Routes>
+          {/* Public */}
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/logout" element={<Logout />} />
 
-        {/* Protected */}
-        <Route
-          path="/cars"
-          element={
-            <ProtectedRoute>
-              <Cars />
-            </ProtectedRoute>
-          }
-        >
-          <Route path=":id" element={<CarDetails />} />
-          <Route path="update/:id" element={<UpdateCar />} />
-        </Route>
+          {/* Protected */}
+          <Route
+            path="/cars"
+            element={
+              <ProtectedRoute>
+                <Cars />
+              </ProtectedRoute>
+            }
+          >
+            <Route path=":id" element={<CarDetails />} />
+            <Route path="update/:id" element={<UpdateCar />} />
+          </Route>
 
-        <Route
-          path="/services"
-          element={
-            <ProtectedRoute>
-              <Services />
-            </ProtectedRoute>
-          }
-        />
+          <Route
+            path="/services"
+            element={
+              <ProtectedRoute>
+                <Services />
+              </ProtectedRoute>
+            }
+          />
 
-        <Route
-          path="/customers"
-          element={
-            <ProtectedRoute>
-              <Customer />
-            </ProtectedRoute>
-          }
-        >
-          <Route path=":id" element={<CustomerDetails />} />
-          <Route path="update/:id" element={<UpdateCustomer />} />
-        </Route>
+          <Route
+            path="/customers"
+            element={
+              <ProtectedRoute>
+                <Customer />
+              </ProtectedRoute>
+            }
+          >
+            <Route path=":id" element={<CustomerDetails />} />
+            <Route path="update/:id" element={<UpdateCustomer />} />
+          </Route>
 
-        {/* ✅ Booking should be TOP LEVEL, not nested */}
-        <Route
-          path="/booking"
-          element={
-            <ProtectedRoute>
-              <Booking />
-            </ProtectedRoute>
-          }
-        />
+          <Route
+            path="/booking"
+            element={
+              <ProtectedRoute>
+                <Booking />
+              </ProtectedRoute>
+            }
+          />
 
-        <Route
-          path="/cart"
-          element={
-            <ProtectedRoute>
-              <Cart />
-            </ProtectedRoute>
-          }
-        />
-      </Routes>
+          <Route
+            path="/cart"
+            element={
+              <ProtectedRoute>
+                <Cart />
+              </ProtectedRoute>
+            }
+          />
+        </Routes>
+      </main>
 
+      {/* ✅ Sticky Footer */}
       <Footer />
     </div>
   );

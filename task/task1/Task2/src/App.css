@@ -477,14 +477,26 @@ body {
 .navbar .logout-btn:hover {
   background: #a71d2a;
 }
+/* footer */
+.app-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* full screen */
+}
+
+.content {
+  flex: 1; /* take up remaining space */
+}
 
 .footer {
-  background:black;
-  color:white;
+  margin-top: auto; /* pushes footer down */
+  background: black;
+  color: white;
   padding: 10px;
   text-align: center;
-  margin-top: 40px;
 }
+
+/* booking */
 .booking-container {
   max-width: 400px;
   margin: 40px auto;
