@@ -16,6 +16,7 @@ import UpdateCustomer from "./pages/UpdateCustomer";
 import Cart from "./pages/Cart";
 import Login from "./pages/Login";
 import Logout from "./pages/Logout";
+import Footer from "./pages/Footer";
 
 // ProtectedRoute using Redux
 function ProtectedRoute({ children }) {
@@ -105,6 +106,8 @@ function App() {
           }
         />
       </Routes>
+      {/* ✅ Footer */}
+      <Footer />
     </div>
   );
 }
