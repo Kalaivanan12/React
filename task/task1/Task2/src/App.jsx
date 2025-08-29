@@ -13,6 +13,7 @@ import Services from "./pages/Services";
 import Customer from "./pages/Customer";
 import CustomerDetails from "./pages/CustomerDetails";
 import UpdateCustomer from "./pages/UpdateCustomer";
+import Booking from "./pages/Booking";
 import Cart from "./pages/Cart";
 import Login from "./pages/Login";
 import Logout from "./pages/Logout";
@@ -43,6 +44,7 @@ function App() {
         <Link to="/cars">Cars</Link>
         <Link to="/services">Services</Link>
         <Link to="/customers">Customers</Link>
+        <Link to="/booking">Booking</Link>
         <Link to="/cart">Cart ({cartCount})</Link>
 
         {isLoggedIn ? (
@@ -97,6 +99,16 @@ function App() {
           <Route path="update/:id" element={<UpdateCustomer />} />
         </Route>
 
+        {/* ✅ Booking should be TOP LEVEL, not nested */}
+        <Route
+          path="/booking"
+          element={
+            <ProtectedRoute>
+              <Booking />
+            </ProtectedRoute>
+          }
+        />
+
         <Route
           path="/cart"
           element={
@@ -106,6 +118,7 @@ function App() {
           }
         />
       </Routes>
+
       <Footer />
     </div>
   );
