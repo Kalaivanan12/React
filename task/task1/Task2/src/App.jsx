@@ -106,7 +106,6 @@ function App() {
           }
         />
       </Routes>
-      {/* ✅ Footer */}
       <Footer />
     </div>
   );
