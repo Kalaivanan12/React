@@ -79,6 +79,41 @@ export default function Home() {
           </div>
         </div>
       </section>
+       {/* ⭐ Testimonials Section */}
+      <section className="testimonials-section">
+        <h2> What Our Clients Say</h2>
+        <div className="testimonials">
+          <div className="testimonial-card">
+            <p>"Great experience buying my Tesla here, smooth process!"</p>
+            <h4>- Sarah W.</h4>
+          </div>
+          <div className="testimonial-card">
+            <p>"Amazing collection of cars and friendly staff."</p>
+            <h4>- David R.</h4>
+          </div>
+          <div className="testimonial-card">
+            <p>"I found my dream BMW at a great price. Highly recommended!"</p>
+            <h4>- Priya K.</h4>
+          </div>
+        </div>
+      </section>
+
+      {/* Call To Action */}
+      <section className="cta">
+        <h2>Book a Test Drive Today!</h2>
+        <Link to="/book" className="btn-cta">Book Now</Link>
+      </section>
+
+      {/* Newsletter */}
+      <section className="newsletter">
+        <h2>Stay Updated!</h2>
+        <p>Subscribe to get the latest car deals and offers.</p>
+        <form>
+          <input type="email" placeholder="Enter your email" required />
+          <button type="submit">Subscribe</button>
+        </form>
+      </section>
+
     </div>
   );
 }
