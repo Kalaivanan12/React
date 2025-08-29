@@ -481,43 +481,7 @@ body {
 .footer {
   background:black;
   color:white;
-  padding: 20px 10px;
+  padding: 10px;
   text-align: center;
   margin-top: 40px;
-}
-
-.footer-content {
-  max-width: 900px;
-  margin: auto;
-}
-
-.footer-links {
-  margin-top: 10px;
-}
-
-.footer-links a {
-  margin: 0 10px;
-  color:#f9f9f9;
-  text-decoration: none;
-  transition: color 0.3s;
-}
-
-.footer-links a:hover {
-  color: #fff;
-}
-
-.footer-social {
-  margin-top: 15px;
-}
-
-.footer-social a {
-  margin: 0 8px;
-  color: #fdfbfb;
-  font-size: 20px;
-  transition: color 0.3s, transform 0.2s;
-}
-
-.footer-social a:hover {
-  color: #fff;
-  transform: scale(1.1);
 }
