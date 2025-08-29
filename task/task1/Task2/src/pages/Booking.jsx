@@ -19,7 +19,7 @@ export default function Booking() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert(`✅ Booking confirmed for ${form.name} - ${form.car} on ${form.date}`);
+    alert(`Booking confirmed for ${form.name} - ${form.car} on ${form.date}`);
     setForm({ name: "", email: "", phone: "", car: "", date: "" });
   };
 
