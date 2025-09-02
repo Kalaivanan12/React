@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { addBooking } from "../redux/bookingSlice";
+import { addBooking } from "../redux/bookingsSlice";
 
 export default function Booking() {
   const cars = useSelector((state) => state.cars.list);

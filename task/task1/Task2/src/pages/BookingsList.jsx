@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { deleteBooking } from "../redux/bookingSlice";
+import { deleteBooking } from "../redux/bookingsSlice";
 
 export default function BookingsList() {
   const bookings = useSelector((state) => state.bookings.list);
