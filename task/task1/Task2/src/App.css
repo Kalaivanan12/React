@@ -668,7 +668,7 @@ footer {
 
 /* Newsletter Section */
 .newsletter {
-  color: white;
+  color: rgb(7, 7, 7);
   text-align: center;
   padding: 40px 20px;
 }
@@ -716,7 +716,7 @@ footer {
 .cta {
   padding: 50px 20px;
   text-align: center;
-  color: white;
+  color: rgb(13, 13, 13);
 }
 
 .cta h2 {
