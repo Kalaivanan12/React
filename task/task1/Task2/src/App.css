@@ -242,7 +242,6 @@ footer {
 .customers-container {
   padding: 30px;
   text-align: center;
-
 }
 
 .customer-table {
@@ -305,6 +304,82 @@ footer {
 .customer-form input:focus,
 .customer-form textarea:focus {
   border-color: #1abc9c;
+}
+
+/* ===========================
+   Responsive Styles
+=========================== */
+
+/* Tablets */
+@media (max-width: 992px) {
+  .customers-container {
+    padding: 20px;
+  }
+
+  .customer-add-container {
+    width: 90%;
+    margin: 20px auto;
+    padding: 20px;
+  }
+
+  .customer-table th,
+  .customer-table td {
+    padding: 8px;
+    font-size: 14px;
+  }
+}
+
+/* Small Tablets & Mobiles */
+@media (max-width: 768px) {
+  .customer-table {
+    display: block;
+    overflow-x: auto; /* enable horizontal scroll */
+    white-space: nowrap;
+  }
+
+  .customer-add-container {
+    padding: 15px;
+  }
+
+  .customer-form input,
+  .customer-form textarea {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .customer-form .form-group {
+    margin-bottom: 12px;
+  }
+}
+
+/* Small Mobiles */
+@media (max-width: 480px) {
+  .customers-container {
+    padding: 15px;
+  }
+
+  .customer-add-container {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: none;
+    padding: 12px;
+  }
+
+  .customer-table th,
+  .customer-table td {
+    font-size: 12px;
+    padding: 6px;
+  }
+
+  .customer-form label {
+    font-size: 13px;
+  }
+
+  .customer-form input,
+  .customer-form textarea {
+    font-size: 13px;
+    padding: 6px;
+  }
 }
 
 .submit-btn {
