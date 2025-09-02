@@ -44,7 +44,7 @@ function App() {
       {/*  Navbar */}
       <nav className="navbar">
         <div className="nav-brand">
-          Car<span className="nav-brand">Makes</span>
+          Car<span className="nav-brand"> Makes</span>
         </div>
 
         {/* Hamburger toggle */}
