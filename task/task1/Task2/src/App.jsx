@@ -1,3 +1,4 @@
+// App.jsx
 import React, { useState } from "react";
 import { Routes, Route, Link, Navigate, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
@@ -14,19 +15,20 @@ import Customer from "./pages/Customer";
 import CustomerDetails from "./pages/CustomerDetails";
 import UpdateCustomer from "./pages/UpdateCustomer";
 import Booking from "./pages/Booking";
+import BookingsList from "./pages/BookingsList";   // ✅ import added
 import Cart from "./pages/Cart";
 import Login from "./pages/Login";
 import Logout from "./pages/Logout";
 import Footer from "./pages/Footer";
 
-// ProtectedRoute using Redux
+// ProtectedRoute
 function ProtectedRoute({ children }) {
   const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
   return isLoggedIn ? children : <Navigate to="/login" replace />;
 }
 
 function App() {
-  const [menuOpen, setMenuOpen] = useState(false); // ✅ For hamburger toggle
+  const [menuOpen, setMenuOpen] = useState(false);
   const dispatch = useDispatch();
   const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
   const cartCount = useSelector((state) => state.cart.items.length);
@@ -41,7 +43,9 @@ function App() {
     <div className="app-wrapper">
       {/* ✅ Navbar */}
       <nav className="navbar">
-        <div className="nav-brand">Car<span className="nav-brand">Makes</span></div>
+        <div className="nav-brand">
+          Car<span className="nav-brand">Makes</span>
+        </div>
 
         {/* Hamburger toggle */}
         <button
@@ -56,7 +60,7 @@ function App() {
           <Link to="/cars" onClick={() => setMenuOpen(false)}>Cars</Link>
           <Link to="/services" onClick={() => setMenuOpen(false)}>Services</Link>
           <Link to="/customers" onClick={() => setMenuOpen(false)}>Customers</Link>
-          <Link to="/booking" onClick={() => setMenuOpen(false)}>Booking</Link>
+          <Link to="/bookings-list" onClick={() => setMenuOpen(false)}>Bookings</Link>
           <Link to="/cart" onClick={() => setMenuOpen(false)}>Cart ({cartCount})</Link>
 
           {isLoggedIn ? (
@@ -127,6 +131,18 @@ function App() {
               </ProtectedRoute>
             }
           />
+
+          {/* ✅ Bookings List route */}
+          <Route
+            path="/bookings-list"
+            element={
+              <ProtectedRoute>
+                <BookingsList />
+              </ProtectedRoute>
+            }
+          />
+           {/* ✅ Alias: /book redirects to /booking */}
+  <Route path="/book" element={<Navigate to="/booking" replace />} />
 
           <Route
             path="/cart"

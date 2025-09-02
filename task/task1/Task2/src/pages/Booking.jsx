@@ -1,9 +1,10 @@
-// Booking.jsx
 import React, { useState } from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { addBooking } from "../redux/bookingSlice";
 
 export default function Booking() {
-  const cars = useSelector((state) => state.cars.list); // ✅ from Redux store
+  const cars = useSelector((state) => state.cars.list);
+  const dispatch = useDispatch();
 
   const [form, setForm] = useState({
     name: "",
@@ -13,13 +14,19 @@ export default function Booking() {
     date: "",
   });
 
+  const [success, setSuccess] = useState("");
+
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert(`Booking confirmed for ${form.name} - ${form.car} on ${form.date}`);
+
+    // ✅ Save booking to Redux
+    dispatch(addBooking(form));
+
+    setSuccess(`✅ Booking confirmed for ${form.name} - ${form.car} on ${form.date}`);
     setForm({ name: "", email: "", phone: "", car: "", date: "" });
   };
 
@@ -31,7 +38,6 @@ export default function Booking() {
         <input type="email" name="email" placeholder="Your Email" value={form.email} onChange={handleChange} required />
         <input type="tel" name="phone" placeholder="Phone Number" value={form.phone} onChange={handleChange} required />
 
-        {/* ✅ Car Dropdown from Redux */}
         <select name="car" value={form.car} onChange={handleChange} required>
           <option value="">-- Select Car --</option>
           {cars.map((c) => (
@@ -44,6 +50,8 @@ export default function Booking() {
         <input type="date" name="date" value={form.date} onChange={handleChange} required />
         <button type="submit" className="book-btn">Confirm Booking</button>
       </form>
+
+      {success && <p className="success-msg">{success}</p>}
     </div>
   );
 }
