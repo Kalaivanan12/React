@@ -15,7 +15,7 @@ import Customer from "./pages/Customer";
 import CustomerDetails from "./pages/CustomerDetails";
 import UpdateCustomer from "./pages/UpdateCustomer";
 import Booking from "./pages/Booking";
-import BookingsList from "./pages/BookingsList";   // ✅ import added
+import BookingsList from "./pages/BookingsList";
 import Cart from "./pages/Cart";
 import Login from "./pages/Login";
 import Logout from "./pages/Logout";
@@ -41,7 +41,7 @@ function App() {
 
   return (
     <div className="app-wrapper">
-      {/* ✅ Navbar */}
+      {/*  Navbar */}
       <nav className="navbar">
         <div className="nav-brand">
           Car<span className="nav-brand">Makes</span>
@@ -81,7 +81,7 @@ function App() {
         </div>
       </nav>
 
-      {/* ✅ Main content */}
+      {/*  Main content */}
       <main className="content">
         <Routes>
           {/* Public */}
@@ -132,7 +132,7 @@ function App() {
             }
           />
 
-          {/* ✅ Bookings List route */}
+          {/*  Bookings List route */}
           <Route
             path="/bookings-list"
             element={
@@ -141,7 +141,7 @@ function App() {
               </ProtectedRoute>
             }
           />
-           {/* ✅ Alias: /book redirects to /booking */}
+           {/*  Alias: /book redirects to /booking */}
   <Route path="/book" element={<Navigate to="/booking" replace />} />
 
           <Route
@@ -155,7 +155,7 @@ function App() {
         </Routes>
       </main>
 
-      {/* ✅ Sticky Footer */}
+      {/*  Sticky Footer */}
       <Footer />
     </div>
   );
