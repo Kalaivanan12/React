@@ -1,29 +1,121 @@
-/* General styles */
-body {
+/* General Layout */
+body, html, .app-wrapper {
   margin: 0;
+  padding: 0;
+  height: 100%;
   font-family: Arial, sans-serif;
-  background: #a7c7f49e;
-  color: #333;
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  flex: 1; /* Push footer to bottom */
+  padding: 20px;
 }
 
 /* Navbar */
-/* .navbar {
+.navbar {
   display: flex;
-  gap: 20px;
-  padding: 12px;
-  background-color: #47696d;
+  justify-content: space-between;
+  align-items: center;
+  background: #222;
+  color: #fff;
+  padding: 10px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+.nav-brand span {
+  color: #f1c40f;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+}
+.nav-brand {
+  font-size: 1.3rem;
+  font-weight: bold;
 }
 
-.navbar a {
+/* Hamburger button (hidden on desktop) */
+.hamburger {
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  display: none;
+}
+
+/* Links */
+.nav-links {
+  display: flex;
+  gap: 15px;
+}
+
+.nav-links a,
+.nav-links .login-btn,
+.nav-links .logout-btn {
   color: white;
   text-decoration: none;
-  font-weight: bold;
-  transition: 0.3s;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: background 0.3s;
+  cursor: pointer;
 }
 
-.navbar a:hover {
-  color: #f48148;
-} */
+.nav-links a:hover,
+.login-btn:hover,
+.logout-btn:hover {
+  color: black;
+}
+
+/* Buttons */
+.login-btn {
+  background: #007bff;
+}
+
+.logout-btn {
+  background: #3cb7e7;
+  border: none;
+}
+
+/* ===== Mobile Styles ===== */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: #222;
+    flex-direction: column;
+    width: 200px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-in-out;
+  }
+
+  .nav-links.open {
+    max-height: 300px; /* Slide down */
+  }
+
+  .nav-links a,
+  .login-btn,
+  .logout-btn {
+    padding: 12px;
+    border-bottom: 1px solid #333;
+  }
+}
+
+/* Footer */
+footer {
+  background: #222;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  margin-top: auto;
+}
+
 
 /* Home Page */
 .home-container {
@@ -445,10 +537,6 @@ body {
   transition: 0.3s;
 }
 
-.navbar a:hover {
-  color: #f48148;
-}
-
 .navbar .login-btn,
 .navbar .logout-btn {
   margin-left: auto;
@@ -475,7 +563,7 @@ body {
 }
 
 .navbar .logout-btn:hover {
-  background: #a71d2a;
+  color:black;
 }
 /* footer */
 .app-wrapper {

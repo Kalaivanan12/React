@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Routes, Route, Link, Navigate, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { logout } from "./redux/authSlice";
@@ -26,6 +26,7 @@ function ProtectedRoute({ children }) {
 }
 
 function App() {
+  const [menuOpen, setMenuOpen] = useState(false); // ✅ For hamburger toggle
   const dispatch = useDispatch();
   const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
   const cartCount = useSelector((state) => state.cart.items.length);
@@ -40,22 +41,40 @@ function App() {
     <div className="app-wrapper">
       {/* ✅ Navbar */}
       <nav className="navbar">
-        <Link to="/">Home</Link>
-        <Link to="/cars">Cars</Link>
-        <Link to="/services">Services</Link>
-        <Link to="/customers">Customers</Link>
-        <Link to="/booking">Booking</Link>
-        <Link to="/cart">Cart ({cartCount})</Link>
+        <div className="nav-brand">Car<span className="nav-brand">Makes</span></div>
 
-        {isLoggedIn ? (
-          <button className="logout-btn" onClick={handleLogout}>
-            Logout
-          </button>
-        ) : (
-          <Link className="login-btn" to="/login">
-            Login
-          </Link>
-        )}
+        {/* Hamburger toggle */}
+        <button
+          className="hamburger"
+          onClick={() => setMenuOpen((prev) => !prev)}
+        >
+          ☰
+        </button>
+
+        <div className={`nav-links ${menuOpen ? "open" : ""}`}>
+          <Link to="/" onClick={() => setMenuOpen(false)}>Home</Link>
+          <Link to="/cars" onClick={() => setMenuOpen(false)}>Cars</Link>
+          <Link to="/services" onClick={() => setMenuOpen(false)}>Services</Link>
+          <Link to="/customers" onClick={() => setMenuOpen(false)}>Customers</Link>
+          <Link to="/booking" onClick={() => setMenuOpen(false)}>Booking</Link>
+          <Link to="/cart" onClick={() => setMenuOpen(false)}>Cart ({cartCount})</Link>
+
+          {isLoggedIn ? (
+            <button
+              className="logout-btn"
+              onClick={() => {
+                handleLogout();
+                setMenuOpen(false);
+              }}
+            >
+              Logout
+            </button>
+          ) : (
+            <Link className="login-btn" to="/login" onClick={() => setMenuOpen(false)}>
+              Login
+            </Link>
+          )}
+        </div>
       </nav>
 
       {/* ✅ Main content */}
