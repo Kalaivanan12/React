@@ -15,6 +15,10 @@
   text-align: center;
   color: #333;
 }
+.cart-container p {
+  font-size: 16px;
+  text-align: center;
+}
 
 /* Empty cart */
 .empty-cart {
