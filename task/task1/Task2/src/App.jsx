@@ -20,6 +20,7 @@ import Cart from "./pages/Cart";
 import Login from "./pages/Login";
 import Logout from "./pages/Logout";
 import Footer from "./pages/Footer";
+import ButtonClick from "./pages/ButtonClick"; // 👈 added new page
 
 // ProtectedRoute
 function ProtectedRoute({ children }) {
@@ -41,7 +42,7 @@ function App() {
 
   return (
     <div className="app-wrapper">
-      {/*  Navbar */}
+      {/* Navbar */}
       <nav className="navbar">
         <div className="nav-brand">
           Car<span className="nav-brand"> Makes</span>
@@ -62,6 +63,7 @@ function App() {
           <Link to="/customers" onClick={() => setMenuOpen(false)}>Customers</Link>
           <Link to="/bookings-list" onClick={() => setMenuOpen(false)}>Bookings</Link>
           <Link to="/cart" onClick={() => setMenuOpen(false)}>Cart ({cartCount})</Link>
+          <Link to="/button-click" onClick={() => setMenuOpen(false)}>Demo</Link>
 
           {isLoggedIn ? (
             <button
@@ -81,7 +83,7 @@ function App() {
         </div>
       </nav>
 
-      {/*  Main content */}
+      {/* Main content */}
       <main className="content">
         <Routes>
           {/* Public */}
@@ -132,7 +134,7 @@ function App() {
             }
           />
 
-          {/*  Bookings List route */}
+          {/* Bookings List route */}
           <Route
             path="/bookings-list"
             element={
@@ -141,8 +143,9 @@ function App() {
               </ProtectedRoute>
             }
           />
-           {/*  Alias: /book redirects to /booking */}
-  <Route path="/book" element={<Navigate to="/booking" replace />} />
+
+          {/* Alias: /book redirects to /booking */}
+          <Route path="/book" element={<Navigate to="/booking" replace />} />
 
           <Route
             path="/cart"
@@ -152,10 +155,20 @@ function App() {
               </ProtectedRoute>
             }
           />
+
+          {/* ButtonClick Demo */}
+          <Route
+            path="/button-click"
+            element={
+              <ProtectedRoute>
+                <ButtonClick />
+              </ProtectedRoute>
+            }
+          />
         </Routes>
       </main>
 
-      {/*  Sticky Footer */}
+      {/* Sticky Footer */}
       <Footer />
     </div>
   );
