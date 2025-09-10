@@ -1,0 +1,140 @@
+/* Reset some basics */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Top Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #a790b3; /* dark purple */
+  padding: 12px 30px;
+  color: white;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* Left side: Logo, location, search */
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+  color: #ff3366; /* Spinny pink */
+}
+
+.location {
+  padding: 6px 12px;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+/* Search box */
+.search-box {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  background: white;
+  overflow: hidden;
+}
+
+.search-box input {
+  border: none;
+  padding: 6px 12px;
+  outline: none;
+  flex: 1;
+  font-size: 14px;
+}
+
+.search-btn {
+  border: none;
+  background: none;
+  padding: 6px 12px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* Right side: nav links + account */
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li {
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links li:hover {
+  color: #ff3366; /* hover effect */
+}
+
+.account {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 14px;
+}
+
+.account span {
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.account span:hover {
+  color: #ff3366;
+}
+
+.call {
+  font-weight: bold;
+  color: #ffd700; /* gold */
+}
+
+/* Second row: filter bar */
+.filter-bar {
+  background-color: #4b0f63; /* lighter purple */
+  padding: 10px 30px;
+}
+
+.filter-bar ul {
+  display: flex;
+  list-style: none;
+  gap: 25px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #ddd;
+}
+
+.filter-bar li {
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.filter-bar li:hover {
+  color: #ff3366;
+}
+
+.logo img {
+  height: 45px;   /* adjust size */
+  width: 100px;    /* adjust size */
+  display: block;
+}
