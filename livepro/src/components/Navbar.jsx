@@ -1,4 +1,5 @@
 import React from "react";
+import { FaHeart, FaUser, FaPhoneAlt, FaSearch } from "react-icons/fa";
 import "./Navbar.css";
 
 function Navbar() {
@@ -9,7 +10,6 @@ function Navbar() {
         {/* Left: Logo */}
         <div className="navbar-left">
           <div className="logo">
-            {/* ✅ Use image from public folder */}
             <img src="src/logo/spinnylogo.png" alt="Spinny Logo" />
           </div>
 
@@ -23,7 +23,9 @@ function Navbar() {
           {/* Search bar */}
           <div className="search-box">
             <input type="text" placeholder="Search by make" />
-            <button className="search-btn">🔍</button>
+            <button className="search-btn">
+              <FaSearch />
+            </button>
           </div>
         </div>
 
@@ -37,9 +39,9 @@ function Navbar() {
             </ul>
           </nav>
           <div className="account">
-            <span>❤️ Shortlisted</span>
-            <span>👤 Account ▾</span>
-            <span className="call">📞 727-727-7275</span>
+            <span><FaHeart /> Shortlisted</span>
+            <span><FaUser /> Account ▾</span>
+            <span className="call"><FaPhoneAlt /> 727-727-7275</span>
           </div>
         </div>
       </header>
