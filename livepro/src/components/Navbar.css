@@ -1,140 +1,129 @@
-/* Reset some basics */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* Top Navbar */
+/* General Navbar */
 .navbar {
+  background-color: #5f2879;
+  color: #ffffff;
+  border-bottom: 1px solid #e5e5e5;
+  padding: 10px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #a790b3; /* dark purple */
-  padding: 12px 30px;
-  color: white;
-  font-family: "Segoe UI", Arial, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Left side: Logo, location, search */
 .navbar-left {
   display: flex;
   align-items: center;
   gap: 15px;
 }
 
-.logo {
-  font-size: 20px;
-  font-weight: bold;
-  color: #ff3366; /* Spinny pink */
+.logo img {
+  height: 40px;
 }
 
 .location {
   padding: 6px 12px;
+  border: 1px solid #ccc;
   border-radius: 20px;
-  border: none;
-  outline: none;
   font-size: 14px;
   cursor: pointer;
 }
 
-/* Search box */
 .search-box {
   display: flex;
   align-items: center;
-  border: 1px solid #ccc;
+  border: 1px solid #ddd;
   border-radius: 20px;
-  background: white;
   overflow: hidden;
 }
 
 .search-box input {
   border: none;
-  padding: 6px 12px;
-  outline: none;
-  flex: 1;
+  padding: 10px 12px;
   font-size: 14px;
+  outline: none;
+  width: 200px;
 }
 
 .search-btn {
+  background: #e63946;
   border: none;
-  background: none;
-  padding: 6px 12px;
+  padding: 8.5px 14px;
   cursor: pointer;
+  color: #fff;
   font-size: 16px;
 }
 
-/* Right side: nav links + account */
+/* Right section */
 .navbar-right {
   display: flex;
   align-items: center;
-  gap: 25px;
+  gap: 30px;
 }
 
 .nav-links {
-  list-style: none;
   display: flex;
   gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .nav-links li {
-  cursor: pointer;
-  font-size: 15px;
+  position: relative;
+  font-size: 14px;
   font-weight: 500;
-  transition: color 0.3s ease;
+  cursor: pointer;
+  padding: 6px 10px;
 }
 
 .nav-links li:hover {
-  color: #ff3366; /* hover effect */
+  color: #e63946;
 }
 
+/* Dropdowns */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 110%;
+  left: 0;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  min-width: 180px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  z-index: 999;
+}
+
+.dropdown-menu li {
+  padding: 10px 15px;
+  font-size: 14px;
+  color: #333;
+  white-space: nowrap;
+}
+
+.dropdown-menu li:hover {
+  background: #f9f9f9;
+  color: #e63946;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* Account Section */
 .account {
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 20px;
   font-size: 14px;
+  font-weight: 500;
 }
 
 .account span {
   cursor: pointer;
-  transition: color 0.3s ease;
 }
 
-.account span:hover {
-  color: #ff3366;
-}
-
-.call {
+.account .call {
   font-weight: bold;
-  color: #ffd700; /* gold */
-}
-
-/* Second row: filter bar */
-.filter-bar {
-  background-color: #4b0f63; /* lighter purple */
-  padding: 10px 30px;
-}
-
-.filter-bar ul {
-  display: flex;
-  list-style: none;
-  gap: 25px;
-  font-size: 14px;
-  font-weight: 500;
-  color: #ddd;
-}
-
-.filter-bar li {
-  cursor: pointer;
-  transition: color 0.3s ease;
-}
-
-.filter-bar li:hover {
-  color: #ff3366;
-}
-
-.logo img {
-  height: 45px;   /* adjust size */
-  width: 100px;    /* adjust size */
-  display: block;
+  color: #ffffff;
 }
