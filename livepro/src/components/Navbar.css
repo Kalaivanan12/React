@@ -83,6 +83,7 @@
 /* Dropdowns */
 .dropdown-menu {
   display: none;
+  list-style: none;
   position: absolute;
   top: 110%;
   left: 0;
