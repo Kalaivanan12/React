@@ -54,14 +54,55 @@ section {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-image: url("/src/img/kalai.png");
+  background-image: url("/img/kalai.png"); /* public folder path */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   color: white;
   text-align: center;
+  position: relative;
 }
 
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+}
+
+.hero h2, .hero p, .hero .hero-buttons {
+  position: relative; /* above overlay */
+}
+
+/* Responsive Hero */
+@media (max-width: 768px) {
+  .hero {
+    height: 40vh;
+    background-position: top;
+  }
+
+  .hero h2 {
+    font-size: 1.8rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    height: 35vh;
+  }
+
+  .hero h2 {
+    font-size: 1.5rem;
+  }
+
+  .hero p {
+    font-size: 0.9rem;
+  }
+}
 
 .hero h1 span {
   color: yellow;
