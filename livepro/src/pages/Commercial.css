@@ -1,0 +1,96 @@
+.commercial-hero {
+    position: relative;
+    background: url("/src/img/commercialbanner.webp") center/cover no-repeat;
+    color: white;
+    padding: 80px 20px 40px;
+    text-align: center;
+}
+
+.commercial-hero h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    background: white;
+    padding: 14px 20px;
+    border-radius: 40px;
+    max-width: 700px;
+    margin: 0 auto 30px;
+    color: #333;
+}
+
+.search-box select,
+.search-box input {
+    border: none;
+    outline: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.radio-box {
+    display: flex;
+    gap: 12px;
+    font-size: 14px;
+}
+
+.radio-box input {
+    margin-right: 4px;
+}
+
+.search-btn {
+    background: #00d084;
+    color: white;
+    border: none;
+    padding: 10px 22px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.search-btn:hover {
+    background: #00a86b;
+}
+
+.promo-banner {
+    background: #1f1f1f;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    max-width: 750px;
+    margin: 0 auto;
+    padding: 16px 20px;
+    border-radius: 12px;
+}
+
+.promo-banner .tag {
+    background: #ff0055;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 4px 10px;
+    border-radius: 20px;
+}
+
+.promo-banner h3 {
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+.promo-banner p {
+    margin: 4px 0 0;
+    font-size: 14px;
+    color: #ddd;
+}
+
+.promo-banner .arrow {
+    font-size: 1.5rem;
+}
