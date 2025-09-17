@@ -32,12 +32,12 @@ function PgColiving() {
         </div>
 
         {/* Promo Section */}
-        <div className="promo">
+        {/* <div className="promo">
           <span className="badge">NEW</span>
           <h3>Unlimited PG’s with Premium</h3>
           <p>Upgrade to Premium & access unlimited PG’s</p>
           <button>Explore Now!</button>
-        </div>
+        </div> */}
       </section>
     </div>
   );

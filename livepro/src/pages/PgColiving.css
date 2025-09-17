@@ -3,6 +3,7 @@
 }
 
 .pg-hero {
+  height: 71vh;
   background: url("/src/img/pgbanner.webp") center/cover no-repeat;
   color: white;
   text-align: center;

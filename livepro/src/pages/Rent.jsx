@@ -77,7 +77,7 @@ function Rent() {
       </section>
 
       {/* Featured Properties */}
-      <section className="rent-listings">
+      {/* <section className="rent-listings">
         <h2>Featured Rental Properties</h2>
         <div className="property-grid">
           <div className="property-card">
@@ -99,7 +99,7 @@ function Rent() {
             <p className="price">₹8,500/month</p>
           </div>
         </div>
-      </section>
+      </section> */}
     </div>
   );
 }
