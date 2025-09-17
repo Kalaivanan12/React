@@ -1,22 +1,25 @@
 import React from "react";
+import projectData from "../data/projectData"; 
 
 function Projects() {
   return (
     <section id="projects" className="projects">
       <h2>Projects</h2>
       <div className="project-list">
-        <div className="project-card">
-          <h3>E-Farming App</h3>
-          <p>A mobile app for efficient farming system.</p>
-        </div>
-        <div className="project-card">
-          <h3>CarVilla Website</h3>
-          <p>A car dealership website template with React & CSS.</p>
-        </div>
-        <div className="project-card">
-          <h3>OLX Clone</h3>
-          <p>Marketplace app with frontend & backend separation.</p>
-        </div>
+        {projectData.map((project) => (
+          <div key={project.id} className="project-card">
+            <h3>{project.title}</h3>
+            <p>{project.description}</p>
+            <p>
+              <strong>Tech Stack:</strong> {project.techStack.join(", ")}
+            </p>
+            {project.link && (
+              <a href={project.link} target="_blank" rel="noopener noreferrer">
+                View Project
+              </a>
+            )}
+          </div>
+        ))}
       </div>
     </section>
   );
