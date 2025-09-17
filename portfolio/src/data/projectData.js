@@ -5,7 +5,7 @@ const projectData = [
     description:
       "A mobile application designed to help farmers manage crops efficiently. Features include crop tracking, weather updates, and notifications for optimal farming practices.",
     techStack: ["React Native", "Firebase", "JavaScript"],
-    // link: "https://github.com/Kalaivanan12/e-farming-app" // optional
+    link: "https://github.com/Kalaivanan12/e-farming-app" // optional
   },
   {
     id: 2,
@@ -13,7 +13,7 @@ const projectData = [
     description:
       "A responsive car dealership website template. Users can browse cars, filter listings, and view detailed information for each vehicle.",
     techStack: ["React", "CSS", "HTML", "JavaScript"],
-    // link: "https://github.com/Kalaivanan12/carvilla" // optional
+    link: "https://github.com/Kalaivanan12/carvilla" // optional
   },
   {
     id: 3,
