@@ -56,14 +56,12 @@
 .tabs {
   display: flex;
   justify-content: center;
-  background: rgba(255, 255, 255, 0.1);
   border-radius: 8px;
   overflow: hidden;
   margin-bottom: 30px;
 }
 
 .tabs a {
-  flex: 1;
   text-decoration: none;
   color: #040404;
   padding: 12px 18px;

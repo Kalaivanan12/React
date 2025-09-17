@@ -16,6 +16,12 @@
 }
 
 .hero-overlay h1 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #111111;
+}
+
+.hero-overlay h1 {
     font-size: 2rem;
     margin-bottom: 10px;
 }
