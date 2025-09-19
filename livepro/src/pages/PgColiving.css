@@ -15,36 +15,6 @@
   margin-bottom: 15px;
 }
 
-/* Search Bar */
-.search-bar {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
-  gap: 10px;
-}
-
-.search-bar select,
-.search-bar input {
-  padding: 10px;
-  border-radius: 6px;
-  border: none;
-  width: 200px;
-}
-
-.search-btn {
-  background: #00c896;
-  color: white;
-  border: none;
-  padding: 10px 18px;
-  border-radius: -1px;
-  cursor: pointer;
-  font-weight: bold;
-}
-
-.search-btn:hover {
-  background: #009c72;
-}
-
 /* Promo */
 /* .promo {
   background: white;

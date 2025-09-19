@@ -35,14 +35,14 @@ function Commercial() {
             <option>Bangalore</option>
           </select>
           <input type="text" placeholder="Search Locality" />
-          <div className="radio-box">
+          {/* <div className="radio-box">
             <label>
               <input type="radio" name="type" defaultChecked /> Buy
             </label>
             <label>
               <input type="radio" name="type" /> Lease
             </label>
-          </div>
+          </div> */}
           <button className="search-btn">Search</button>
         </div>
 

@@ -2,6 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import "./Rent.css";
 
+
 function Rent() {
   return (
     <div className="rent-page">
