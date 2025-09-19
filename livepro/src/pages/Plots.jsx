@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom"; // Import Router
-import "./Plots.css"; // Import CSS file
+import "./Plots.css";
 
 const Plots = () => {
   const location = useLocation(); // Get current route

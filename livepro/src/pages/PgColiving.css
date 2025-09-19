@@ -36,7 +36,7 @@
   color: white;
   border: none;
   padding: 10px 18px;
-  border-radius: 6px;
+  border-radius: -1px;
   cursor: pointer;
   font-weight: bold;
 }
@@ -46,7 +46,7 @@
 }
 
 /* Promo */
-.promo {
+/* .promo {
   background: white;
   color: #333;
   margin: 40px auto 0;
@@ -54,7 +54,7 @@
   max-width: 500px;
   border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-}
+} */
 
 .badge {
   background: #c93f05;

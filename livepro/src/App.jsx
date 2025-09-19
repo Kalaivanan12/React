@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import Hero from "./pages/Hero";
+import Hero from "./components/Hero";
 import Rent from "./pages/Rent";
 import Commercial from "./pages/Commercial";
 import PgColiving from "./pages/PgColiving";

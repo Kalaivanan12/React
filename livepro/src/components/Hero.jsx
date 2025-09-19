@@ -60,7 +60,7 @@ function Hero() {
 
         {/* Promo Section */}
         <div className="promo">
-          <h3>Mega Home Utsav</h3>
+          <img src="./src/img/megahome.webp" alt="Premium" />
           <p>10th Sep - 15th Oct 2025</p>
           <button className="promo-btn">Explore Now!</button>
         </div>
