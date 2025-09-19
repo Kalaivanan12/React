@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Hero from "./components/Hero";
 import Rent from "./pages/Rent";
@@ -8,6 +8,8 @@ import Plots from "./pages/Plots";
 import "./App.css";
 
 function App() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <Router>
       <div className="App">
@@ -17,12 +19,21 @@ function App() {
             HOUSING<span>.com</span>
           </div>
 
-          <nav className="nav-links">
-            <Link to="/">Home</Link>
-            <Link to="/rent">Rent</Link>
-            <Link to="/commercial">Commercial</Link>
-            <Link to="/pg">PG/Co-Living</Link>
-            <Link to="/plots">Plots</Link>
+          {/* Hamburger Button */}
+          <div
+            className="hamburger"
+            onClick={() => setMenuOpen(!menuOpen)}
+          >
+            ☰
+          </div>
+
+          {/* Nav Links */}
+          <nav className={`nav-links ${menuOpen ? "open" : ""}`}>
+            <Link to="/" onClick={() => setMenuOpen(false)}>Home</Link>
+            <Link to="/rent" onClick={() => setMenuOpen(false)}>Rent</Link>
+            <Link to="/commercial" onClick={() => setMenuOpen(false)}>Commercial</Link>
+            <Link to="/pg" onClick={() => setMenuOpen(false)}>PG/Co-Living</Link>
+            <Link to="/plots" onClick={() => setMenuOpen(false)}>Plots</Link>
           </nav>
         </header>
 

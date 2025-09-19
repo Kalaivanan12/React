@@ -35,25 +35,7 @@ function Commercial() {
             <option>Bangalore</option>
           </select>
           <input type="text" placeholder="Search Locality" />
-          {/* <div className="radio-box">
-            <label>
-              <input type="radio" name="type" defaultChecked /> Buy
-            </label>
-            <label>
-              <input type="radio" name="type" /> Lease
-            </label>
-          </div> */}
           <button className="search-btn">Search</button>
-        </div>
-
-        {/* Promo Section */}
-        <div className="promo-banner">
-          <span className="tag">NEW</span>
-          <div>
-            <h3>Properties with Great Returns</h3>
-            <p>Looking for properties with high ROI? Explore now!</p>
-          </div>
-          <span className="arrow">➜</span>
         </div>
       </div>
     </section>

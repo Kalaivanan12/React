@@ -52,7 +52,7 @@ function Rent() {
         </div>
 
         {/* Search Bar */}
-        <div className="search-bar">
+        <div className="search-box">
           <select>
             <option>Coimbatore</option>
             <option>Chennai</option>
