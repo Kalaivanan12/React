@@ -8,6 +8,41 @@ import "swiper/css/pagination";
 import "./Hero.css";
 
 function Hero() {
+  const properties = [
+    {
+      price: "₹35.41 L - 74.77 L",
+      name: "Adhya",
+      developer: "Purnaya Developers Private Ltd",
+      desc: "1, 2, 3 BHK Apartments · Saravanampatty",
+      image: "./src/img/saravanampatty.avif",
+      logo: "./src/img/dev1.png",
+    },
+    {
+      price: "₹3.48 Cr - 3.89 Cr",
+      name: "Sreevatsa Poorna",
+      developer: "Sreevatsa Real Estates Pvt Ltd",
+      desc: "3 BHK Villa · Thudiyalur, Coimbatore",
+      image: "./src/img/thudiyalur.avif",
+      logo: "./src/img/dev2.png",
+    },
+    {
+      price: "₹16.67 L - 77.75 L",
+      name: "Echo Valley",
+      developer: "Adissia Developers Pvt Ltd",
+      desc: "Residential Plots · Pannimadai",
+      image: "./src/img/kalapatti.avif",
+      logo: "./src/img/dev3.png",
+    },
+    {
+      price: "₹1.15 Cr - 1.4 Cr",
+      name: "Sreevatsa Viswa",
+      developer: "Sreevatsa Real Estates Pvt Ltd",
+      desc: "3 BHK Apartment · Villankurichi",
+      image: "./src/img/peelamedu.avif",
+      logo: "./src/img/dev2.png",
+    },
+  ];
+
   return (
     <>
       {/* Hero Section */}
@@ -74,7 +109,7 @@ function Hero() {
         </div>
       </section>
 
-      {/* 👇 New Section with Carousel */}
+      {/* New Section with Carousel */}
       <section className="featured-section">
         <h2>Recommendations for you</h2>
         <p>Event special project attractions</p>
@@ -85,7 +120,7 @@ function Hero() {
           slidesPerView={3}
           navigation
           pagination={{ clickable: true }}
-          autoplay={{ delay: 3000 }}
+          autoplay={{ delay: 4000 }}
           loop={true}
           breakpoints={{
             320: { slidesPerView: 1 },
@@ -93,41 +128,19 @@ function Hero() {
             1024: { slidesPerView: 3 },
           }}
         >
-          <SwiperSlide>
-            <div className="property-card">
-              <img src="./src/img/saravanampatty.avif" alt="Property 1" />
-              <h3>Luxury Villa in Saravanampatty</h3>
-              <p>₹85 Lakhs · 3 BHK</p>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="property-card">
-              <img src="./src/img/vadavalli.avif" alt="Property 2" />
-              <h3>Modern Apartment in Vadavalli</h3>
-              <p>₹45 Lakhs · 2 BHK</p>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="property-card">
-              <img src="./src/img/kalapatti.avif" alt="Property 3" />
-              <h3>Plots for Sale in Kalapatti</h3>
-              <p>₹12 Lakhs · 1200 sq.ft</p>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="property-card">
-              <img src="./src/img/thudiyalur.avif" alt="Property 3" />
-              <h3>Plots for Sale in Thudiyalur</h3>
-              <p>₹12 Lakhs · 1200 sq.ft</p>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="property-card">
-              <img src="./src/img/peelamedu.avif" alt="Property 3" />
-              <h3>Plots for Sale in Peelamedu</h3>
-              <p>₹12 Lakhs · 1200 sq.ft</p>
-            </div>
-          </SwiperSlide>
+          {properties.map((property, index) => (
+            <SwiperSlide key={index}>
+              <div className="property-card">
+                <img src={property.image} alt={property.name} className="property-img" />
+                <div className="property-info">
+                </div>
+                <div className="property-footer">
+                  <img src={property.logo} alt={property.developer} className="dev-logo" />
+                  <button className="contact-btn">Contact</button>
+                </div>
+              </div>
+            </SwiperSlide>
+          ))}
         </Swiper>
       </section>
     </>
