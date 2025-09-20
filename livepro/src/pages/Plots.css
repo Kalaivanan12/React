@@ -6,7 +6,7 @@
   align-items: center;
   justify-content: center;
   color: #fff;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Poppins', 'Helvetica Neue', Arial, sans-serif;
 }
 
 .plots-container::before {

@@ -1,7 +1,7 @@
 .rent-page {
   min-height: 71vh; /* safer than fixed vh */
   padding: 20px;
-  font-family: Arial, sans-serif;
+  font-family: 'Poppins', 'Helvetica Neue', Arial, sans-serif;
   background: url("/src/img/renthero2.webp") center/cover no-repeat;
   color: #fff; /* default text white for contrast */
 }

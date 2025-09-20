@@ -1,9 +1,10 @@
 /* Reset */
 * {
+  flex-wrap: wrap;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, sans-serif;
+  font-family: 'Poppins', 'Helvetica Neue', Arial, sans-serif;
 }
 
 .App {
