@@ -102,7 +102,7 @@ function Hero() {
 
           {/* Promo Section */}
           <div className="promo">
-            <img src="./src/img/megahome.webp" alt="Premium" />
+            <img src="./src/img/megahome.png" alt="Premium" />
             <p>10th Sep - 15th Oct 2025</p>
             <button className="promo-btn">Explore Now!</button>
           </div>
