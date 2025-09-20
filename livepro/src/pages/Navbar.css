@@ -1,0 +1,182 @@
+/* Navbar */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(to right, #0a0c58, #0b0a3f);
+  padding: 12px 20px;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  flex-wrap: wrap; /* allow wrapping on smaller devices */
+}
+
+/* Logo */
+.logo {
+  flex-wrap: wrap;
+  padding:10px;
+  height: 40px;
+  cursor: pointer;
+}
+
+/* Center Menu */
+.navbar-center {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex: 1;
+  justify-content: right;
+  margin: 0 20px;
+  flex-wrap: wrap;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  color: #fff;
+  text-decoration: none;
+  transition: 0.3s;
+  white-space: nowrap;
+}
+
+.nav-link:hover {
+  color: #ffd700;
+}
+
+.dropdown {
+  font-size: 10px;
+}
+
+/* Pay Rent Button */
+.pay-btn {
+  background: #5c5ca7;
+  color: #fff;
+  padding: 6px 16px;
+  border-radius: 8px;
+  border: none;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.pay-btn:hover {
+  background: #46468a;
+}
+
+/* Post Property Highlight */
+.post-property {
+  font-weight: bold;
+}
+
+.free-badge {
+  background: #ff004c;
+  color: #fff;
+  font-size: 10px;
+  padding: 2px 5px;
+  border-radius: 4px;
+  margin-left: 4px;
+}
+
+/* Right Side Profile */
+.navbar-right {
+  display: flex;
+  align-items: center;
+}
+
+.profile-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #fff;
+  border: none;
+  border-radius: 25px;
+  padding: 6px 10px;
+  cursor: pointer;
+}
+
+.menu-icon {
+  color: #333;
+}
+
+.profile-icon {
+  color: #6a3ecf;
+  font-size: 18px;
+}
+
+/* ------------------ */
+/* RESPONSIVE STYLES */
+/* ------------------ */
+
+/* Tablets (<= 1024px) */
+@media (max-width: 1024px) {
+  .navbar {
+    padding: 12px 15px;
+  }
+
+  .navbar-center {
+    gap: 15px;
+    font-size: 13px;
+  }
+
+  .pay-btn {
+    padding: 5px 12px;
+    font-size: 13px;
+  }
+}
+
+/* Mobile Landscape & Small Tablets (<= 768px) */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar-center {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin-top: 10px;
+    gap: 10px;
+  }
+
+  .nav-link {
+    font-size: 13px;
+  }
+
+  .pay-btn {
+    font-size: 13px;
+    padding: 5px 10px;
+  }
+
+  .navbar-right {
+    align-self: flex-end;
+    margin-top: 10px;
+  }
+}
+
+/* Mobile Portrait (<= 480px) */
+@media (max-width: 480px) {
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .navbar-center {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .nav-link {
+    font-size: 12px;
+  }
+
+  .pay-btn {
+    font-size: 12px;
+    padding: 4px 8px;
+  }
+
+  .profile-btn {
+    margin-top: 10px;
+  }
+}

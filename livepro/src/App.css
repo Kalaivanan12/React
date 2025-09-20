@@ -12,46 +12,6 @@
   background-color: #f9f9f9;
 }
 
-/* Navbar */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 30px;
-  background: linear-gradient(to bottom, #0e1743, #262753);
-  color: white;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-
-.logo {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #ffd600;
-}
-
-.logo span {
-  color: white;
-}
-
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-
-.nav-links a {
-  text-decoration: none;
-  color: white;
-  font-size: 0.95rem;
-}
-
-.nav-links a:hover {
-  text-decoration: underline;
-  color: #ffd600;
-}
-
 /* ================== TABS GLOBAL STYLE ================== */
 .tabs {
   display: flex;
