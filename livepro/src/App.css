@@ -87,96 +87,68 @@
   margin-right: 10px;
 }
 
-.search-box select,
-.search-box input {
-  padding: 12px 16px;
-  border: none;
-  outline: none;
-  font-size: 15px;
-  border-radius: 25px;
-}
-
-.search-box select,
-.search-box input {
-  padding: 12px 16px;
-  border: none;
-  outline: none;
-  font-size: 15px;
-  border-radius: 25px;
-}
-
-.search-box select {
-  background: #f5f5f5;
-  min-width: 140px;
-}
-
-.search-box input {
-  flex: 1;
-  background: #f5f5f5;
-}
-
-.search-box button {
-  background: #1dbf73;
-  color: #fff;
-  border: none;
-  padding: 12px 28px;
-  border-radius: 20px;
-  font-size: 15px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.search-box button:hover {
-  background: #17a864;
-}
-
-.search-btn {
-  background: #00d084;
-  color: white;
-  border: none;
-  padding: 10px 22px;
-  border-radius: 30px;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-
-.search-btn:hover {
-  background: #00a86b;
-}
-
 .search-box {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 12px;
-  background: white;
-  padding: 14px 20px;
-  border-radius: 40px;
-  max-width: 700px;
+  background: #fff;
+  padding: 10px 16px;
+  border-radius: 50px;
+  max-width: 720px;
   margin: 0 auto 30px;
-  color: #333;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.12);
+  border: 1px solid #e5e5e5;
 }
 
 .search-box select,
 .search-box input {
+  padding: 12px 16px;
   border: none;
   outline: none;
-  padding: 8px 12px;
-  border-radius: 6px;
-  font-size: 14px;
+  font-size: 15px;
+  border-radius: 30px;
+  background: #f9f9f9;
+  transition: all 0.3s ease;
+}
+
+.search-box select {
+  min-width: 140px;
+}
+
+.search-box input {
+  flex: 1;
+}
+
+.search-box input:focus,
+.search-box select:focus {
+  border: 1px solid #00d084;
+  background: #fff;
+  box-shadow: 0 0 6px rgba(0, 208, 132, 0.3);
+}
+
+.search-box button {
+  background: #00d084;
+  color: #fff;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 30px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.search-box button:hover {
+  background: #00a86b;
+  transform: translateY(-2px);
 }
 
 .search-bar {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #fff;
-  border-radius: 40px;
-  padding: 8px;
-  max-width: 700px;
   margin: 0 auto 30px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
 .hamburger {

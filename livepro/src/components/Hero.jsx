@@ -50,61 +50,54 @@ function Hero() {
         <div className="hero-overlay">
           <h1>Properties to buy in Coimbatore</h1>
           <p>
-            <span>9K+</span> listings added daily and <span>63K+</span> total verified
+            <span>9K+</span> listings added daily and <span>63K+</span> total
+            verified
           </p>
 
-          {/* Tabs */}
-          <nav className="tabs">
-            <NavLink to="/" end className={({ isActive }) => (isActive ? "active" : "")}>
-              Buy
-            </NavLink>
-            <NavLink to="/rent" className={({ isActive }) => (isActive ? "active" : "")}>
-              Rent
-            </NavLink>
-            <NavLink to="/commercial" className={({ isActive }) => (isActive ? "active" : "")}>
-              Commercial
-            </NavLink>
-            <NavLink to="/pg" className={({ isActive }) => (isActive ? "active" : "")}>
-              PG/Co-Living
-            </NavLink>
-            <NavLink to="/plots" className={({ isActive }) => (isActive ? "active" : "")}>
-              Plots
-            </NavLink>
-          </nav>
+          {/* Tabs Navigation */}
+          <div className="search-wrap css-nc7111">
+            <nav className="css-koo8qs">
+              <ul>
+                <NavLink className={({ isActive }) => (isActive ? "active" : "")}
+                  to="/"
+                  end
+                >
+                  Buy
+                </NavLink>
+                <NavLink className={({ isActive }) => (isActive ? "active" : "")}
+                  to="/rent"
+                >
+                  Rent
+                </NavLink>
+                <NavLink className={({ isActive }) => (isActive ? "active" : "")}     
+                  to="/commercial"
+                >
+                  Commercial
+                </NavLink>
+                <NavLink className={({ isActive }) => (isActive ? "active" : "")} 
+                  to="/pg"
+                >
+                  PG/Co-Living
+                </NavLink>
+                <NavLink className={({ isActive }) => (isActive ? "active" : "")}
+                  to="/plots"
+                >
+                  Plots
+                </NavLink>
+              </ul>
+            </nav>
 
-          {/* Search Bar */}
-          <div className="search-bar">
-            <div className="location-select">
-              <select>
-                <option>Coimbatore</option>
-                <option>Chennai</option>
-                <option>Bangalore</option>
-              </select>
+            <div className="search-box css-5pw9gy">
+              <input type="text" placeholder="Coimbatore" className="search-bar css-80eldr" value fdprocessedid="7rkw3f" />
+              <div data-q="search" className="css-1p91ys">
+                <div className="input-container">
+                  <div className="input-container-dropdown css-126ysyq">
+              <input type="text" placeholder="Search for locality, landmark, project, or builder" className="css-1s4ak33" />
+                    <button data-testid="buttonId" test-id="" className="T_searchButtonStyle _1q73exct _csbfng _2db3ly _g38jkm _5j12xx _3f1b13 _l8115q _girdoj T_btnStyle _j9qr11ef _1yfe11ef _xvuoe25i _1vt4glyw _9jtlke _7lu67f _c8dlk8 _26oii0 cta" fdprocessedid="2e7cpo">Search</button>
+                  </div>
+                </div>
+              </div>
             </div>
-            <input
-              type="text"
-              placeholder="Search for locality, landmark, project, or builder"
-            />
-            <button className="search-btn">Search</button>
-          </div>
-
-          {/* Popular Localities */}
-          <div className="localities">
-            <p>Popular Localities:</p>
-            <div className="tags">
-              <span>Saravanampatty</span>
-              <span>Vadavalli</span>
-              <span>Kovai Pudur</span>
-              <span>Kalapatti</span>
-              <span>Karumathampatti</span>
-            </div>
-          </div>
-
-          {/* Promo Section */}
-          <div className="promo">
-            <img src="./src/img/megahome.png" alt="Premium" />
-            <p>10th Sep - 15th Oct 2025</p>
-            <button className="promo-btn">Explore Now!</button>
           </div>
         </div>
       </section>
@@ -131,11 +124,22 @@ function Hero() {
           {properties.map((property, index) => (
             <SwiperSlide key={index}>
               <div className="property-card">
-                <img src={property.image} alt={property.name} className="property-img" />
+                <img
+                  src={property.image}
+                  alt={property.name}
+                  className="property-img"
+                />
                 <div className="property-info">
+                  <h3>{property.name}</h3>
+                  <p>{property.desc}</p>
+                  <p className="price">{property.price}</p>
                 </div>
                 <div className="property-footer">
-                  <img src={property.logo} alt={property.developer} className="dev-logo" />
+                  <img
+                    src={property.logo}
+                    alt={property.developer}
+                    className="dev-logo"
+                  />
                   <button className="contact-btn">Contact</button>
                 </div>
               </div>
