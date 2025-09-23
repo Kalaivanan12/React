@@ -1,6 +1,5 @@
 /* Reset */
 * {
-  flex-wrap: wrap;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -41,116 +40,6 @@
   color: #222;
   font-weight: bold;
 }
-
-/* Search Bar */
-.search-box {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #fff;
-  border-radius: 40px;
-  padding: 8px;
-  max-width: 700px;
-  margin: 0 auto 30px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-}
-
-.search-bar input {
-  flex: 1;
-  padding: 12px;
-  border: none;
-  outline: none;
-  border-radius: 30px;
-  font-size: 15px;
-}
-
-.search-btn {
-  background: #00a884;
-  border: none;
-  color: #fff;
-  padding: 12px 25px;
-  border-radius: 30px;
-  cursor: pointer;
-  font-weight: bold;
-  transition: background 0.3s ease;
-}
-
-.search-btn:hover {
-  background: #008f6b;
-}
-
-.location-select select {
-  border: none;
-  padding: 12px;
-  border-radius: 30px;
-  outline: none;
-  margin-right: 10px;
-}
-
-.search-box {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  background: #fff;
-  padding: 10px 16px;
-  border-radius: 50px;
-  max-width: 720px;
-  margin: 0 auto 30px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.12);
-  border: 1px solid #e5e5e5;
-}
-
-.search-box select,
-.search-box input {
-  padding: 12px 16px;
-  border: none;
-  outline: none;
-  font-size: 15px;
-  border-radius: 30px;
-  background: #f9f9f9;
-  transition: all 0.3s ease;
-}
-
-.search-box select {
-  min-width: 140px;
-}
-
-.search-box input {
-  flex: 1;
-}
-
-.search-box input:focus,
-.search-box select:focus {
-  border: 1px solid #00d084;
-  background: #fff;
-  box-shadow: 0 0 6px rgba(0, 208, 132, 0.3);
-}
-
-.search-box button {
-  background: #00d084;
-  color: #fff;
-  border: none;
-  padding: 12px 28px;
-  border-radius: 30px;
-  font-size: 15px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background 0.3s ease, transform 0.2s ease;
-}
-
-.search-box button:hover {
-  background: #00a86b;
-  transform: translateY(-2px);
-}
-
-.search-bar {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 auto 30px;
-}
-
 .hamburger {
   display: none;
   cursor: pointer;
@@ -190,21 +79,5 @@
     font-size: 1.5rem;
     cursor: pointer;
     color: white;
-  }
-}
-
-/* Mobile (common for <=576px) */
-@media (max-width: 576px) {
-  .search-box {
-    flex-direction: column;
-    gap: 12px;
-    border-radius: 12px;
-  }
-
-  .search-box select,
-  .search-box input,
-  .search-box button {
-    width: 100%;
-    border-radius: 8px;
   }
 }

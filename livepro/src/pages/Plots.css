@@ -57,7 +57,7 @@
 }
 
 /* Search box */
-.search-box {
+/* .search-box {
   margin-top: 25px;
   display: flex;
   gap: 12px;
@@ -68,12 +68,18 @@
 }
 
 .search-box select,
-.search-box input,
 .search-box button {
+  position: relative;
+  bottom: 13px;
   padding: 10px;
   border: none;
   border-radius: 8px;
   font-size: 1rem;
+}
+.search-box input{
+  position: relative;
+  right: 20px;
+
 }
 
 .search-box button {
@@ -86,7 +92,7 @@
 
 .search-box button:hover {
   background: #e14b4f;
-}
+} */
 
 /* Responsive */
 @media (max-width: 768px) {

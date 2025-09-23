@@ -57,45 +57,58 @@ function Hero() {
           {/* Tabs Navigation */}
           <div className="search-wrap css-nc7111">
             <nav className="css-koo8qs">
-              <ul>
-                <NavLink className={({ isActive }) => (isActive ? "active" : "")}
-                  to="/"
-                  end
-                >
-                  Buy
-                </NavLink>
-                <NavLink className={({ isActive }) => (isActive ? "active" : "")}
-                  to="/rent"
-                >
-                  Rent
-                </NavLink>
-                <NavLink className={({ isActive }) => (isActive ? "active" : "")}     
-                  to="/commercial"
-                >
-                  Commercial
-                </NavLink>
-                <NavLink className={({ isActive }) => (isActive ? "active" : "")} 
-                  to="/pg"
-                >
-                  PG/Co-Living
-                </NavLink>
-                <NavLink className={({ isActive }) => (isActive ? "active" : "")}
-                  to="/plots"
-                >
-                  Plots
-                </NavLink>
+              <ul className="navlist">
+                <li>
+                  <span className="custom-underline">
+                     <NavLink className={({ isActive }) => (isActive ? "active" : "")} to="/" end>
+                    BUY
+                  </NavLink>
+                  </span>
+                </li>
+                <li>
+                  <NavLink className={({ isActive }) => (isActive ? "active" : "")} to="/rent">
+                    RENT
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink className={({ isActive }) => (isActive ? "active" : "")} to="/commercial">
+                    COMMERCIAL
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink className={({ isActive }) => (isActive ? "active" : "")} to="/pg">
+                    PG/CO-LIVING
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink className={({ isActive }) => (isActive ? "active" : "")} to="/plots">
+                    PLOTS
+                  </NavLink>
+                </li>
               </ul>
             </nav>
 
-            <div className="search-box css-5pw9gy">
-              <input type="text" placeholder="Coimbatore" className="search-bar css-80eldr" value fdprocessedid="7rkw3f" />
-              <div data-q="search" className="css-1p91ys">
-                <div className="input-container">
-                  <div className="input-container-dropdown css-126ysyq">
-              <input type="text" placeholder="Search for locality, landmark, project, or builder" className="css-1s4ak33" />
-                    <button data-testid="buttonId" test-id="" className="T_searchButtonStyle _1q73exct _csbfng _2db3ly _g38jkm _5j12xx _3f1b13 _l8115q _girdoj T_btnStyle _j9qr11ef _1yfe11ef _xvuoe25i _1vt4glyw _9jtlke _7lu67f _c8dlk8 _26oii0 cta" fdprocessedid="2e7cpo">Search</button>
-                  </div>
-                </div>
+            {/* Search Box */}
+            <div className="search-box">
+
+              {/* Dropdown */}
+              <div className="search-section dropdown-sec">
+                <select className="search-dropdown">
+                  <option>Coimbatore</option>
+                  <option>Chennai</option>
+                  <option>Bangalore</option>
+                  <option>Hyderabad</option>
+                </select>
+              </div>
+
+              {/* Input + Button in one container */}
+              <div className="search-section input-sec">
+                <input
+                  type="text"
+                  placeholder="Search for locality, landmark, project, or builder"
+                  className="search-input"
+                />
+                <button className="search-btn">Search</button>
               </div>
             </div>
           </div>
@@ -106,7 +119,6 @@ function Hero() {
       <section className="featured-section">
         <h2>Recommendations for you</h2>
         <p>Event special project attractions</p>
-
         <Swiper
           modules={[Navigation, Pagination, Autoplay]}
           spaceBetween={20}
@@ -124,22 +136,14 @@ function Hero() {
           {properties.map((property, index) => (
             <SwiperSlide key={index}>
               <div className="property-card">
-                <img
-                  src={property.image}
-                  alt={property.name}
-                  className="property-img"
-                />
+                <img src={property.image} alt={property.name} className="property-img" />
                 <div className="property-info">
                   <h3>{property.name}</h3>
                   <p>{property.desc}</p>
                   <p className="price">{property.price}</p>
                 </div>
                 <div className="property-footer">
-                  <img
-                    src={property.logo}
-                    alt={property.developer}
-                    className="dev-logo"
-                  />
+                  <img src={property.logo} alt={property.developer} className="dev-logo" />
                   <button className="contact-btn">Contact</button>
                 </div>
               </div>
