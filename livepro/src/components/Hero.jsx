@@ -2,6 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import { ChevronRight } from "lucide-react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -43,6 +44,15 @@ function Hero() {
     },
   ];
 
+  // ✅ define localities
+  const localities = [
+    "Saravanampatty",
+    "Vadavalli",
+    "Kovai Pudur",
+    "Kalapatti",
+    "Karamadai",
+  ];
+
   return (
     <>
       {/* Hero Section */}
@@ -58,13 +68,13 @@ function Hero() {
           <div className="search-wrap css-nc7111">
             <nav className="css-koo8qs">
               <ul className="navlist">
-                <li>
-                  <span className="custom-underline">
-                     <NavLink className={({ isActive }) => (isActive ? "active" : "")} to="/" end>
-                    BUY
-                  </NavLink>
-                  </span>
-                </li>
+                <span className="custom-underline">
+                  <li>
+                    <NavLink className={({ isActive }) => (isActive ? "active" : "")} to="/" end>
+                      BUY
+                    </NavLink>
+                  </li>
+                </span>
                 <li>
                   <NavLink className={({ isActive }) => (isActive ? "active" : "")} to="/rent">
                     RENT
@@ -90,7 +100,6 @@ function Hero() {
 
             {/* Search Box */}
             <div className="search-box">
-
               {/* Dropdown */}
               <div className="search-section dropdown-sec">
                 <select className="search-dropdown">
@@ -101,7 +110,7 @@ function Hero() {
                 </select>
               </div>
 
-              {/* Input + Button in one container */}
+              {/* Input + Button */}
               <div className="search-section input-sec">
                 <input
                   type="text"
@@ -112,10 +121,21 @@ function Hero() {
               </div>
             </div>
           </div>
+
+          {/* ✅ Popular Localities Section */}
+          <div className="popular-localities">
+            <h3 className="heading">🏘️ Popular Localities</h3>
+            <div className="localities-scroll">
+              {localities.map((loc, index) => (<button key={index} className="locality-btn">
+                {loc} <ChevronRight size={16} />
+              </button>))}
+            </div>
+          </div>
+
         </div>
       </section>
 
-      {/* New Section with Carousel */}
+      {/* Carousel Section */}
       <section className="featured-section">
         <h2>Recommendations for you</h2>
         <p>Event special project attractions</p>

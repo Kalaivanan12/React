@@ -276,3 +276,66 @@
 .contact-btn:hover {
   background: #e0484d;
 }
+
+/* ===============================
+   Popular Localities
+=================================*/
+.popular-localities {
+  max-width: 100%;
+  margin: 20px auto;
+  padding: 10px 20px;
+  border-radius: 8px;
+  color: #fff;
+  overflow: hidden;
+}
+
+.heading {
+  float: left;
+  position: relative;
+  top: 7px;
+  left: 140px;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Scroll container */
+.localities-scroll {
+  position: relative;
+  right: 55px;
+  float: right;
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  padding-bottom: 5px;
+  scrollbar-width: none;
+}
+
+.localities-scroll::-webkit-scrollbar {
+  display: none;
+  /* Chrome, Safari */
+}
+
+/* Buttons */
+
+.locality-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+  background: rgba(255, 255, 255, 0.15);
+  border: none;
+  color: #fff;
+  font-size: 12px;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.locality-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
