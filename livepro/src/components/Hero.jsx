@@ -131,7 +131,6 @@ function Hero() {
               </button>))}
             </div>
           </div>
-
         </div>
       </section>
 
