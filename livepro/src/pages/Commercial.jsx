@@ -1,44 +1,161 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import { ChevronRight } from "lucide-react";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 import "./Commercial.css";
 
 function Commercial() {
+  const properties = [
+    {
+      price: "₹35.41 L - 74.77 L",
+      name: "Adhya",
+      developer: "Purnaya Developers Private Ltd",
+      desc: "1, 2, 3 BHK Apartments · Saravanampatty",
+      image: "./src/img/saravanampatty.avif",
+      logo: "./src/img/dev1.png",
+    },
+    {
+      price: "₹3.48 Cr - 3.89 Cr",
+      name: "Sreevatsa Poorna",
+      developer: "Sreevatsa Real Estates Pvt Ltd",
+      desc: "3 BHK Villa · Thudiyalur, Coimbatore",
+      image: "./src/img/thudiyalur.avif",
+      logo: "./src/img/dev2.png",
+    },
+    {
+      price: "₹16.67 L - 77.75 L",
+      name: "Echo Valley",
+      developer: "Adissia Developers Pvt Ltd",
+      desc: "Residential Plots · Pannimadai",
+      image: "./src/img/kalapatti.avif",
+      logo: "./src/img/dev3.png",
+    },
+    {
+      price: "₹1.15 Cr - 1.4 Cr",
+      name: "Sreevatsa Viswa",
+      developer: "Sreevatsa Real Estates Pvt Ltd",
+      desc: "3 BHK Apartment · Villankurichi",
+      image: "./src/img/peelamedu.avif",
+      logo: "./src/img/dev2.png",
+    },
+  ];
   return (
-    <section className="commercial-hero">
-      <div className="overlay">
-        <h1>Commercial Real Estate in Coimbatore</h1>
+    <>
+      {/* Commercial Section */}
+      <section className="commercial-section">
+        <div className="commercial-overlay">
+          <h1>Properties to Commercial in Coimbatore</h1>
+          {/* Tabs Navigation */}
+          <div className="search-wrap css-nc7111-com">
+            <nav className="css-koo8qs-com">
+              <ul className="com-navlist">
+                <li>
+                  <NavLink className={({ isActive }) => (isActive ? "active" : "")} to="/" end>
+                    BUY
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink className={({ isActive }) => (isActive ? "active" : "")} to="/rent">
+                    RENT
+                  </NavLink>
+                </li>
+                <span className="custom-underline">
+                  <li>
+                    <NavLink className={({ isActive }) => (isActive ? "active" : "")} to="/commercial">
+                      COMMERCIAL
+                    </NavLink>
+                  </li>
+                </span>
+                <li>
+                  <NavLink className={({ isActive }) => (isActive ? "active" : "")} to="/pg">
+                    PG/CO-LIVING
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink className={({ isActive }) => (isActive ? "active" : "")} to="/plots">
+                    PLOTS
+                  </NavLink>
+                </li>
+              </ul>
+            </nav>
 
-        {/* Tabs */}
-        <nav className="tabs">
-          <NavLink to="/" end className={({ isActive }) => (isActive ? "active" : "")}>
-            Buy
-          </NavLink>
-          <NavLink to="/rent" className={({ isActive }) => (isActive ? "active" : "")}>
-            Rent
-          </NavLink>
-          <NavLink to="/commercial" className={({ isActive }) => (isActive ? "active" : "")}>
-            Commercial
-          </NavLink>
-          <NavLink to="/pg" className={({ isActive }) => (isActive ? "active" : "")}>
-            PG/Co-Living
-          </NavLink>
-          <NavLink to="/plots" className={({ isActive }) => (isActive ? "active" : "")}>
-            Plots
-          </NavLink>
-        </nav>
+            {/* Search Box */}
+            <div className="com-search-box">
+              {/* Dropdown */}
+              <div className="search-section com-dropdown-sec">
+                <select className="com-search-dropdown">
+                  <option>Coimbatore</option>
+                  <option>Chennai</option>
+                  <option>Bangalore</option>
+                  <option>Hyderabad</option>
+                </select>
+              </div>
 
-        {/* Search Bar */}
-        <div className="search-box">
-          <select className="location">
-            <option>Coimbatore</option>
-            <option>Chennai</option>
-            <option>Bangalore</option>
-          </select>
-          <input type="text" placeholder="Search Locality" />
-          <button className="search-btn">Search</button>
+              {/* Input + Button */}
+              <div className="search-section com-input-sec">
+                <input
+                  type="text"
+                  placeholder="Search for locality"
+                  className="com-search-input"
+                />
+                <div>
+                  <div className="radio-group">
+                    <label>
+                      <input type="radio" name="propertyType" value="buy" defaultChecked /> Buy
+                    </label>
+                    <label>
+                      <input type="radio" name="propertyType" value="rent" /> Lease
+                    </label>
+                  </div>
+                </div>
+                <button className="com-search-btn">Search</button>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      {/* Carousel Section */}
+      <section className="featured-section">
+        <h2>Recommendations for you</h2>
+        <p>Event special project attractions</p>
+        <Swiper
+          modules={[Navigation, Pagination, Autoplay]}
+          spaceBetween={20}
+          slidesPerView={3}
+          navigation
+          pagination={{ clickable: true }}
+          autoplay={{ delay: 4000 }}
+          loop={true}
+          breakpoints={{
+            320: { slidesPerView: 1 },
+            768: { slidesPerView: 2 },
+            1024: { slidesPerView: 3 },
+          }}
+        >
+          {properties.map((property, index) => (
+            <SwiperSlide key={index}>
+              <div className="property-card">
+                <img src={property.image} alt={property.name} className="property-img" />
+                <div className="property-info">
+                  <h3>{property.name}</h3>
+                  <p>{property.desc}</p>
+                  <p className="price">{property.price}</p>
+                </div>
+                <div className="property-footer">
+                  <img src={property.logo} alt={property.developer} className="dev-logo" />
+                  <button className="contact-btn">Contact</button>
+                </div>
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </section>
+    </>
   );
 }
 

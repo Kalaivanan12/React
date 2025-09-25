@@ -1,108 +1,347 @@
-/* Hero Section */
-.commercial-hero {
-  position: relative;
+/* ===============================
+   Commercial Section
+=================================*/
+.commercial-section {
   background: url("/src/img/commercialbanner.webp") center/cover no-repeat;
-  color: white;
-  padding: 80px 20px 40px;
+  height: 420px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+}
+
+.commercial-overlay {
+  padding: 50px 20px;
+  border-radius: 20px;
+  width: 80%;
+  max-width: 1100px;
+}
+
+.commercial-overlay h1 {
+  position: relative;
+  left: -35px;
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+/* ===============================
+   Tabs Navigation
+=================================*/
+.com-navlist {
+  position: relative;
+  display: inline-block;
+  list-style-type: none;
+  padding: 0 0 0 10px;
+  margin: 0;
+  display: flex;
+  gap: 30px;
+}
+
+.com-navlist a {
+  position: relative;
+  top: 10px;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.589);
+  font-size: 15px;
+  font-weight: 600;
+  padding: 6px 10px;
+  padding-top: 20PX;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.com-custom-underline {
+  position: relative;
+  display: inline-block;
+}
+
+.com-custom-underline::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -12px;
+  width: 100%;
+  height: 1.5px;
+  background: #ffffffb2;
+}
+
+.css-nc7111-com {
+  width: 746px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.500);
+  backdrop-filter: blur(10px);
+  border-radius: 15px 15px 41px 41px;
+}
+
+.css-k008qs-com {
+  display: flex;
+  justify-content: space-around;
+  background: #fff;
+  border-radius: 15px 15px 0 0;
+  padding: 12px 0;
+}
+
+.css-k008qs-com ul {
+  display: flex;
+  gap: 30px;
+}
+
+.css-k008qs-com a {
+  color: #444;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 6px 10px;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.css-k008qs-com a.active,
+.css-k008qs-com a:hover {
+  background: #ff5a5f;
+  color: #fff;
+}
+
+/* ===============================
+   Search Box
+=================================*/
+/* Container */
+.com-search-box {
+  height: 75px;
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border-radius: 50px;
+  padding: 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  max-width: 900px;
+  margin: 20px auto;
+  overflow: hidden;
+}
+
+/* Dropdown */
+.com-dropdown-sec {
+  flex: 0 0 25%;
+}
+
+.com-search-dropdown {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px;
+  border-right: none;
+  font-size: 14px;
+  background: white;
+  color: black;
+  outline: none;
+  border-radius: 30px 0 0 30px;
+}
+
+.com-search-dropdown option {
+  color: black;
+}
+
+/* Input + Button Section */
+.com-input-sec {
+  flex: 0 0 75%;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.com-search-input {
+  /* width: 100%; */
+  padding: 12px 100px 12px 15px;
+  border: 1px;
+  border-radius: 0 30px 30px 0;
+  font-size: 14px;
+  outline: none;
+}
+
+/* Radio */
+.radio-group input[type="radio"] {
+  transform: scale(1.5); 
+  margin-right: 6px;
+  cursor: pointer;
+}
+
+.radio-group label {
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+  margin-right: 15px;
+  cursor: pointer;
+}
+
+/* Button inside input */
+.com-search-btn {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 15px 30px;
+  background: #20f08f;
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.com-search-btn:hover {
+  background: #70e4b6;
+}
+
+/* ===============================
+   Featured Carousel
+=================================*/
+.featured-section {
+  padding: 60px 40px;
   text-align: center;
 }
 
-.commercial-hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
+.featured-section h2 {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 10px;
 }
 
-.commercial-hero h1 {
+.featured-section p {
+  font-size: 15px;
+  margin-bottom: 40px;
+  color: #666;
+}
+
+.property-card {
+  background: #fff;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+  text-align: left;
+}
+
+.property-card:hover {
+  transform: translateY(-5px);
+}
+
+.property-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.property-info {
+  padding: 15px;
+}
+
+.property-info h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.property-info p {
+  font-size: 14px;
+  color: #555;
+}
+
+.property-info .price {
+  color: #211ec4;
+  font-weight: 700;
+  margin-top: 10px;
+}
+
+.property-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 15px;
+  border-top: 1px solid #eee;
+}
+
+.dev-logo {
+  height: 28px;
+}
+
+.contact-btn {
+  background: #ff5a5f;
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  padding: 6px 18px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.contact-btn:hover {
+  background: #e0484d;
+}
+
+/* ===============================
+   Popular Localities
+=================================*/
+.popular-localities {
+  max-width: 100%;
+  margin: 20px auto;
+  padding: 10px 20px;
+  border-radius: 8px;
+  color: #fff;
+  overflow: hidden;
+}
+
+.heading {
+  float: left;
   position: relative;
-  font-size: 2rem;
-  font-weight: bold;
-  margin-bottom: 20px;
-  z-index: 1;
-}
-
-/* Promo Banner */
-.promo-banner {
-  background: #1f1f1f;
-  color: white;
+  top: 7px;
+  left: 140px;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 10px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  max-width: 750px;
-  margin: 20px auto;
-  padding: 16px 20px;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s ease;
+  gap: 8px;
 }
 
-.promo-banner:hover {
-  transform: translateY(-3px);
+/* Scroll container */
+.localities-scroll {
+  position: relative;
+  right: 55px;
+  float: right;
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  padding-bottom: 5px;
+  scrollbar-width: none;
 }
 
-.promo-banner .tag {
-  background: #ff0055;
-  color: white;
+.localities-scroll::-webkit-scrollbar {
+  display: none;
+  /* Chrome, Safari */
+}
+
+/* Buttons */
+
+.locality-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+  background: rgba(255, 255, 255, 0.15);
+  border: none;
+  color: #fff;
   font-size: 12px;
-  font-weight: bold;
-  padding: 4px 10px;
-  border-radius: 20px;
-}
-
-.promo-banner h3 {
-  font-size: 1.2rem;
-  margin: 0;
-}
-
-.promo-banner p {
-  margin: 4px 0 0;
-  font-size: 14px;
-  color: #ddd;
-}
-
-.promo-banner .arrow {
-  font-size: 1.5rem;
-  color: #ff0055;
+  padding: 8px 16px;
+  border-radius: 6px;
   cursor: pointer;
-  transition: color 0.3s;
+  transition: background 0.3s;
 }
 
-.promo-banner .arrow:hover {
-  color: #ff3366;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .commercial-hero {
-    padding: 60px 15px 30px;
-  }
-
-  .commercial-hero h1 {
-    font-size: 1.6rem;
-  }
-
-  .promo-banner {
-    flex-direction: column;
-    text-align: center;
-    gap: 10px;
-  }
-
-  .promo-banner h3 {
-    font-size: 1.1rem;
-  }
-
-  .promo-banner p {
-    font-size: 13px;
-  }
-}
-
-@media (max-width: 480px) {
-  .commercial-hero h1 {
-    font-size: 1.4rem;
-  }
-
-  .promo-banner {
-    padding: 12px 15px;
-  }
+.locality-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
 }
