@@ -45,9 +45,9 @@ function Plots() {
   ];
   return (
     <>
-      {/* Hero Section */}
-      <section className="hero-section">
-        <div className="hero-overlay">
+      {/* Plots Section */}
+      <section className="plots-section">
+        <div className="plots-overlay">
           <h1>Plots for sale in Coimbatore</h1>
           {/* Tabs Navigation */}
           <div className="search-wrap css-nc7111">
