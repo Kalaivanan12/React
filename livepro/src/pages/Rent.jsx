@@ -1,107 +1,176 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import { ChevronRight } from "lucide-react";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 import "./Rent.css";
 
-
 function Rent() {
+  const properties = [
+    {
+      price: "₹35.41 L - 74.77 L",
+      name: "Adhya",
+      developer: "Purnaya Developers Private Ltd",
+      desc: "1, 2, 3 BHK Apartments · Saravanampatty",
+      image: "./src/img/saravanampatty.avif",
+      logo: "./src/img/dev1.png",
+    },
+    {
+      price: "₹3.48 Cr - 3.89 Cr",
+      name: "Sreevatsa Poorna",
+      developer: "Sreevatsa Real Estates Pvt Ltd",
+      desc: "3 BHK Villa · Thudiyalur, Coimbatore",
+      image: "./src/img/thudiyalur.avif",
+      logo: "./src/img/dev2.png",
+    },
+    {
+      price: "₹16.67 L - 77.75 L",
+      name: "Echo Valley",
+      developer: "Adissia Developers Pvt Ltd",
+      desc: "Residential Plots · Pannimadai",
+      image: "./src/img/kalapatti.avif",
+      logo: "./src/img/dev3.png",
+    },
+    {
+      price: "₹1.15 Cr - 1.4 Cr",
+      name: "Sreevatsa Viswa",
+      developer: "Sreevatsa Real Estates Pvt Ltd",
+      desc: "3 BHK Apartment · Villankurichi",
+      image: "./src/img/peelamedu.avif",
+      logo: "./src/img/dev2.png",
+    },
+  ];
+
+  // ✅ define localities
+  const localities = [
+    "Sulur",
+    "RS Puram",
+    "Selvapuram South",
+    "Cheran Ma Nagar",
+    "Velandipalayam",
+  ];
+
   return (
-    <div className="rent-page">
-      {/* Hero Section */}
-      <section className="rent-hero">
-        <h1>Properties for rent in Coimbatore</h1>
-        <p>
-          <span>9K+</span> listings added daily and <span>63K+</span> total verified
-        </p>
+    <>
+      {/* Rent Section */}
+      <section className="rent-section">
+        <div className="rent-overlay">
+          <h1>Properties to rent in Coimbatore</h1>
+          <p>
+            <span>9K+</span> listings added daily and <span>63K+</span> total
+            verified
+          </p>
 
-        {/* Tabs */}
-        <div className="tabs">
-          <NavLink 
-            to="/" 
-            className={({ isActive }) => (isActive ? "tab-btn active" : "tab-btn")}
-          >
-            Buy
-          </NavLink>
+          {/* Tabs Navigation */}
+          <div className="search-wrap css-nc7111rent">
+            <nav className="css-koo8qsrent">
+              <ul className="navlistrent">
+                  <li>
+                    <NavLink className={({ isActive }) => (isActive ? "active" : "")} to="/" end>
+                      BUY
+                    </NavLink>
+                  </li>
+                <span className="rentcustom-underline">
+                <li>
+                  <NavLink className={({ isActive }) => (isActive ? "active" : "")} to="/rent">
+                    RENT
+                  </NavLink>
+                </li>
+                </span>
+                <li>
+                  <NavLink className={({ isActive }) => (isActive ? "active" : "")} to="/commercial">
+                    COMMERCIAL
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink className={({ isActive }) => (isActive ? "active" : "")} to="/pg">
+                    PG/CO-LIVING
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink className={({ isActive }) => (isActive ? "active" : "")} to="/plots">
+                    PLOTS
+                  </NavLink>
+                </li>
+              </ul>
+            </nav>
 
-          <NavLink 
-            to="/rent" 
-            className={({ isActive }) => (isActive ? "tab-btn active" : "tab-btn")}
-          >
-            Rent
-          </NavLink>
+            {/* Search Box */}
+            <div className="search-boxrent">
+              {/* Dropdown */}
+              <div className="search-section dropdown-secrent">
+                <select className="search-dropdownrent">
+                  <option>Coimbatore</option>
+                  <option>Chennai</option>
+                  <option>Bangalore</option>
+                  <option>Hyderabad</option>
+                </select>
+              </div>
 
-          <NavLink 
-            to="/commercial" 
-            className={({ isActive }) => (isActive ? "tab-btn active" : "tab-btn")}
-          >
-            Commercial
-          </NavLink>
+              {/* Input + Button */}
+              <div className="search-section rentinput-sec">
+                <input
+                  type="text"
+                  placeholder="Search for locality, landmark, project, or builder"
+                  className="search-inputrent"
+                />
+                <button className="search-btn-rent">Search</button>
+              </div>
+            </div>
+          </div>
 
-          <NavLink 
-            to="/pg" 
-            className={({ isActive }) => (isActive ? "tab-btn active" : "tab-btn")}
-          >
-            PG/Co-Living
-          </NavLink>
-
-          <NavLink 
-            to="/plots" 
-            className={({ isActive }) => (isActive ? "tab-btn active" : "tab-btn")}
-          >
-            Plots
-          </NavLink>
-        </div>
-
-        {/* Search Bar */}
-        <div className="search-box">
-          <select>
-            <option>Coimbatore</option>
-            <option>Chennai</option>
-            <option>Bangalore</option>
-          </select>
-          <input
-            type="text"
-            placeholder="Search for locality, landmark, project, or builder"
-          />
-          <button className="search-btn">Search</button>
-        </div>
-
-        {/* Popular Localities */}
-        <div className="localities">
-          <p>Popular Localities:</p>
-          <div className="tags">
-            <span>Sulur</span>
-            <span>RS Puram</span>
-            <span>Selvapurm South</span>
-            <span>Cheran Ma Nagar</span>
+          {/* ✅ Popular Localities Section */}
+          <div className="popular-localities-rent">
+            <h3 className="rent-heading">🏘️ Popular Localities</h3>
+            <div className="rent-localities-scroll">
+              {localities.map((loc, index) => (<button key={index} className="rent-locality-btn">
+                {loc} <ChevronRight size={16} />
+              </button>))}
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Featured Properties */}
-      {/* <section className="rent-listings">
-        <h2>Featured Rental Properties</h2>
-        <div className="property-grid">
-          <div className="property-card">
-            <img src="https://via.placeholder.com/250x150" alt="House" />
-            <h3>2BHK Apartment</h3>
-            <p>Sulur, Coimbatore</p>
-            <p className="price">₹12,000/month</p>
-          </div>
-          <div className="property-card">
-            <img src="https://via.placeholder.com/250x150" alt="House" />
-            <h3>3BHK Villa</h3>
-            <p>RS Puram, Coimbatore</p>
-            <p className="price">₹25,000/month</p>
-          </div>
-          <div className="property-card">
-            <img src="https://via.placeholder.com/250x150" alt="House" />
-            <h3>1BHK Studio</h3>
-            <p>Cheran Ma Nagar</p>
-            <p className="price">₹8,500/month</p>
-          </div>
-        </div>
-      </section> */}
-    </div>
+      {/* Carousel Section */}
+      <section className="featured-section">
+        <h2>Recommendations for you</h2>
+        <p>Event special project attractions</p>
+        <Swiper
+          modules={[Navigation, Pagination, Autoplay]}
+          spaceBetween={20}
+          slidesPerView={3}
+          navigation
+          pagination={{ clickable: true }}
+          autoplay={{ delay: 4000 }}
+          loop={true}
+          breakpoints={{
+            320: { slidesPerView: 1 },
+            768: { slidesPerView: 2 },
+            1024: { slidesPerView: 3 },
+          }}
+        >
+          {properties.map((property, index) => (
+            <SwiperSlide key={index}>
+              <div className="property-card">
+                <img src={property.image} alt={property.name} className="property-img" />
+                <div className="property-info">
+                  <h3>{property.name}</h3>
+                  <p>{property.desc}</p>
+                  <p className="price">{property.price}</p>
+                </div>
+                <div className="property-footer">
+                  <img src={property.logo} alt={property.developer} className="dev-logo" />
+                  <button className="contact-btn">Contact</button>
+                </div>
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </section>
+    </>
   );
 }
 
