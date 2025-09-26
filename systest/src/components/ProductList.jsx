@@ -100,7 +100,7 @@ const ProductList = () => {
     }
   };
 
-  if (loading) return <p>Loading products...</p>;
+  if (loading) return <p style={{ color: "black", fontSize: "20px" }}>Loading products...☺ </p>;
 
   return (
     <section className="products">
