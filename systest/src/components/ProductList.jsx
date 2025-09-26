@@ -57,11 +57,11 @@ const ProductList = () => {
   const validateForm = () => {
     const { title, price, description, category } = formData;
     if (!title || !price || !description || !category) {
-      showPopup("⚠️ All fields are required!", false);
+      showPopup("All fields are required!", false);
       return false;
     }
     if (parseFloat(price) <= 0) {
-      showPopup("⚠️ Price must be a positive number!", false);
+      showPopup("Price must be a positive number!", false);
       return false;
     }
     return true;
