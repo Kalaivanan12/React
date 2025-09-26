@@ -1,6 +1,7 @@
 body {
   font-family: 'Poppins', 'Helvetica Neue', Arial, sans-serif;
 }
+
 /* Navbar */
 .navbar {
   display: flex;
@@ -33,13 +34,14 @@ body {
   margin: 0 20px;
   flex-wrap: wrap;
 }
-.navbar-left{
+
+.navbar-left {
   position: relative;
   left: 60px;
 }
 
 .nav-link {
-   font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-weight: 600;
   display: flex;
   align-items: center;
@@ -81,7 +83,7 @@ body {
 
 /* Post Property Highlight */
 .post-property {
-   font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-weight: 600;
   /* font-weight: bold; */
 }
