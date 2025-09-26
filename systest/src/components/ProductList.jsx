@@ -140,7 +140,7 @@ const ProductList = () => {
       {showForm && (
         <form className="add-form" onSubmit={handleSubmit}>
           <input id="title" type="text" placeholder="Title" value={formData.title} onChange={handleChange} />
-          <input id="price" type="number" step="0.01" placeholder="Price" value={formData.price} onChange={handleChange} />
+          <input id="price" type="text" step="0.01" placeholder="Price" value={formData.price} onChange={handleChange} />
           <textarea id="description" placeholder="Description" value={formData.description} onChange={handleChange} />
           <input id="category" type="text" placeholder="Category" value={formData.category} onChange={handleChange} /><br />
           <button type="submit" className="submit-btn">Save Product</button>
