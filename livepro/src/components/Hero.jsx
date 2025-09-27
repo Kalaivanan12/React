@@ -57,7 +57,7 @@ function Hero() {
     <>
       {/* Hero Section */}
       <section className="hero-section">
-        <div className="hero-overlay">
+        <div className="hero-overlay"><br /><br /><br />
           <h1>Properties to buy in Coimbatore</h1>
           <p>
             <span>9K+</span> listings added daily and <span>63K+</span> total
@@ -122,13 +122,31 @@ function Hero() {
             </div>
           </div>
 
-          {/* ✅ Popular Localities Section */}
+          {/*Popular Localities Section */}
           <div className="popular-localities">
             <h3 className="heading">🏘️ Popular Localities</h3>
             <div className="localities-scroll">
               {localities.map((loc, index) => (<button key={index} className="locality-btn">
                 {loc} <ChevronRight size={16} />
               </button>))}
+            </div>
+          </div>
+          {/*Mega Home Utsav Banner */}
+          <div className="mega-banner">
+            <div className="mega-content">
+              {/* Left Logo & Title */}
+              <div className="mega-left">
+                <img
+                  src="/src/img/megahome.webp"
+                  alt="Mega Home Utsav"
+                  className="mega-logo"
+                />
+              </div>
+              {/* Right Side (Date + Button) */}
+              <div className="mega-right">
+                <span className="mega-date">10th Sep - 15th Oct 2025</span>
+                <button className="mega-btn">Explore Now!</button>
+              </div>
             </div>
           </div>
         </div>
