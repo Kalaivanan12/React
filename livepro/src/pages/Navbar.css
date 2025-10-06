@@ -34,11 +34,13 @@ body {
   margin: 0 20px;
   flex-wrap: wrap;
   font-size: 12px;
+  cursor: pointer;
 }
 
 .navbar-left {
   position: relative;
   left: 60px;
+  cursor: pointer;
 }
 
 .nav-link {
@@ -51,11 +53,15 @@ body {
   text-decoration: none;
   transition: 0.3s;
   white-space: nowrap;
+  cursor: pointer;
 }
-
 .nav-link:hover {
   color: #ffd700;
 }
+
+/* .nav-link:hover {
+  color: #ffd700;
+} */
 
 .dropdown {
   font-size: 10px;
