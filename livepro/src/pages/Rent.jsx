@@ -59,7 +59,7 @@ function Rent() {
       {/* Rent Section */}
       <section className="rent-section">
         <div className="rent-overlay">
-          <h1>Properties to rent in Coimbatore</h1>
+          <h1>Properties to rent in Cuddalore</h1>
           <p>
             <span>9K+</span> listings added daily and <span>63K+</span> total
             verified
@@ -104,7 +104,7 @@ function Rent() {
               {/* Dropdown */}
               <div className="search-section dropdown-sec">
                 <select className="search-dropdown">
-                  <option>Coimbatore</option>
+                  <option>Cuddalore</option>
                   <option>Chennai</option>
                   <option>Bangalore</option>
                   <option>Hyderabad</option>

@@ -49,7 +49,7 @@ function Plots() {
       {/* Plots Section */}
       <section className="plots-section">
         <div className="plots-overlay">
-          <h1>Plots for sale in Coimbatore</h1>
+          <h1>Plots for sale in Cuddalore</h1>
           {/* Tabs Navigation */}
           <div className="search-wrap css-nc7111">
             <nav className="css-koo8qs">
@@ -89,7 +89,7 @@ function Plots() {
               {/* Dropdown */}
               <div className="search-section dropdown-sec">
                 <select className="search-dropdown">
-                  <option>Coimbatore</option>
+                  <option>Cuddalore</option>
                   <option>Chennai</option>
                   <option>Bangalore</option>
                   <option>Hyderabad</option>

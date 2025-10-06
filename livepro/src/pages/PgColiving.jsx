@@ -49,7 +49,7 @@ function PgColiving() {
       {/* Hero Section */}
       <section className="pg-section">
         <div className="pg-overlay">
-          <h1>PG/Co-Living in Coimbatore</h1>
+          <h1>PG/Co-Living in Cuddalore</h1>
           {/* Tabs Navigation */}
           <div className="search-wrap css-nc7111">
             <nav className="css-koo8qs">
@@ -89,7 +89,7 @@ function PgColiving() {
               {/* Dropdown */}
               <div className="search-section dropdown-sec">
                 <select className="search-dropdown">
-                  <option>Coimbatore</option>
+                  <option>Cuddalore</option>
                   <option>Chennai</option>
                   <option>Bangalore</option>
                   <option>Hyderabad</option>

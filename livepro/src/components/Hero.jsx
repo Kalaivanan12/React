@@ -59,7 +59,7 @@ function Hero() {
       {/* Hero Section */}
       <section className="hero-section">
         <div className="hero-overlay"><br /><br /><br />
-          <h1>Properties to buy in Coimbatore</h1>
+          <h1>Properties to buy in Cuddalore</h1>
           <p>
             <span>9K+</span> listings added daily and <span>63K+</span> total
             verified
@@ -104,6 +104,7 @@ function Hero() {
               {/* Dropdown */}
               <div className="search-section dropdown-sec">
                 <select className="search-dropdown">
+                  <option>Cuddalore</option>
                   <option>Coimbatore</option>
                   <option>Chennai</option>
                   <option>Bangalore</option>

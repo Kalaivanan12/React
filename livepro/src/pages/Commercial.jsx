@@ -48,7 +48,7 @@ function Commercial() {
       {/* Commercial Section */}
       <section className="commercial-section">
         <div className="commercial-overlay">
-          <h1>Properties to Commercial in Coimbatore</h1>
+          <h1>Properties to Commercial in Cuddalore</h1>
           {/* Tabs Navigation */}
           <div className="search-wrap css-nc7111">
             <nav className="css-koo8qs">
@@ -88,7 +88,7 @@ function Commercial() {
               {/* Dropdown */}
               <div className="search-section com-dropdown-sec">
                 <select className="com-search-dropdown">
-                  <option>Coimbatore</option>
+                  <option>Cuddalore</option>
                   <option>Chennai</option>
                   <option>Bangalore</option>
                   <option>Hyderabad</option>
