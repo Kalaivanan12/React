@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./pages/Navbar";
+// import Dashboard from "./pages/Dashboard";
 import Hero from "./components/Hero";
 import Rent from "./pages/Rent";
 import Commercial from "./pages/Commercial";

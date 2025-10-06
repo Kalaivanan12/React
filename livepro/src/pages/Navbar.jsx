@@ -1,22 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Navbar.css";
 import { FaMobileAlt, FaHeart, FaBars } from "react-icons/fa";
 import { MdOutlineLibraryBooks } from "react-icons/md";
 import { CgProfile } from "react-icons/cg";
+import Dashboard from "./Dashboard";
 
 function Navbar() {
+  const [isDashboardOpen, setIsDashboardOpen] = useState(false);
+
   return (
     <header className="navbar">
-      {/* Logo */}
       <div className="navbar-left">
-        <img
-          src="./src/img/navlogo.webp"
-          alt="Housing.com"
-          className="logo"
-        />
+        <img src="./src/img/navlogo.webp" alt="Housing.com" className="logo" />
       </div>
 
-      {/* Center Menu */}
       <nav className="navbar-center">
         <button className="pay-btn">Pay Rent</button>
         <a href="#download" className="nav-link">
@@ -33,12 +30,18 @@ function Navbar() {
         </a>
       </nav>
 
-      {/* Right Side */}
       <div className="navbar-right">
-        <button className="profile-btn">
+        <button
+          className="profile-btn"
+          onClick={() => setIsDashboardOpen(!isDashboardOpen)}
+        >
           <FaBars className="menu-icon" />
           <CgProfile className="profile-icon" />
         </button>
+
+        {isDashboardOpen && (
+          <Dashboard onClose={() => setIsDashboardOpen(false)} />
+        )}
       </div>
     </header>
   );
