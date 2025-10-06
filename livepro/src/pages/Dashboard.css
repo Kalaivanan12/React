@@ -12,7 +12,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #f7f7fb;
+  background: #f2f3f8;
   color: black;
   padding: 15px;
   border-radius: 8px;
@@ -33,6 +33,7 @@
 }
 
 .profile-info h3 {
+  font-weight: 2px bold;
   margin: 0 0 5px;
   font-size: 16px;
 }
@@ -43,24 +44,32 @@
   font-size: 13px;
   list-style: none;
 }
+.profile-info ul li {
+  margin-bottom: 3px;
+  font-size: 12px;
+}
 
 .login-btn {
-  background: #00c16a;
+  background: #2cd689;
   color: white;
   border: none;
-  padding: 8px 14px;
+  padding: 8px 20px;
   border-radius: 6px;
   cursor: pointer;
 }
 
 /* Activity Section */
 .activity-title {
+  position: relative;
+  top: -35px;
   color: black;
   margin: 20px 0 10px;
   font-weight: bold;
 }
 
 .activity-cards {
+  position: relative;
+  top: -35px;
   display: flex;
   justify-content: space-between;
   gap: 6px;
