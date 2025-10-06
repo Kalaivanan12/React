@@ -2,7 +2,7 @@
   max-width: 360px;
   margin: 0 auto;
   font-family: Arial, sans-serif;
-  transition: all 0.3s ease;
+  /* transition: all 0.3s ease; */
 }
 
 /* Profile Card */
@@ -65,6 +65,7 @@
   color: black;
   margin: 20px 0 10px;
   font-weight: bold;
+  /* background-image: url(/src/img/profilePill.webp) no-repeat right center; */
 }
 
 .activity-cards {
@@ -94,6 +95,9 @@
 }
 
 .activity-card.active {
+  border: 1.5px solid #7d4fff;
+}
+.activity-card:hover {
   border: 1.5px solid #7d4fff;
 }
 

@@ -18,7 +18,7 @@ function Dashboard({ onClose }) {
               className="profile-img"
             />
             <div>
-              <h3>Hello 👋</h3>
+              <h3>Hello👋</h3>
               <ul>
                 <li>✅ Easy Contact with sellers</li>
                 <li>✅ Personalized experience</li>
@@ -35,7 +35,7 @@ function Dashboard({ onClose }) {
             { id: "contacted", label: "Contacted Properties", count: "00" },
             { id: "seen", label: "Seen Properties", count: "00" },
             { id: "saved", label: "Saved Properties", count: "00" },
-            { id: "recent", label: "Recent Searches", count: "01" },
+            { id: "recent", label: "Recent Searches", count: "00" },
           ].map((card) => (
             <div
               key={card.id}
