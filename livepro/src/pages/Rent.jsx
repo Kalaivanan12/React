@@ -7,6 +7,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "./Rent.css";
+import "../App.css";
 
 function Rent() {
   const properties = [
@@ -65,15 +66,15 @@ function Rent() {
           </p>
 
           {/* Tabs Navigation */}
-          <div className="search-wrap css-nc7111rent">
-            <nav className="css-koo8qsrent">
-              <ul className="navlistrent">
+          <div className="search-wrap css-nc7111">
+            <nav className="css-koo8qs">
+              <ul className="navlist">
                   <li>
                     <NavLink className={({ isActive }) => (isActive ? "active" : "")} to="/" end>
                       BUY
                     </NavLink>
                   </li>
-                <span className="rentcustom-underline">
+                <span className="custom-underline">
                 <li>
                   <NavLink className={({ isActive }) => (isActive ? "active" : "")} to="/rent">
                     RENT
@@ -99,10 +100,10 @@ function Rent() {
             </nav>
 
             {/* Search Box */}
-            <div className="search-boxrent">
+            <div className="search-box">
               {/* Dropdown */}
-              <div className="search-section dropdown-secrent">
-                <select className="search-dropdownrent">
+              <div className="search-section dropdown-sec">
+                <select className="search-dropdown">
                   <option>Coimbatore</option>
                   <option>Chennai</option>
                   <option>Bangalore</option>
@@ -111,20 +112,20 @@ function Rent() {
               </div>
 
               {/* Input + Button */}
-              <div className="search-section rentinput-sec">
+              <div className="search-section input-sec">
                 <input
                   type="text"
                   placeholder="Search for locality, landmark, project, or builder"
-                  className="search-inputrent"
+                  className="search-input"
                 />
-                <button className="search-btn-rent">Search</button>
+                <button className="search-btn">Search</button>
               </div>
             </div>
           </div>
 
-          {/* ✅ Popular Localities Section */}
+          {/* Popular Localities Section */}
           <div className="popular-localities-rent">
-            <h3 className="rent-heading">🏘️ Popular Localities</h3>
+            <h3 className="rent-heading">Popular Localities</h3>
             <div className="rent-localities-scroll">
               {localities.map((loc, index) => (<button key={index} className="rent-locality-btn">
                 {loc} <ChevronRight size={16} />

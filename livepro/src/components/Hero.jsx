@@ -7,6 +7,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "./Hero.css";
+import "../App.css";
 
 function Hero() {
   const properties = [

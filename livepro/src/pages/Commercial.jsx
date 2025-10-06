@@ -7,7 +7,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "./Commercial.css";
-
+import "../App.css";
 function Commercial() {
   const properties = [
     {
@@ -50,9 +50,9 @@ function Commercial() {
         <div className="commercial-overlay">
           <h1>Properties to Commercial in Coimbatore</h1>
           {/* Tabs Navigation */}
-          <div className="search-wrap css-nc7111-com">
-            <nav className="css-koo8qs-com">
-              <ul className="com-navlist">
+          <div className="search-wrap css-nc7111">
+            <nav className="css-koo8qs">
+              <ul className="navlist">
                 <li>
                   <NavLink className={({ isActive }) => (isActive ? "active" : "")} to="/" end>
                     BUY

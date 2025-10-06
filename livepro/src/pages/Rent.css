@@ -34,161 +34,6 @@
   font-weight: 600;
   text-align: bold;
 }
-/* ===============================
-   Tabs Navigation
-=================================*/
-.navlistrent {
-  position: relative;
-  display: inline-block;
-  list-style-type: none;
-  padding: 0 0 0 10px;
-  margin: 0;
-  display: flex;
-  gap: 30px;
-}
-
-.navlistrent a {
-  position: relative;
-  top: 10px;
-  text-decoration: none;
-  color: rgba(255, 255, 255, 0.589);
-  font-size: 15px;
-  font-weight: 600;
-  padding: 6px 10px;
-  padding-top: 20PX;
-  border-radius: 5px;
-  transition: 0.3s;
-}
-
-.rentcustom-underline {
-  position: relative;
-  display: inline-block;
-}
-
-.rentcustom-underline::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: -12px;
-  width: 100%;
-  height: 1.5px;
-  background: #ffffffb2;
-}
-
-.css-nc7111rent {
-  width: 746px;
-  margin: 0 auto;
-  position: relative;
-  z-index: 1;
-  background: rgba(0, 0, 0, 0.500);
-  backdrop-filter: blur(10px);
-  border-radius: 15px 15px 41px 41px;
-}
-
-.css-k008qsrent {
-  display: flex;
-  justify-content: space-around;
-  background: #fff;
-  border-radius: 15px 15px 0 0;
-  padding: 12px 0;
-}
-
-.css-k008qsrent ul {
-  display: flex;
-  gap: 30px;
-}
-
-.css-k008qsrent a {
-  color: #444;
-  font-size: 15px;
-  font-weight: 600;
-  text-decoration: none;
-  padding: 6px 10px;
-  border-radius: 5px;
-  transition: 0.3s;
-}
-
-.css-k008qsrent a.active,
-.css-k008qsrent a:hover {
-  background: #ff5a5f;
-  color: #fff;
-}
-
-/* ===============================
-   Search Box
-=================================*/
-/* Container */
-.search-boxrent {
-  height: 75px;
-  display: flex;
-  align-items: center;
-  background: #fff;
-  border-radius: 50px;
-  padding: 0;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-  max-width: 900px;
-  margin: 20px auto;
-  overflow: hidden;
-}
-
-/* Dropdown */
-.dropdown-secrent {
-  flex: 0 0 25%;
-}
-
-.search-dropdownrent {
-  width: 100%;
-  padding: 12px 15px;
-  border: 1px;
-  border-right: none;
-  font-size: 14px;
-  background: white;
-  color: black;
-  outline: none;
-  border-radius: 30px 0 0 30px;
-}
-
-.search-dropdownrent option {
-  color: black;
-}
-
-/* Input + Button Section */
-.rentinput-sec {
-  flex: 0 0 75%;
-  display: flex;
-  align-items: center;
-  position: relative;
-}
-
-.search-inputrent {
-  width: 100%;
-  padding: 12px 100px 12px 15px;
-  border: 1px;
-  border-radius: 0 30px 30px 0;
-  font-size: 14px;
-  outline: none;
-}
-
-/* Button inside input */
-.search-btn-rent {
-  position: absolute;
-  right: 8px;
-  top: 50%;
-  transform: translateY(-50%);
-  padding: 15px 30px;
-  background: #20f08f;
-  color: #fff;
-  border: none;
-  border-radius: 25px;
-  font-size: 14px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.search-btn-rent:hover {
-  background: #70e4b6;
-}
-
 
 /* ===============================
    Popular Localities
@@ -218,7 +63,6 @@
 /* Scroll container */
 .rent-localities-scroll {
   position: relative;
-  /* right: 0px; */
   float: right;
   display: flex;
   gap: 12px;
@@ -229,7 +73,6 @@
 
 .rent-localities-scroll::-webkit-scrollbar {
   display: none;
-  /* Chrome, Safari */
 }
 
 /* Buttons */
