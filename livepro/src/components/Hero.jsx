@@ -124,7 +124,7 @@ function Hero() {
 
           {/*Popular Localities Section */}
           <div className="popular-localities">
-            <h3 className="heading">🏘️ Popular Localities</h3>
+            <h3 className="heading">Popular Localities</h3>
             <div className="localities-scroll">
               {localities.map((loc, index) => (<button key={index} className="locality-btn">
                 {loc} <ChevronRight size={16} />
