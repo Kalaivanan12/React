@@ -47,11 +47,8 @@ function Hero() {
 
   // ✅ define localities
   const localities = [
-    "Saravanampatty",
-    "Vadavalli",
-    "Kovai Pudur",
-    "Kalapatti",
-    "Karamadai",
+    "Manjakuppam",
+    "Koothapakkam",
   ];
 
   return (

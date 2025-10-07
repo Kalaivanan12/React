@@ -2,7 +2,7 @@
    Hero Section
 =================================*/
 .hero-section {
-  background: url("../img/buyhero1.webp") center center / cover no-repeat;
+  background: url("../img/buyCover.webp") center center / cover no-repeat;
   height: 530px;
   position: relative;
   display: flex;

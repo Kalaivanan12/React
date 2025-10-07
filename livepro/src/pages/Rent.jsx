@@ -47,11 +47,7 @@ function Rent() {
 
   // ✅ define localities
   const localities = [
-    "Sulur",
-    "RS Puram",
-    "Selvapuram South",
-    "Cheran Ma Nagar",
-    "Velandipalayam",
+    "Rathinavel Nagar",
   ];
 
   return (

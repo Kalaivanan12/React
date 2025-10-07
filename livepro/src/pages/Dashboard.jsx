@@ -1,10 +1,103 @@
 import React, { useState } from "react";
 import "./Dashboard.css";
 
-function Dashboard({ onClose }) {
-  // State to track which activity card is active
-  const [activeCard, setActiveCard] = useState("seen"); // default active
+// Import React Icons
+import {
+  FaGem,                // Diamond
+  FaCreditCard,         // Transactions
+  FaStar,               // Reviews
+  FaHandPointer,        // Quick Links
+  FaBox,                // Packages
+  FaHome,               // Housing Edge
+  FaHandsHelping,       // Services
+  FaSearch,             // Top Search
+  FaBell,               // Alerts
+  FaLightbulb,          // Advice
+  FaExclamationTriangle // Fraud Report
+} from "react-icons/fa";
 
+// =============================
+// Menu Item Component
+// =============================
+const MenuItem = ({ item }) => {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <div className="menu-item">
+      <div
+        className={`menu-header ${item.submenu ? "has-submenu" : ""}`}
+        onClick={() => item.submenu && setOpen(!open)}
+      >
+        <span className="icon">{item.icon}</span>
+        <span className="label">{item.label}</span>
+
+        {/* Tag for NEW */}
+        {item.tag && <span className="tag">{item.tag}</span>}
+
+        {/* Dropdown arrow */}
+        {item.submenu && (
+          <span className={`arrow ${open ? "open" : ""}`}>▼</span>
+        )}
+      </div>
+
+      {/* Submenu */}
+      {item.submenu && open && (
+        <ul className="submenu">
+          {item.submenu.map((sub, i) => (
+            <li key={i}>{sub}</li>
+          ))}
+        </ul>
+      )}
+    </div>
+  );
+};
+
+// =============================
+// Dashboard Component
+// =============================
+function Dashboard({ onClose }) {
+  const [activeCard, setActiveCard] = useState("seen"); // Default active card
+
+  // =============================
+  // Side Menu Items
+  // =============================
+  const menuItems = [
+    { label: "Zero Brokerage Properties", icon: <FaGem /> },
+    { label: "My Transactions", icon: <FaCreditCard /> },
+    { label: "My Reviews", icon: <FaStar />, tag: "NEW" },
+    {
+      label: "Quick Links",
+      icon: <FaHandPointer />,
+      submenu: ["Profile Settings", "Saved Searches", "Notifications"],
+    },
+    {
+      label: "Residential Packages",
+      icon: <FaBox />,
+      submenu: ["Buy Package", "Renew Package"],
+    },
+    {
+      label: "Housing Edge",
+      icon: <FaHome />,
+      submenu: ["Home Loan", "Legal Assistance"],
+    },
+    {
+      label: "Services",
+      icon: <FaHandsHelping />,
+      submenu: ["Property Valuation", "Consultation"],
+    },
+    {
+      label: "Top Search",
+      icon: <FaSearch />,
+      submenu: ["Trending Areas", "Popular Cities"],
+    },
+    { label: "Unsubscribe Alerts", icon: <FaBell /> },
+    { label: "Housing Advice", icon: <FaLightbulb /> },
+    { label: "Report a Fraud", icon: <FaExclamationTriangle /> },
+  ];
+
+  // =============================
+  // Render
+  // =============================
   return (
     <div className="dashboard-backdrop" onClick={onClose}>
       <div className="dashboard" onClick={(e) => e.stopPropagation()}>
@@ -18,7 +111,7 @@ function Dashboard({ onClose }) {
               className="profile-img"
             />
             <div>
-              <h3>Hello👋</h3>
+              <h3>Hello 👋</h3>
               <ul>
                 <li>✅ Easy Contact with sellers</li>
                 <li>✅ Personalized experience</li>
@@ -73,6 +166,12 @@ function Dashboard({ onClose }) {
           </div>
         </div>
 
+        {/* Side Menu Section */}
+        <div className="side-menu">
+          {menuItems.map((item, idx) => (
+            <MenuItem key={idx} item={item} />
+          ))}
+        </div>
       </div>
     </div>
   );
