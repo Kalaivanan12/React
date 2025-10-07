@@ -2,7 +2,7 @@
    Rent Section
 =================================*/
 .rent-section {
-  background: url("/src/img/renthero2.webp") center/cover no-repeat;
+  background: url("/src/img/renthero2.webp") center / cover no-repeat;
   height: 420px;
   position: relative;
   display: flex;
@@ -31,8 +31,7 @@
 }
 
 .rent-overlay p span {
-  font-weight: 600;
-  text-align: bold;
+  font-weight: 600;                      /* fixed */
 }
 
 /* ===============================
@@ -41,7 +40,7 @@
 .popular-localities-rent {
   max-width: 100%;
   margin: 20px auto;
-  padding: 10px 310px;
+  padding: 10px 310px;                    /* will adjust in media queries */
   border-radius: 8px;
   color: #fff;
   overflow: hidden;
@@ -68,15 +67,14 @@
   gap: 12px;
   overflow-x: auto;
   padding-bottom: 5px;
-  scrollbar-width: none;
+  scrollbar-width: none;                  /* for Firefox */
 }
 
 .rent-localities-scroll::-webkit-scrollbar {
-  display: none;
+  display: none;                           /* for Chrome/Safari */
 }
 
-/* Buttons */
-
+/* Locality Buttons */
 .rent-locality-btn {
   display: flex;
   align-items: center;
@@ -94,4 +92,72 @@
 
 .rent-locality-btn:hover {
   background: rgba(255, 255, 255, 0.3);
+}
+
+/* ===============================
+   Responsive Design
+=================================*/
+
+/* Tablets */
+@media (max-width: 992px) {
+  .rent-section {
+    height: 380px;
+  }
+
+  .rent-overlay {
+    width: 90%;
+    padding: 40px 20px;
+  }
+
+  .rent-overlay h1 {
+    font-size: 28px;
+  }
+
+  .rent-overlay p {
+    font-size: 15px;
+  }
+
+  .popular-localities-rent {
+    padding: 10px 80px;
+  }
+
+  .rent-heading {
+    left: 20px;
+    font-size: 12px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+  .rent-section {
+    height: 320px;
+    padding: 0 10px;
+  }
+
+  .rent-overlay {
+    width: 95%;
+    padding: 30px 15px;
+  }
+
+  .rent-overlay h1 {
+    font-size: 24px;
+  }
+
+  .rent-overlay p {
+    font-size: 14px;
+  }
+
+  .popular-localities-rent {
+    padding: 10px 20px;
+  }
+
+  .rent-heading {
+    left: 0;
+    font-size: 12px;
+  }
+
+  .rent-locality-btn {
+    font-size: 11px;
+    padding: 6px 12px;
+  }
 }

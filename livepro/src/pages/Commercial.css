@@ -4,12 +4,12 @@
 .commercial-section {
   background: url("/src/img/commercialbanner.webp") center/cover no-repeat;
   height: 420px;
-  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   color: #fff;
+  position: relative;
 }
 
 .commercial-overlay {
@@ -20,43 +20,42 @@
 }
 
 .commercial-overlay h1 {
-  position: relative;
-  left: -35px;
   font-size: 32px;
   font-weight: 700;
   margin-bottom: 10px;
+  position: relative;
+  left: 0; /* Removed fixed offset for responsiveness */
 }
 
 /* ===============================
    Search Box
 =================================*/
-/* Container */
 .com-search-box {
   height: 75px;
   display: flex;
   align-items: center;
   background: #fff;
   border-radius: 50px;
-  padding: 0;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
   max-width: 900px;
   margin: 20px auto;
   overflow: hidden;
+  flex-wrap: wrap;
 }
 
 /* Dropdown */
 .com-dropdown-sec {
-  flex: 0 0 25%;
+  flex: 1 1 25%;
+  min-width: 120px;
 }
 
 .com-search-dropdown {
   width: 100%;
   padding: 12px 15px;
-  border: 1px;
-  border-right: none;
   font-size: 14px;
   background: white;
   color: black;
+  border: none;
   outline: none;
   border-radius: 30px 0 0 30px;
 }
@@ -67,18 +66,18 @@
 
 /* Input + Button Section */
 .com-input-sec {
-  flex: 0 0 75%;
+  flex: 1 1 75%;
   display: flex;
   align-items: center;
   position: relative;
 }
 
 .com-search-input {
-  /* width: 100%; */
+  flex: 1;
   padding: 12px 100px 12px 15px;
-  border: 1px;
-  border-radius: 0 30px 30px 0;
   font-size: 14px;
+  border: none;
+  border-radius: 0 30px 30px 0;
   outline: none;
 }
 
@@ -115,4 +114,71 @@
 
 .com-search-btn:hover {
   background: #70e4b6;
+}
+
+/* ===============================
+   Responsive Styles
+=================================*/
+
+/* Tablets <= 1024px */
+@media (max-width: 1024px) {
+  .commercial-overlay h1 {
+    font-size: 28px;
+  }
+
+  .com-search-box {
+    height: 65px;
+  }
+
+  .com-search-input,
+  .com-search-dropdown {
+    font-size: 13px;
+  }
+
+  .com-search-btn {
+    padding: 12px 25px;
+    font-size: 13px;
+  }
+}
+
+/* Mobile <= 768px */
+@media (max-width: 768px) {
+  .commercial-section {
+    height: 350px;
+  }
+
+  .com-search-box {
+    flex-direction: column;
+    height: auto;
+    padding: 10px;
+  }
+
+  .com-dropdown-sec,
+  .com-input-sec {
+    flex: 1 1 100%;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .com-search-input {
+    padding: 12px 20px;
+  }
+
+  .com-search-btn {
+    position: static;
+    transform: none;
+    width: 100%;
+    border-radius: 25px;
+  }
+}
+
+/* Mobile <= 480px */
+@media (max-width: 480px) {
+  .commercial-overlay h1 {
+    font-size: 24px;
+  }
+
+  .radio-group label {
+    font-size: 14px;
+  }
 }

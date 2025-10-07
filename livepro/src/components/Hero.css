@@ -12,6 +12,7 @@
   color: #fff;
 }
 
+/* Overlay Box */
 .hero-overlay {
   padding: 50px 20px;
   border-radius: 20px;
@@ -21,7 +22,7 @@
 
 .hero-overlay h1 {
   font-size: 32px;
-  font-weight:120px;
+  font-weight: 700;     /* fixed font-weight */
   margin-bottom: 10px;
 }
 
@@ -32,5 +33,49 @@
 
 .hero-overlay p span {
   font-weight: 600;
-  text-align: bold;
+}
+
+/* ===============================
+   Responsive Styles
+=================================*/
+
+/* Tablets */
+@media (max-width: 992px) {
+  .hero-section {
+    height: 420px;
+  }
+
+  .hero-overlay {
+    width: 90%;
+    padding: 40px 20px;
+  }
+
+  .hero-overlay h1 {
+    font-size: 28px;
+  }
+
+  .hero-overlay p {
+    font-size: 15px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+  .hero-section {
+    height: 360px;
+    padding: 0 10px;
+  }
+
+  .hero-overlay {
+    width: 95%;
+    padding: 30px 15px;
+  }
+
+  .hero-overlay h1 {
+    font-size: 24px;
+  }
+
+  .hero-overlay p {
+    font-size: 14px;
+  }
 }

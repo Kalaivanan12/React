@@ -2,7 +2,7 @@
    Plots Section
 =================================*/
 .plots-section {
-  background: url("/src/img/plotsbanner.webp") center/cover no-repeat;
+  background: url("/src/img/plotsbanner.webp") center / cover no-repeat;
   height: 420px;
   position: relative;
   display: flex;
@@ -20,9 +20,50 @@
 }
 
 .plots-overlay h1 {
-  position: relative;
-  left: -140px;
   font-size: 32px;
   font-weight: 700;
   margin-bottom: 10px;
+  position: relative;
+  left: -140px;                           /* original offset (desktop) */
+}
+
+/* ===============================
+   Responsive Design
+=================================*/
+
+/* Tablets */
+@media (max-width: 992px) {
+  .plots-section {
+    height: 380px;
+  }
+
+  .plots-overlay {
+    width: 90%;
+    padding: 40px 20px;
+  }
+
+  .plots-overlay h1 {
+    font-size: 28px;
+    left: 0;                               /* center text for tablets */
+    text-align: center;
+  }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+  .plots-section {
+    height: 320px;
+    padding: 0 10px;
+  }
+
+  .plots-overlay {
+    width: 95%;
+    padding: 30px 15px;
+  }
+
+  .plots-overlay h1 {
+    font-size: 24px;
+    left: 0;                               /* remove desktop offset */
+    text-align: center;
+  }
 }

@@ -20,9 +20,41 @@
 }
 
 .pg-overlay h1 {
-  position: relative;
-  left: -140px;
   font-size: 32px;
   font-weight: 700;
   margin-bottom: 10px;
+  left: 0; /* Removed fixed left offset for better responsiveness */
+  position: relative;
+}
+
+/* ===============================
+   Responsive Media Queries
+=================================*/
+
+/* Tablets */
+@media (max-width: 992px) {
+  .pg-overlay {
+    width: 90%;
+    padding: 40px 15px;
+  }
+
+  .pg-overlay h1 {
+    font-size: 28px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+  .pg-section {
+    height: 350px;
+  }
+
+  .pg-overlay {
+    width: 95%;
+    padding: 30px 10px;
+  }
+
+  .pg-overlay h1 {
+    font-size: 24px;
+  }
 }
