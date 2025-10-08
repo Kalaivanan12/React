@@ -50,14 +50,14 @@ const server = http.createServer(async (req, res) => {
     return res.end('Welcome to Backend Page with JSON FS!');
   }
 
-  // GET all data
+  // GET all users
   if (url === '/users' && method === 'GET') {
     const data = readData();
     res.writeHead(200, { 'Content-Type': 'application/json' });
     return res.end(JSON.stringify(data));
   }
 
-  // GET data by ID
+  // GET user by ID
   if (url.startsWith('/users/') && method === 'GET') {
     const id = parseInt(url.split('/')[2]);
     const data = readData();
@@ -71,37 +71,32 @@ const server = http.createServer(async (req, res) => {
     }
   }
 
-  // POST → Append (add new item)
+  // POST → Add new user or Update existing user
   if (url === '/users' && method === 'POST') {
     try {
       const body = await parseBody(req);
       const data = readData();
-      const newItem = { id: data.length + 1, ...body };
-      data.push(newItem);
-      writeData(data);
-      res.writeHead(201, { 'Content-Type': 'application/json' });
-      return res.end(JSON.stringify(newItem));
-    } catch (err) {
-      res.writeHead(400, { 'Content-Type': 'text/plain' });
-      return res.end('Invalid JSON');
-    }
-  }
 
-  // PUT → Update
-  if (url.startsWith('/users/') && method === 'PUT') {
-    try {
-      const id = parseInt(url.split('/')[2]);
-      const data = readData();
-      const item = data.find(u => u.id === id);
-      if (!item) {
-        res.writeHead(404, { 'Content-Type': 'text/plain' });
-        return res.end('User not found');
+      if (body.id) {
+        // Update existing user
+        const item = data.find(u => u.id === body.id);
+        if (!item) {
+          res.writeHead(404, { 'Content-Type': 'text/plain' });
+          return res.end('User not found');
+        }
+        Object.assign(item, body);
+        writeData(data);
+        res.writeHead(200, { 'Content-Type': 'application/json' });
+        return res.end(JSON.stringify(item));
+      } else {
+        // Add new user
+        const newItem = { id: data.length + 1, ...body };
+        data.push(newItem);
+        writeData(data);
+        res.writeHead(201, { 'Content-Type': 'application/json' });
+        return res.end(JSON.stringify(newItem));
       }
-      const body = await parseBody(req);
-      Object.assign(item, body);
-      writeData(data);
-      res.writeHead(200, { 'Content-Type': 'application/json' });
-      return res.end(JSON.stringify(item));
+
     } catch (err) {
       res.writeHead(400, { 'Content-Type': 'text/plain' });
       return res.end('Invalid JSON');

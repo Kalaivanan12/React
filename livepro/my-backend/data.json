@@ -10,5 +10,12 @@
     "name": "Vini",
     "email": "vini@example.com",
     "phone": "9361688365"
+  },
+  {
+    "id": 3,
+    "name": "Kamalu",
+    "email": "kamalu@example.com",
+    "phone": "9784652130"
   }
+
 ]
