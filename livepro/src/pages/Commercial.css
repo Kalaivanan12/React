@@ -24,7 +24,7 @@
   font-weight: 700;
   margin-bottom: 10px;
   position: relative;
-  left: 0;
+  left: -45px;
   /* Removed fixed offset for responsiveness */
 }
 

@@ -54,7 +54,7 @@ function Rent() {
     <>
       {/* Rent Section */}
       <section className="rent-section">
-        <div className="rent-overlay">
+        <div className="rent-overlay"><br /><br /><br />
           <h1>Properties to rent in Cuddalore</h1>
           <p>
             <span>9K+</span> listings added daily and <span>63K+</span> total
