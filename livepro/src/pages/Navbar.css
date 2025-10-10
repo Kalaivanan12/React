@@ -7,16 +7,13 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: rgba(10, 13, 88, 0.104);
-  backdrop-filter: blur(10px);        
+  background: rgba(10, 13, 88, 0.707);
+  /* backdrop-filter: blur(10px);         */
   -webkit-backdrop-filter: blur(10px); 
   padding: 12px 20px;
   color: #fff;
   flex-wrap: wrap;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
 }
 
 
