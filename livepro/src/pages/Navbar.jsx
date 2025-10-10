@@ -36,7 +36,7 @@ function Navbar() {
           onClick={() => setIsDashboardOpen(!isDashboardOpen)}
         >
           <FaBars className="menu-icon" />
-          <CgProfile className="profile-icon" />
+          <img src="./src/img/profile.webp" alt="" width={20} height={20} />
         </button>
 
         {isDashboardOpen && (
