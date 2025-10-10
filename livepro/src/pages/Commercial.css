@@ -154,6 +154,9 @@
     padding: 12px 25px;
     font-size: 13px;
   }
+  .radio-group label {
+    font-size: 15px;
+  }
 }
 
 /* Mobile <= 768px */
@@ -185,6 +188,15 @@
     width: 100%;
     border-radius: 25px;
   }
+  .radio-group {
+    justify-content: center;
+    margin: 10px 0 0 0;
+    right: 0;
+    gap: 20px;
+  }
+  .radio-group label {
+    font-size: 15px;
+  }
 }
 
 /* Mobile <= 480px */
@@ -195,5 +207,9 @@
 
   .radio-group label {
     font-size: 14px;
+  }
+  .com-search-btn {
+    padding: 10px;
+    font-size: 13px;
   }
 }
