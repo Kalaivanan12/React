@@ -105,10 +105,12 @@ function Commercial() {
                 <div>
                   <div className="radio-group">
                     <label>
-                      <input type="radio" name="propertyType" value="buy" defaultChecked /> Buy
+                      <input type="radio" name="propertyType" value="buy" defaultChecked />
+                      <span>Buy</span>
                     </label>
                     <label>
-                      <input type="radio" name="propertyType" value="rent" /> Lease
+                      <input type="radio" name="propertyType" value="rent" />
+                      <span>Lease</span>
                     </label>
                   </div>
                 </div>
