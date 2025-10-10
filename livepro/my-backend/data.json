@@ -6,6 +6,11 @@
     "phone": "8870051316"
   },
   {
+    "id": 10,
+    "name": "Bun",
+    "email": "Bun@gmail.com"
+  },
+  {
     "id": 2,
     "name": "Vini",
     "email": "vini@example.com",
@@ -46,10 +51,5 @@
     "id": 9,
     "name": "karthi",
     "email": "karthi@gmail.com"
-  },
-  {
-    "id": 10,
-    "name": "Bun",
-    "email": "Bun@gmail.com"
   }
 ]
