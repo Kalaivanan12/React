@@ -90,7 +90,7 @@ body {
 .pay-btn {
   position: relative;
   right: 40px;
-  background: #5c5ca762;
+  background: #5c5ca75d;
   color: #fff;
   padding: 6px 16px;
   border-radius: 8px;
@@ -100,7 +100,7 @@ body {
   letter-spacing: 0.3px;
 }
 .pay-btn:hover {
-  background: #46468a;
+  background: #46468a87;
 }
 
 /* Post Property Highlight */
