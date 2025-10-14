@@ -4,7 +4,7 @@ const PORT = 2831;
 
 let users = [
   { id: 1, name: "Kalai", email: "kalai@gmail.com" },
-  { id: 2, name: "Vijay", email: "vijay@gmail.com" },
+  { id: 2, name: "Bun", email: "Bun@gmail.com" },
 ];
 
 app.get("/users", (req, res) => {
