@@ -41,13 +41,11 @@ app.get("/users", (req, res) => {
 
   // Return results
   res.json({
-    total: result.length,
     users: result,
   });
 });
 
 // Add User via URL
-// Example: /write?id=5&name=Kavi&email=kavi@gmail.com&role=user
 app.get("/write", (req, res) => {
   const { id, name, email, role } = req.query;
 
