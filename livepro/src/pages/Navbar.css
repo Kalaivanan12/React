@@ -272,3 +272,164 @@ body {
     font-size: 8px;
   }
 }
+/* ===============================
+   Responsive Navbar (Tablet + Mobile)
+=================================*/
+
+/* Tablet View (Keep as before) */
+@media (max-width: 992px) {
+  .navbar-center,
+  .nav-link,
+  .pay-btn,
+  .free-badge,
+  .dropdown {
+    display: none !important;
+  }
+
+  .navbar-left,
+  .navbar-right {
+    display: flex !important;
+    align-items: center;
+  }
+
+  .navbar {
+    justify-content: space-between;
+    padding: 10px 15px;
+  }
+
+  .logo {
+    left: 0;
+    height: 20px;
+  }
+
+  .profile-btn {
+    padding: 6px 10px;
+  }
+}
+
+/* Mobile View (425px and below) */
+@media (max-width: 425px) {
+  .navbar {
+    flex-direction: row; /* Keep both sides in one line */
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 12px;
+  }
+
+  .navbar-left,
+  .navbar-right {
+    flex: 0 0 auto; /* prevent wrapping */
+    display: flex;
+    align-items: center;
+  }
+
+  .logo {
+    height: 16px;
+    left: 0;
+  }
+
+  .profile-btn {
+    padding: 5px 8px;
+    font-size: 11px;
+  }
+}
+
+/* 375px and below */
+@media (max-width: 375px) {
+  .navbar {
+    padding: 6px 10px;
+  }
+
+  .logo {
+    height: 15px;
+  }
+
+  .profile-btn {
+    padding: 4px 7px;
+    font-size: 10px;
+  }
+}
+
+/* 320px and below */
+@media (max-width: 320px) {
+  .navbar {
+    padding: 5px 8px;
+  }
+
+  .logo {
+    height: 14px;
+  }
+
+  .profile-btn {
+    padding: 3px 6px;
+    font-size: 9px;
+  }
+}
+
+/* Tablet & Large Mobile: 425px → 767px */
+@media (min-width: 425px) and (max-width: 767px) {
+  .navbar-center,
+  .nav-link,
+  .pay-btn,
+  .free-badge,
+  .dropdown {
+    display: none !important; /* hide middle section */
+  }
+
+  .navbar-left,
+  .navbar-right {
+    display: flex !important;
+    align-items: center;
+    flex: 0 0 auto;
+  }
+
+  .navbar {
+    flex-direction: row; /* keep one line */
+    justify-content: space-between;
+    padding: 10px 15px;
+  }
+
+  .logo {
+    height: 18px;
+    left: 0;
+  }
+
+  .profile-btn {
+    padding: 5px 8px;
+    font-size: 12px;
+  }
+}
+
+/* Small Mobile: below 424px */
+@media (max-width: 424px) {
+  .navbar-center,
+  .nav-link,
+  .pay-btn,
+  .free-badge,
+  .dropdown {
+    display: none !important;
+  }
+
+  .navbar-left,
+  .navbar-right {
+    display: flex !important;
+    align-items: center;
+    flex: 0 0 auto;
+  }
+
+  .navbar {
+    flex-direction: row; /* same line */
+    justify-content: space-between;
+    padding: 8px 12px;
+  }
+
+  .logo {
+    height: 16px;
+    left: 0;
+  }
+
+  .profile-btn {
+    padding: 4px 6px;
+    font-size: 10px;
+  }
+}
