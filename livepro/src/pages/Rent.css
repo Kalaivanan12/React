@@ -1,5 +1,5 @@
 /* ===============================
-   Rent Section
+   Rent Section (Base Styles)
 =================================*/
 .rent-section {
   background: url("/src/img/renthero2.webp") center / cover no-repeat;
@@ -31,16 +31,16 @@
 }
 
 .rent-overlay p span {
-  font-weight: 600;                      /* fixed */
+  font-weight: 600;
 }
 
 /* ===============================
-   Popular Localities
+   Popular Localities (Base)
 =================================*/
 .popular-localities-rent {
   max-width: 100%;
   margin: 20px auto;
-  padding: 10px 310px;                    /* will adjust in media queries */
+  padding: 10px 310px;
   border-radius: 8px;
   color: #fff;
   overflow: hidden;
@@ -59,7 +59,6 @@
   gap: 8px;
 }
 
-/* Scroll container */
 .rent-localities-scroll {
   position: relative;
   float: right;
@@ -67,14 +66,13 @@
   gap: 12px;
   overflow-x: auto;
   padding-bottom: 5px;
-  scrollbar-width: none;                  /* for Firefox */
+  scrollbar-width: none; 
 }
 
 .rent-localities-scroll::-webkit-scrollbar {
-  display: none;                           /* for Chrome/Safari */
+  display: none; 
 }
 
-/* Locality Buttons */
 .rent-locality-btn {
   display: flex;
   align-items: center;
@@ -95,69 +93,158 @@
 }
 
 /* ===============================
-   Responsive Design
+   Responsive Media Queries
 =================================*/
 
-/* Tablets */
-@media (max-width: 992px) {
+/* 4K & Extra Large Screens (≥1400px) */
+@media (min-width: 1400px) {
   .rent-section {
-    height: 380px;
+    height: 500px;
   }
+  .rent-overlay {
+    max-width: 1300px;
+    padding: 60px 30px;
+  }
+  .rent-overlay h1 {
+    font-size: 42px;
+  }
+  .rent-overlay p {
+    font-size: 20px;
+  }
+  .popular-localities-rent {
+    padding: 10px 400px;
+  }
+  .rent-heading {
+    font-size: 15px;
+    left: 180px;
+  }
+  .rent-locality-btn {
+    font-size: 14px;
+    padding: 10px 20px;
+  }
+}
 
+/* Large Desktops (1200px–1399px) */
+@media (max-width: 1399px) and (min-width: 1200px) {
+  .rent-section {
+    height: 460px;
+  }
+  .rent-overlay h1 {
+    font-size: 36px;
+  }
+  .rent-overlay p {
+    font-size: 18px;
+  }
+  .popular-localities-rent {
+    padding: 10px 300px;
+  }
+  .rent-heading {
+    font-size: 14px;
+    left: 120px;
+  }
+  .rent-locality-btn {
+    font-size: 13px;
+  }
+}
+
+/* Tablets / Laptops (768px–1199px) */
+@media (max-width: 1199px) and (min-width: 768px) {
+  .rent-section {
+    height: 400px;
+  }
   .rent-overlay {
     width: 90%;
     padding: 40px 20px;
   }
-
   .rent-overlay h1 {
     font-size: 28px;
   }
-
   .rent-overlay p {
     font-size: 15px;
   }
-
   .popular-localities-rent {
-    padding: 10px 80px;
+    padding: 10px 100px;
+    text-align: center;
   }
-
   .rent-heading {
-    left: 20px;
-    font-size: 12px;
+    left: 0;
+    top: 0;
+    font-size: 13px;
+    justify-content: center;
+    float: none;
+    margin-bottom: 10px;
+  }
+  .rent-localities-scroll {
+    float: none;
+    justify-content: center;
   }
 }
 
-/* Mobile */
-@media (max-width: 576px) {
+/* Mobiles (≤767px) */
+@media (max-width: 767px) {
   .rent-section {
-    height: 320px;
+    height: 340px;
     padding: 0 10px;
   }
-
   .rent-overlay {
     width: 95%;
     padding: 30px 15px;
   }
-
   .rent-overlay h1 {
     font-size: 24px;
   }
-
   .rent-overlay p {
     font-size: 14px;
   }
-
   .popular-localities-rent {
     padding: 10px 20px;
+    text-align: center;
   }
-
   .rent-heading {
-    left: 0;
     font-size: 12px;
+    position: static;
+    float: none;
+    margin-bottom: 10px;
+    justify-content: center;
   }
-
+  .rent-localities-scroll {
+    float: none;
+    justify-content: flex-start;
+    gap: 10px;
+  }
   .rent-locality-btn {
     font-size: 11px;
     padding: 6px 12px;
+  }
+}
+
+/* Small Phones (≤480px) */
+@media (max-width: 480px) {
+  .rent-section {
+    height: 300px;
+  }
+  .rent-overlay {
+    width: 100%;
+    padding: 25px 10px;
+  }
+  .rent-overlay h1 {
+    font-size: 20px;
+    line-height: 1.2;
+  }
+  .rent-overlay p {
+    font-size: 13px;
+  }
+  .popular-localities-rent {
+    padding: 10px;
+  }
+  .rent-heading {
+    font-size: 11px;
+  }
+  .rent-localities-scroll {
+    gap: 8px;
+  }
+  .rent-locality-btn {
+    font-size: 10px;
+    padding: 5px 10px;
   }
 }

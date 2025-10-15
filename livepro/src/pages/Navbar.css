@@ -1,10 +1,17 @@
+/* ===============================
+   Base Styles
+=================================*/
 body {
   font-family: 'Poppins', 'Helvetica Neue', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
-/* Navbar */
+/* ===============================
+   Navbar
+=================================*/
 .navbar {
-  position: fixed; 
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -17,7 +24,7 @@ body {
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   z-index: 1000;
   overflow: hidden;
-  background: rgba(255, 255, 255, 0); 
+  background: rgba(255, 255, 255, 0);
 }
 
 .navbar::before {
@@ -31,18 +38,21 @@ body {
   background: rgba(255, 255, 255, 0.1);
   border-radius: 0 0 15px 15px;
   filter: blur(20px);
-  transform: scale(1.1); 
+  transform: scale(1.1);
   z-index: -1;
   pointer-events: none;
-  opacity: 0.6; 
+  opacity: 0.6;
 }
+
 .navbar a,
 .navbar button {
   position: relative;
   z-index: 1;
 }
 
-/* Logo */
+/* ===============================
+   Navbar Sections
+=================================*/
 .logo {
   position: relative;
   left: 40px;
@@ -50,7 +60,10 @@ body {
   cursor: pointer;
 }
 
-/* Center Menu */
+.navbar-left {
+  cursor: pointer;
+}
+
 .navbar-center {
   display: flex;
   align-items: center;
@@ -60,10 +73,6 @@ body {
   margin: 0 20px;
   flex-wrap: wrap;
   font-size: 12px;
-}
-
-.navbar-left {
-  cursor: pointer;
 }
 
 .nav-link {
@@ -86,7 +95,6 @@ body {
   font-size: 10px;
 }
 
-/* Pay Rent Button */
 .pay-btn {
   position: relative;
   right: 40px;
@@ -103,7 +111,6 @@ body {
   background: #46468a87;
 }
 
-/* Post Property Highlight */
 .free-badge {
   background: #ff004c;
   color: #fff;
@@ -113,7 +120,6 @@ body {
   margin-left: 4px;
 }
 
-/* Right Side Profile */
 .navbar-right {
   display: flex;
   align-items: center;
@@ -141,77 +147,128 @@ body {
   font-size: 18px;
 }
 
-/* ------------------ */
-/* RESPONSIVE STYLES */
-/* ------------------ */
+/* ===============================
+   Responsive Styles
+=================================*/
 
-/* Tablets (<= 1024px) */
-@media (max-width: 1024px) {
+/* 4K and Extra Large Screens (≥1400px) */
+@media (min-width: 1400px) {
   .navbar {
-    padding: 12px 15px;
+    padding: 18px 60px;
   }
-
-  .navbar-center {
-    gap: 15px;
-    font-size: 13px;
+  .logo {
+    left: 60px;
+    height: 25px;
   }
-
+  .nav-link,
   .pay-btn {
-    padding: 5px 12px;
+    font-size: 14px;
+  }
+}
+
+/* Large Desktops (1200px–1399px) */
+@media (max-width: 1399px) and (min-width: 1200px) {
+  .navbar {
+    padding: 14px 40px;
+  }
+  .nav-link {
+    font-size: 13px;
+    right: 20px;
+  }
+  .pay-btn {
     font-size: 13px;
   }
 }
 
-/* Mobile Landscape & Small Tablets (<= 768px) */
-@media (max-width: 768px) {
+/* Tablets / Laptops (768px–1199px) */
+@media (max-width: 1199px) and (min-width: 768px) {
+  .navbar {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 10px 20px;
+  }
+  .logo {
+    left: 0;
+  }
+  .navbar-center {
+    justify-content: center;
+    margin-top: 8px;
+    gap: 15px;
+  }
+  .nav-link {
+    right: 0;
+    font-size: 12px;
+  }
+  .pay-btn {
+    right: 0;
+    font-size: 12px;
+  }
+  .profile-btn {
+    right: 0;
+    padding: 5px 8px;
+  }
+}
+
+/* Mobiles (≤767px) */
+@media (max-width: 767px) {
   .navbar {
     flex-direction: column;
     align-items: flex-start;
+    padding: 10px 15px;
   }
-
+  .logo {
+    left: 0;
+    margin-bottom: 10px;
+  }
   .navbar-center {
-    justify-content: flex-start;
-    margin-top: 10px;
+    width: 100%;
+    justify-content: space-around;
     gap: 10px;
+    flex-wrap: wrap;
   }
-
   .nav-link {
-    font-size: 13px;
+    font-size: 11px;
+    right: 0;
   }
-
   .pay-btn {
-    font-size: 13px;
-    padding: 5px 10px;
+    font-size: 11px;
+    padding: 5px 12px;
+    right: 0;
   }
-
-  .navbar-right {
-    align-self: flex-end;
-    margin-top: 10px;
+  .profile-btn {
+    padding: 5px 10px;
+    right: 0;
   }
 }
 
-/* Mobile Portrait (<= 480px) */
+/* Small Phones (≤480px) */
 @media (max-width: 480px) {
   .navbar {
+    flex-direction: column;
     align-items: center;
-    text-align: center;
+    padding: 8px 10px;
   }
-
+  .logo {
+    height: 18px;
+    margin-bottom: 8px;
+  }
   .navbar-center {
     flex-direction: column;
+    align-items: center;
     gap: 8px;
   }
-
   .nav-link {
-    font-size: 12px;
+    font-size: 10px;
   }
-
   .pay-btn {
-    font-size: 12px;
-    padding: 4px 8px;
+    font-size: 10px;
+    padding: 4px 10px;
   }
-
   .profile-btn {
-    margin-top: 10px;
+    padding: 4px 8px;
+    font-size: 10px;
+  }
+  .free-badge {
+    font-size: 8px;
   }
 }

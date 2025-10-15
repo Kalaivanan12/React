@@ -1,8 +1,8 @@
 /* ===============================
-   Commercial Section
+   Commercial Section (Base Styles)
 =================================*/
 .commercial-section {
-  background: url("/src/img/commercialbanner.webp") center/cover no-repeat;
+  background: url("/src/img/commercialbanner.webp") center / cover no-repeat;
   height: 420px;
   display: flex;
   align-items: center;
@@ -90,6 +90,7 @@
   position: relative;
   right: 130px;
 }
+
 .radio-group label {
   display: flex;
   align-items: center;
@@ -99,12 +100,14 @@
   cursor: pointer;
   transition: color 0.3s ease;
 }
+
 .radio-group input[type="radio"] {
   transform: scale(1.5);
   margin-right: 8px;
   cursor: pointer;
-  accent-color: #6a0dad; 
+  accent-color: #6a0dad;
 }
+
 .radio-group input[type="radio"]:checked + span,
 .radio-group input[type="radio"]:checked {
   color: #6a0dad;
@@ -131,84 +134,214 @@
 }
 
 /* ===============================
-   Responsive Styles
+   Responsive Media Queries
 =================================*/
 
-/* Tablets <= 1024px */
-@media (max-width: 1024px) {
+/* 4K & Extra Large Screens (≥1400px) */
+@media (min-width: 1400px) {
+  .commercial-section {
+    height: 500px;
+  }
+
+  .commercial-overlay {
+    max-width: 1300px;
+    padding: 60px 30px;
+  }
+
   .commercial-overlay h1 {
-    font-size: 28px;
+    font-size: 42px;
+    left: -30px;
   }
 
   .com-search-box {
-    height: 65px;
+    max-width: 1100px;
+    height: 80px;
   }
 
-  .com-search-input,
-  .com-search-dropdown {
-    font-size: 13px;
+  .com-search-dropdown,
+  .com-search-input {
+    font-size: 16px;
   }
 
-  .com-search-btn {
-    padding: 12px 25px;
-    font-size: 13px;
+  .radio-group label {
+    font-size: 18px;
   }
+}
+
+/* Large Desktops (1200px–1399px) */
+@media (max-width: 1399px) and (min-width: 1200px) {
+  .commercial-section {
+    height: 460px;
+  }
+
+  .commercial-overlay h1 {
+    font-size: 36px;
+    left: -30px;
+  }
+
+  .com-search-box {
+    max-width: 950px;
+  }
+
+  .radio-group {
+    right: 100px;
+  }
+
   .radio-group label {
     font-size: 15px;
   }
 }
 
-/* Mobile <= 768px */
-@media (max-width: 768px) {
+/* Tablets / Laptops (768px–1199px) */
+@media (max-width: 1199px) and (min-width: 768px) {
   .commercial-section {
-    height: 350px;
+    height: 400px;
+  }
+
+  .commercial-overlay {
+    width: 90%;
+    padding: 40px 20px;
+  }
+
+  .commercial-overlay h1 {
+    font-size: 28px;
+    left: 0;
+  }
+
+  .com-search-box {
+    flex-wrap: wrap;
+    height: auto;
+    border-radius: 25px;
+    padding: 10px 15px;
+  }
+
+  .com-dropdown-sec,
+  .com-input-sec {
+    flex: 1 1 100%;
+    margin-bottom: 10px;
+  }
+
+  .com-search-dropdown,
+  .com-search-input {
+    border-radius: 25px;
+    font-size: 14px;
+  }
+
+  .radio-group {
+    gap: 15px;
+    right: 0;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 8px;
+  }
+
+  .radio-group label {
+    font-size: 14px;
+  }
+
+  .com-search-btn {
+    position: relative;
+    right: 0;
+    transform: none;
+    margin-top: 10px;
+    width: 100%;
+  }
+}
+
+/* Mobiles (≤767px) */
+@media (max-width: 767px) {
+  .commercial-section {
+    height: 340px;
+    padding: 0 10px;
+  }
+
+  .commercial-overlay {
+    width: 95%;
+    padding: 30px 15px;
+  }
+
+  .commercial-overlay h1 {
+    font-size: 24px;
+    left: 0;
   }
 
   .com-search-box {
     flex-direction: column;
+    align-items: stretch;
     height: auto;
-    padding: 10px;
+    border-radius: 20px;
+    padding: 15px;
   }
 
   .com-dropdown-sec,
   .com-input-sec {
     flex: 1 1 100%;
     width: 100%;
-    margin-bottom: 10px;
   }
 
+  .com-search-dropdown,
   .com-search-input {
-    padding: 12px 20px;
+    font-size: 13px;
+    border-radius: 20px;
+    padding: 10px 15px;
+  }
+
+  .radio-group {
+    position: static;
+    margin: 10px 0;
+    justify-content: space-around;
+    gap: 10px;
+  }
+
+  .radio-group label {
+    font-size: 13px;
   }
 
   .com-search-btn {
-    position: static;
-    transform: none;
     width: 100%;
-    border-radius: 25px;
-  }
-  .radio-group {
-    justify-content: center;
-    margin: 10px 0 0 0;
-    right: 0;
-    gap: 20px;
-  }
-  .radio-group label {
-    font-size: 15px;
+    font-size: 13px;
+    padding: 12px;
   }
 }
 
-/* Mobile <= 480px */
+/* Small Phones (≤480px) */
 @media (max-width: 480px) {
+  .commercial-section {
+    height: 300px;
+  }
+
+  .commercial-overlay {
+    width: 100%;
+    padding: 20px 10px;
+  }
+
   .commercial-overlay h1 {
-    font-size: 24px;
+    font-size: 20px;
+  }
+
+  .com-search-box {
+    padding: 10px;
+    border-radius: 15px;
+  }
+
+  .com-search-dropdown,
+  .com-search-input {
+    font-size: 12px;
+    padding: 8px 12px;
+  }
+
+  .radio-group {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
   }
 
   .radio-group label {
-    font-size: 14px;
+    font-size: 12px;
   }
+
   .com-search-btn {
     padding: 10px;
-    font-size: 13px;
+    font-size: 12px;
   }
 }

@@ -1,5 +1,5 @@
 /* ===============================
-   Hero Section
+   Hero Section (Base Styles)
 =================================*/
 .hero-section {
   background: url("../img/buyCover.webp") center center / cover no-repeat;
@@ -12,7 +12,6 @@
   color: #fff;
 }
 
-/* Overlay Box */
 .hero-overlay {
   padding: 50px 20px;
   border-radius: 20px;
@@ -21,13 +20,13 @@
 }
 
 .hero-overlay h1 {
-  font-size: 32px;
-  font-weight: 700;     /* fixed font-weight */
+  font-size: 36px;
+  font-weight: 700;
   margin-bottom: 10px;
 }
 
 .hero-overlay p {
-  font-size: 16px;
+  font-size: 18px;
   margin-bottom: 25px;
 }
 
@@ -36,13 +35,50 @@
 }
 
 /* ===============================
-   Responsive Styles
+   Extra Large Screens (≥1400px)
 =================================*/
-
-/* Tablets */
-@media (max-width: 992px) {
+@media (min-width: 1400px) {
   .hero-section {
-    height: 420px;
+    height: 600px;
+  }
+
+  .hero-overlay {
+    max-width: 1300px;
+    padding: 60px 30px;
+  }
+
+  .hero-overlay h1 {
+    font-size: 42px;
+  }
+
+  .hero-overlay p {
+    font-size: 20px;
+  }
+}
+
+/* ===============================
+   Desktops (1200px–1399px)
+=================================*/
+@media (max-width: 1399px) and (min-width: 1200px) {
+  .hero-section {
+    height: 550px;
+  }
+
+  .hero-overlay h1 {
+    font-size: 34px;
+  }
+
+  .hero-overlay p {
+    font-size: 17px;
+  }
+}
+
+/* ===============================
+   Laptops / Tablets (768px–1199px)
+=================================*/
+@media (max-width: 1199px) and (min-width: 768px) {
+  .hero-section {
+    height: 450px;
   }
 
   .hero-overlay {
@@ -55,14 +91,16 @@
   }
 
   .hero-overlay p {
-    font-size: 15px;
+    font-size: 16px;
   }
 }
 
-/* Mobile */
-@media (max-width: 576px) {
+/* ===============================
+   Mobiles (≤767px)
+=================================*/
+@media (max-width: 767px) {
   .hero-section {
-    height: 360px;
+    height: 380px;
     padding: 0 10px;
   }
 
@@ -77,5 +115,29 @@
 
   .hero-overlay p {
     font-size: 14px;
+  }
+}
+
+/* ===============================
+   Small Phones (≤480px)
+=================================*/
+@media (max-width: 480px) {
+  .hero-section {
+    height: 320px;
+  }
+
+  .hero-overlay {
+    width: 100%;
+    padding: 25px 10px;
+    border-radius: 15px;
+  }
+
+  .hero-overlay h1 {
+    font-size: 20px;
+    line-height: 1.2;
+  }
+
+  .hero-overlay p {
+    font-size: 13px;
   }
 }

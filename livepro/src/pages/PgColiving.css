@@ -23,38 +23,113 @@
   font-size: 32px;
   font-weight: 700;
   margin-bottom: 10px;
-  left: -145px; 
   position: relative;
+  left: -145px;
 }
 
 /* ===============================
-   Responsive Media Queries
+   Responsive Styles
 =================================*/
 
-/* Tablets */
-@media (max-width: 992px) {
-  .pg-overlay {
-    width: 90%;
-    padding: 40px 15px;
+/* Extra Large Screens (≥1400px) */
+@media (max-width: 1400px) {
+  .pg-section {
+    height: 400px;
   }
-
+  .pg-overlay {
+    width: 75%;
+  }
   .pg-overlay h1 {
-    font-size: 28px;
+    font-size: 30px;
+    left: -100px;
   }
 }
 
-/* Mobile */
-@media (max-width: 576px) {
+/* Large Screens (≤1200px) */
+@media (max-width: 1200px) {
   .pg-section {
-    height: 350px;
+    height: 380px;
   }
+  .pg-overlay {
+    width: 85%;
+    padding: 45px 20px;
+  }
+  .pg-overlay h1 {
+    font-size: 28px;
+    left: -80px;
+  }
+}
 
+/* Medium Screens (≤992px) - Tablets Landscape */
+@media (max-width: 992px) {
+  .pg-section {
+    height: 360px;
+  }
+  .pg-overlay {
+    width: 90%;
+    padding: 40px 20px;
+  }
+  .pg-overlay h1 {
+    font-size: 26px;
+    left: -60px;
+  }
+}
+
+/* Tablets Portrait (≤768px) */
+@media (max-width: 768px) {
+  .pg-section {
+    height: 340px;
+  }
   .pg-overlay {
     width: 95%;
-    padding: 30px 10px;
+    padding: 35px 18px;
   }
-
   .pg-overlay h1 {
     font-size: 24px;
+    left: -40px;
+  }
+}
+
+/* Large Mobile (≤576px) */
+@media (max-width: 576px) {
+  .pg-section {
+    height: 320px;
+    padding: 0 10px;
+  }
+  .pg-overlay {
+    width: 95%;
+    padding: 30px 15px;
+  }
+  .pg-overlay h1 {
+    font-size: 22px;
+    left: -20px;
+  }
+}
+
+/* Small Mobile (≤400px) */
+@media (max-width: 400px) {
+  .pg-section {
+    height: 300px;
+  }
+  .pg-overlay {
+    padding: 25px 10px;
+  }
+  .pg-overlay h1 {
+    font-size: 20px;
+    left: -10px;
+  }
+}
+
+/* Extra Small (≤320px) */
+@media (max-width: 320px) {
+  .pg-section {
+    height: 280px;
+  }
+  .pg-overlay {
+    padding: 20px 8px;
+  }
+  .pg-overlay h1 {
+    font-size: 18px;
+    left: 0;
   }
 }
