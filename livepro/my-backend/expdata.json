@@ -10,5 +10,11 @@
     "name": "Bun",
     "email": "Bun@gmail.com",
     "role": "Tester"
+  },
+  {
+    "id": 3,
+    "name": "Kala",
+    "email": "Kala@gmail.com",
+    "role": "CEO"
   }
 ]
