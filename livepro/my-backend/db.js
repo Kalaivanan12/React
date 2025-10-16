@@ -17,7 +17,6 @@ const userSchema = new mongoose.Schema({
   email: String,
   role: String,
 });
-
 const User = mongoose.model("User", userSchema);
 
 // Home
@@ -25,7 +24,7 @@ app.get("/", (req, res) => {
   res.send("Welcome to MongoDB + Express FS Backend!");
 });
 
-// Add New User via GET URL
+// Add New User via GET
 app.get("/write", async (req, res) => {
   const { id, name, email, role } = req.query;
 
@@ -33,13 +32,11 @@ app.get("/write", async (req, res) => {
     return res.status(400).send("Missing id, name, email, or role!");
   }
 
-  // Check if user already exists
   const exists = await User.findOne({ id: parseInt(id) });
   if (exists) {
     return res.status(400).send("User ID already exists!");
   }
 
-  // Add new user
   const newUser = new User({
     id: parseInt(id),
     name,
@@ -58,7 +55,51 @@ app.get("/write", async (req, res) => {
   `);
 });
 
-//  Get All Users (with search, filter, sort)
+// Update User via GET
+app.get("/update", async (req, res) => {
+  const { id, name, email, role } = req.query;
+
+  if (!id) {
+    return res.status(400).send("Missing user ID!");
+  }
+
+  const user = await User.findOne({ id: parseInt(id) });
+  if (!user) {
+    return res.status(404).send("User not found!");
+  }
+
+  if (name) user.name = name;
+  if (email) user.email = email;
+  if (role) user.role = role;
+
+  await user.save();
+
+  res.send(`
+    User updated successfully!<br><br>
+    <b>ID:</b> ${user.id}<br>
+    <b>Name:</b> ${user.name}<br>
+    <b>Email:</b> ${user.email}<br>
+    <b>Role:</b> ${user.role}
+  `);
+});
+
+// Delete User via GET
+app.get("/delete", async (req, res) => {
+  const { id } = req.query;
+
+  if (!id) {
+    return res.status(400).send("Missing user ID!");
+  }
+
+  const deleted = await User.findOneAndDelete({ id: parseInt(id) });
+  if (!deleted) {
+    return res.status(404).send("User not found!");
+  }
+
+  res.send(`User with ID ${id} deleted successfully!`);
+});
+
+// Get All Users (search, filter, sort)
 app.get("/users", async (req, res) => {
   let { search, sort, filter } = req.query;
   let query = {};
@@ -80,7 +121,7 @@ app.get("/users", async (req, res) => {
   res.json({ users });
 });
 
-//  Get Single User by ID
+// Get Single User by ID
 app.get("/users/:id", async (req, res) => {
   const user = await User.findOne({ id: parseInt(req.params.id) });
   if (!user) return res.status(404).send("User not found!");
