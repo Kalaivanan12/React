@@ -30,7 +30,6 @@ app.get("/", (req, res) => {
 app.get("/write", async (req, res) => {
   try {
     const { id, name, email, role } = req.query;
-
     if (!id || !name || !email || !role) {
       return res.status(400).send("Missing id, name, email, or role!");
     }
@@ -38,22 +37,10 @@ app.get("/write", async (req, res) => {
     const exists = await User.findOne({ id: parseInt(id) });
     if (exists) return res.status(400).send("User ID already exists!");
 
-    const newUser = new User({
-      id: parseInt(id),
-      name,
-      email,
-      role,
-    });
-
+    const newUser = new User({ id: parseInt(id), name, email, role });
     await newUser.save();
 
-    res.send(`
-      User added successfully!<br><br>
-      <b>ID:</b> ${id}<br>
-      <b>Name:</b> ${name}<br>
-      <b>Email:</b> ${email}<br>
-      <b>Role:</b> ${role}
-    `);
+    res.send(`User added successfully!<br>ID: ${id}<br>Name: ${name}<br>Email: ${email}<br>Role: ${role}`);
   } catch (err) {
     res.status(500).send("Server error while adding user.");
   }
@@ -74,13 +61,7 @@ app.get("/update", async (req, res) => {
 
     await user.save();
 
-    res.send(`
-      User updated successfully!<br><br>
-      <b>ID:</b> ${user.id}<br>
-      <b>Name:</b> ${user.name}<br>
-      <b>Email:</b> ${user.email}<br>
-      <b>Role:</b> ${user.role}
-    `);
+    res.send(`User updated successfully!<br>ID: ${user.id}<br>Name: ${user.name}<br>Email: ${user.email}<br>Role: ${user.role}`);
   } catch (err) {
     res.status(500).send("Server error while updating user.");
   }
@@ -107,6 +88,7 @@ app.get("/users", async (req, res) => {
     let { search, sort, filter } = req.query;
     let query = {};
 
+    // Search by name or email (case-insensitive)
     if (search) {
       query.$or = [
         { name: { $regex: search, $options: "i" } },
@@ -114,10 +96,14 @@ app.get("/users", async (req, res) => {
       ];
     }
 
-    if (filter) query.role = filter;
+    // Filter by role (case-insensitive)
+    if (filter) {
+      query.role = { $regex: `^${filter}$`, $options: "i" };
+    }
 
     let users = await User.find(query);
 
+    // Sort
     if (sort === "name") users.sort((a, b) => a.name.localeCompare(b.name));
     if (sort === "id") users.sort((a, b) => a.id - b.id);
 
