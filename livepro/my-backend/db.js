@@ -21,7 +21,7 @@ const User = mongoose.model("User", userSchema);
 
 // Home
 app.get("/", (req, res) => {
-  res.send("Welcome to MongoDB + Express FS Backend!");
+  res.send("Welcome to MongoDB");
 });
 
 // Add New User via GET
