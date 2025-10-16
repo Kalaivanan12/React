@@ -1,36 +1,92 @@
-let exp=require('express')
-let db=require('mongoose')
+const express = require("express");
+const mongoose = require("mongoose");
+const app = express();
+const PORT = 2831;
 
-let app=exp()
-let PORT=2831
+mongoose
+  .connect("mongodb://localhost:27017/students", {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
+  .then(() => console.log("MongoDB Connected to 'students' Database"))
+  .catch((err) => console.error("MongoDB Connection Error:", err));
 
-db.connect("mongodb://localhost:27017/students")
-.then(()=>{
-    console.log("Connected to MongoDB")
-})
-.catch((err)=>{
-    console.log("Error connecting to MongoDB",err)
-})
+const userSchema = new mongoose.Schema({
+  id: Number,
+  name: String,
+  email: String,
+  role: String,
+});
 
+const User = mongoose.model("User", userSchema);
 
-let mySchema=new db.Schema({
-    name:{type:String,required:true,unique:false},
-    age:{type:String,required:true,unique:false},
-    phone:{type:String,required:true,unique:true}
-})
-let myModel=db.model("student",mySchema)
+// Home
+app.get("/", (req, res) => {
+  res.send("Welcome to MongoDB + Express FS Backend!");
+});
 
-// let student1=new myModel({name:"John",age:"21",phone:"1234567890"})
-app.get('/',(req,res)=>{
-    res.send("Hello from express")
-})
-app.get('/reg',async(req,res)=>{
-    let {name,age,phone}=req.query
-    let student1=new myModel({name,age,phone})
-    await student1.save()
+// Add New User via GET URL
+app.get("/write", async (req, res) => {
+  const { id, name, email, role } = req.query;
 
-    res.send("registered successfully")
-})
-app.listen(PORT,()=>{
-    console.log(`Server is running on port ${PORT}`)
-})
+  if (!id || !name || !email || !role) {
+    return res.status(400).send("Missing id, name, email, or role!");
+  }
+
+  // Check if user already exists
+  const exists = await User.findOne({ id: parseInt(id) });
+  if (exists) {
+    return res.status(400).send("User ID already exists!");
+  }
+
+  // Add new user
+  const newUser = new User({
+    id: parseInt(id),
+    name,
+    email,
+    role,
+  });
+
+  await newUser.save();
+
+  res.send(`
+    User added successfully!<br><br>
+    <b>ID:</b> ${id}<br>
+    <b>Name:</b> ${name}<br>
+    <b>Email:</b> ${email}<br>
+    <b>Role:</b> ${role}
+  `);
+});
+
+//  Get All Users (with search, filter, sort)
+app.get("/users", async (req, res) => {
+  let { search, sort, filter } = req.query;
+  let query = {};
+
+  if (search) {
+    query.$or = [
+      { name: { $regex: search, $options: "i" } },
+      { email: { $regex: search, $options: "i" } },
+    ];
+  }
+
+  if (filter) query.role = filter;
+
+  let users = await User.find(query);
+
+  if (sort === "name") users.sort((a, b) => a.name.localeCompare(b.name));
+  if (sort === "id") users.sort((a, b) => a.id - b.id);
+
+  res.json({ users });
+});
+
+//  Get Single User by ID
+app.get("/users/:id", async (req, res) => {
+  const user = await User.findOne({ id: parseInt(req.params.id) });
+  if (!user) return res.status(404).send("User not found!");
+  res.json(user);
+});
+
+app.listen(PORT, () => {
+  console.log(`Server running at http://localhost:${PORT}`);
+});
