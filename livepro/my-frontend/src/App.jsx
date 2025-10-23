@@ -7,31 +7,33 @@ function App() {
   const [search, setSearch] = useState("");
   const [filter, setFilter] = useState("");
   const [sort, setSort] = useState("");
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
+  const [editingUser, setEditingUser] = useState(null);
 
   const fetchUsers = async () => {
-    try {
-      setLoading(true);
-      setError(null);
+    let url = `http://localhost:3101/users?search=${search}&filter=${filter}&sort=${sort}`;
+    const res = await fetch(url);
+    const data = await res.json();
+    setUsers(Array.isArray(data) ? data : []);
+  };
 
-      let url = "http://localhost:3101/users?";
-      if (search) url += `search=${search}&`;
-      if (filter) url += `filter=${filter}&`;
-      if (sort) url += `sort=${sort}`;
+  const handleEdit = (user) => {
+    setEditingUser(user);
+  };
 
-      const res = await fetch(url);
-      if (!res.ok) throw new Error("Failed to fetch users");
+  const handleDelete = async (id) => {
+    if (!window.confirm("Are you sure you want to delete this user?")) return;
+    await fetch(`http://localhost:3101/users/${id}`, { method: "DELETE" });
+    fetchUsers();
+  };
 
-      const data = await res.json();
-      setUsers(Array.isArray(data) ? data : []);
-    } catch (err) {
-      console.error(err);
-      setError(err.message);
-      setUsers([]);
-    } finally {
-      setLoading(false);
-    }
+  const handleUpdate = async (updatedUser) => {
+    await fetch(`http://localhost:3101/users/${updatedUser.id}`, {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(updatedUser),
+    });
+    setEditingUser(null);
+    fetchUsers();
   };
 
   useEffect(() => {
@@ -39,45 +41,34 @@ function App() {
   }, [search, filter, sort]);
 
   return (
-    <div style={{ padding: "20px", fontFamily: "Arial" }}>
+    <div style={{ padding: "20px" }}>
       <h1>User Management Dashboard</h1>
-
       <input
         type="text"
-        placeholder="Search by name or email"
+        placeholder="Search"
         value={search}
         onChange={(e) => setSearch(e.target.value)}
-        style={{ marginRight: "10px", padding: "5px" }}
       />
-
-      <select
-        value={filter}
-        onChange={(e) => setFilter(e.target.value)}
-        style={{ marginRight: "10px", padding: "5px" }}
-      >
+      <select value={filter} onChange={(e) => setFilter(e.target.value)}>
         <option value="">All Roles</option>
         <option value="Admin">Admin</option>
         <option value="User">User</option>
         <option value="Manager">Manager</option>
       </select>
-
-      <select
-        value={sort}
-        onChange={(e) => setSort(e.target.value)}
-        style={{ marginRight: "10px", padding: "5px" }}
-      >
+      <select value={sort} onChange={(e) => setSort(e.target.value)}>
         <option value="">Sort By</option>
         <option value="id">ID</option>
         <option value="name">Name</option>
       </select>
+      <button onClick={fetchUsers}>Refresh</button>
 
-      <button onClick={fetchUsers} style={{ padding: "5px 10px" }}>🔄 Refresh</button>
+      <UserTable users={users} onEdit={handleEdit} onDelete={handleDelete} />
 
-      {loading && <p>Loading users...</p>}
-      {error && <p style={{ color: "red" }}>Error: {error}</p>}
-
-      <UserTable users={users} />
-      <AddUserForm onUserAdded={fetchUsers} />
+      <AddUserForm
+        onUserAdded={fetchUsers}
+        editingUser={editingUser}
+        onUpdate={handleUpdate}
+      />
     </div>
   );
 }
