@@ -1,16 +1,22 @@
-const http = require('http');
-const fs = require('fs');
-const path = require('path');
-const urlModule = require('url');
+const express = require("express");
+const fs = require("fs");
+const path = require("path");
+const cors = require("cors");
+const app = express();
+const PORT = 3101;
 
-const PORT = 2831;
-const filePath = path.join(__dirname, 'data.json');
+// Enable CORS for React frontend
+app.use(cors({ origin: "http://localhost:5173" }));
+app.use(express.json());
+
+const filePath = path.join(__dirname, "expdata.json");
 
 function readData() {
-  if (!fs.existsSync(filePath)) fs.writeFileSync(filePath, JSON.stringify([], null, 2));
-  const data = fs.readFileSync(filePath, 'utf8');
+  if (!fs.existsSync(filePath))
+    fs.writeFileSync(filePath, JSON.stringify([], null, 2));
+  const data = fs.readFileSync(filePath, "utf8");
   try {
-    return JSON.parse(data || '[]');
+    return JSON.parse(data || "[]");
   } catch {
     return [];
   }
@@ -20,81 +26,64 @@ function writeData(data) {
   fs.writeFileSync(filePath, JSON.stringify(data, null, 2));
 }
 
-const server = http.createServer((req, res) => {
-  const urlObj = urlModule.parse(req.url, true);
-  const { pathname, query } = urlObj;
+// GET all users (with search, sort, filter)
+app.get("/users", (req, res) => {
+  let { search, sort, filter } = req.query;
+  let users = readData();
+  let result = [...users];
 
-  if (pathname === '/' && req.method === 'GET') {
-    res.writeHead(200, { 'Content-Type': 'text/plain' });
-    return res.end('Welcome to Backend Page with JSON FS!');
+  if (search) {
+    const keyword = search.toLowerCase();
+    result = result.filter(
+      (u) =>
+        u.name.toLowerCase().includes(keyword) ||
+        u.email.toLowerCase().includes(keyword)
+    );
   }
 
-  if (pathname === '/write' && req.method === 'GET') {
-    const { id, name, email } = query;
-
-    if (!id || !name || !email) {
-      res.writeHead(400, { 'Content-Type': 'text/plain' });
-      return res.end('Missing id, name, or email');
-    }
-
-    const data = readData();
-
-    const exists = data.find(u => u.id === parseInt(id));
-    if (exists) {
-      res.writeHead(400, { 'Content-Type': 'text/plain' });
-      return res.end(`User with ID ${id} already exists`);
-    }
-
-    const newUser = { id: parseInt(id), name, email };
-    data.push(newUser);
-    writeData(data);
-
-    res.writeHead(200, { 'Content-Type': 'text/plain' });
-    return res.end(`User added successfully!\nID: ${newUser.id}\nName: ${newUser.name}\nEmail: ${newUser.email}`);
+  if (filter) {
+    result = result.filter(
+      (u) => u.role.toLowerCase() === filter.toLowerCase()
+    );
   }
 
-  if (pathname === '/users' && req.method === 'GET') {
-    let data = readData();
-
-    if (query.search) {
-      const term = query.search.toLowerCase();
-      data = data.filter(u =>
-        u.name.toLowerCase().includes(term) ||
-        u.email.toLowerCase().includes(term)
-      );
-    }
-
-    if (query.sort) {
-      const sortKey = query.sort.toLowerCase();
-      const order = query.order === 'desc' ? -1 : 1;
-      data.sort((a, b) => {
-        if (a[sortKey] < b[sortKey]) return -1 * order;
-        if (a[sortKey] > b[sortKey]) return 1 * order;
-        return 0;
-      });
-    }
-
-    res.writeHead(200, { 'Content-Type': 'application/json' });
-    return res.end(JSON.stringify(data, null, 2));
-  }
-
-  if (pathname.startsWith('/users/') && req.method === 'GET') {
-    const id = parseInt(pathname.split('/')[2]);
-    const data = readData();
-    const user = data.find(u => u.id === id);
-
-    if (user) {
-      res.writeHead(200, { 'Content-Type': 'application/json' });
-      return res.end(JSON.stringify(user, null, 2));
-    } else {
-      res.writeHead(404, { 'Content-Type': 'text/plain' });
-      return res.end(`User with ID ${id} not found`);
+  if (sort) {
+    if (sort === "name") {
+      result.sort((a, b) => a.name.localeCompare(b.name));
+    } else if (sort === "id") {
+      result.sort((a, b) => a.id - b.id);
     }
   }
-  res.writeHead(404, { 'Content-Type': 'text/plain' });
-  res.end('Route not found');
+
+  res.json({ users: result });
 });
 
-server.listen(PORT, () => {
-  console.log(`Server running at http://localhost:${PORT}`);
+// Add new user
+app.get("/write", (req, res) => {
+  const { id, name, email, role } = req.query;
+
+  if (!id || !name || !email || !role) {
+    return res.status(400).send("Missing id, name, email, or role parameters!");
+  }
+
+  const users = readData();
+  const exists = users.some((u) => u.id === parseInt(id));
+
+  if (exists) {
+    return res.status(400).send("User ID already exists!");
+  }
+
+  const newUser = { id: parseInt(id), name, email, role };
+  users.push(newUser);
+  writeData(users);
+
+  res.send(`User added successfully!<br><br>
+    <b>ID:</b> ${id}<br>
+    <b>Name:</b> ${name}<br>
+    <b>Email:</b> ${email}<br>
+    <b>Role:</b> ${role}`);
+});
+
+app.listen(PORT, () => {
+  console.log(`Server running on http://localhost:${PORT}`);
 });
