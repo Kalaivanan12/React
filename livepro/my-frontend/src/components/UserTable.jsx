@@ -1,6 +1,6 @@
 import React from "react";
 
-function UserTable({ users }) {
+function UserTable({ users = [] }) {
   return (
     <table>
       <thead>
