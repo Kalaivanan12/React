@@ -25,9 +25,7 @@ function UserTable({ users }) {
           ))
         ) : (
           <tr>
-            <td colSpan="4" style={{ textAlign: "center", padding: "8px" }}>
-              No users found
-            </td>
+            <td colSpan="4" style={{ textAlign: "center", padding: "8px" }}>No users found</td>
           </tr>
         )}
       </tbody>

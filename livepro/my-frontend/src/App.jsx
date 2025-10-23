@@ -22,6 +22,7 @@ function App() {
 
       const res = await fetch(url);
       if (!res.ok) throw new Error("Failed to fetch users");
+
       const data = await res.json();
       setUsers(Array.isArray(data) ? data : []);
     } catch (err) {
@@ -38,7 +39,7 @@ function App() {
   }, [search, filter, sort]);
 
   return (
-    <div className="container" style={{ padding: "20px", fontFamily: "Arial" }}>
+    <div style={{ padding: "20px", fontFamily: "Arial" }}>
       <h1>User Management Dashboard</h1>
 
       <input
@@ -70,9 +71,7 @@ function App() {
         <option value="name">Name</option>
       </select>
 
-      <button onClick={fetchUsers} style={{ padding: "5px 10px" }}>
-        🔄 Refresh
-      </button>
+      <button onClick={fetchUsers} style={{ padding: "5px 10px" }}>🔄 Refresh</button>
 
       {loading && <p>Loading users...</p>}
       {error && <p style={{ color: "red" }}>Error: {error}</p>}
