@@ -134,40 +134,64 @@ function Hero() {
       </section>
 
       {/* Carousel Section */}
-      <section className="featured-section">
-        <h2>Recommendations for you</h2>
-        <p>Event special project attractions</p>
-        <Swiper
-          modules={[Navigation, Pagination, Autoplay]}
-          spaceBetween={20}
-          slidesPerView={3}
-          navigation
-          pagination={{ clickable: true }}
-          autoplay={{ delay: 4000 }}
-          loop={true}
-          breakpoints={{
-            320: { slidesPerView: 1 },
-            768: { slidesPerView: 2 },
-            1024: { slidesPerView: 3 },
-          }}
-        >
-          {properties.map((property, index) => (
-            <SwiperSlide key={index}>
-              <div className="property-card">
-                <img src={property.image} alt={property.name} className="property-img" />
-                <div className="property-info">
-                  <h3>{property.name}</h3>
-                  <p>{property.desc}</p>
-                  <p className="price">{property.price}</p>
-                </div>
-                <div className="property-footer">
-                  <img src={property.logo} alt={property.developer} className="dev-logo" />
-                  <button className="contact-btn">Contact</button>
-                </div>
+      <section className="housing-edge">
+        <div className="container">
+          <div className="header">
+            <div>
+              <h2>Housing Edge</h2>
+              <p>Explore property related services</p>
+            </div>
+            <a href="#" className="btn">
+              Explore Services →
+            </a>
+          </div>
+
+          <div className="cards">
+            <div className="card">
+              <div className="icon">
+                <img
+                  src="https://cdn-icons-png.flaticon.com/512/1040/1040231.png"
+                  alt="Credit"
+                />
               </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
+              <h3>Pay on Credit</h3>
+              <p>Pay your rent using Credit Card</p>
+            </div>
+
+            <div className="card">
+              <div className="icon">
+                <img
+                  src="https://cdn-icons-png.flaticon.com/512/889/889647.png"
+                  alt="Premium"
+                />
+              </div>
+              <h3>Housing Premium</h3>
+              <p>Instant access to zero brokerage properties</p>
+            </div>
+
+            <div className="card">
+              <div className="icon">
+                <img
+                  src="https://cdn-icons-png.flaticon.com/512/484/484167.png"
+                  alt="Home Loans"
+                />
+              </div>
+              <h3>Home Loans</h3>
+              <p>Lowest Interest rate offers</p>
+            </div>
+
+            <div className="card">
+              <div className="icon">
+                <img
+                  src="https://cdn-icons-png.flaticon.com/512/942/942781.png"
+                  alt="Protect"
+                />
+              </div>
+              <h3>Housing Protect</h3>
+              <p>Protection against cyber frauds</p>
+            </div>
+          </div>
+        </div>
       </section>
     </>
   );
