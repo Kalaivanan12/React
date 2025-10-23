@@ -1,3 +1,4 @@
+// server.js
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
@@ -5,19 +6,18 @@ const cors = require("cors");
 const app = express();
 const PORT = 3101;
 
-// Enable CORS for frontend
+// Enable CORS
 app.use(cors());
 app.use(express.json());
 
-
 // Connect to MongoDB
-const mongoURI = "mongodb://localhost:27017/";
+const mongoURI = "mongodb://127.0.0.1:27017/userManagementDB"; 
 mongoose
   .connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log("MongoDB connected"))
   .catch((err) => console.error("MongoDB connection error:", err));
 
-// Define User Schema
+// User Schema
 const userSchema = new mongoose.Schema({
   id: { type: Number, required: true, unique: true },
   name: { type: String, required: true },
@@ -32,13 +32,13 @@ const User = mongoose.model("User", userSchema);
 app.get("/users", async (req, res) => {
   try {
     const { search, filter, sort } = req.query;
-
     let query = {};
+
     if (filter) query.role = filter;
-    if (search) {
-      const regex = new RegExp(search, "i"); 
-      query.$or = [{ name: regex }, { email: regex }];
-    }
+    if (search) query.$or = [
+      { name: new RegExp(search, "i") },
+      { email: new RegExp(search, "i") }
+    ];
 
     let users = await User.find(query);
 
@@ -62,23 +62,15 @@ app.get("/write", async (req, res) => {
   try {
     const { id, name, email, role } = req.query;
 
-    if (!id || !name || !email || !role) {
+    if (!id || !name || !email || !role)
       return res.status(400).json({ error: "All fields are required" });
-    }
 
-    const existing = await User.findOne({ id: Number(id) });
-    if (existing) {
-      return res.status(400).json({ error: "ID already exists" });
-    }
+    const exists = await User.findOne({ id: Number(id) });
+    if (exists) return res.status(400).json({ error: "ID already exists" });
 
-    const newUser = new User({
-      id: Number(id),
-      name,
-      email,
-      role,
-    });
-
+    const newUser = new User({ id: Number(id), name, email, role });
     await newUser.save();
+
     res.json({ message: "User added successfully" });
   } catch (err) {
     console.error(err);
