@@ -1,29 +1,31 @@
 import React from "react";
 
-function UserTable({ users = [] }) {
+function UserTable({ users }) {
+  const safeUsers = Array.isArray(users) ? users : [];
+
   return (
-    <table>
+    <table style={{ borderCollapse: "collapse", width: "100%", marginTop: "20px" }}>
       <thead>
         <tr>
-          <th>ID</th>
-          <th>Name</th>
-          <th>Email</th>
-          <th>Role</th>
+          <th style={{ border: "1px solid #ddd", padding: "8px" }}>ID</th>
+          <th style={{ border: "1px solid #ddd", padding: "8px" }}>Name</th>
+          <th style={{ border: "1px solid #ddd", padding: "8px" }}>Email</th>
+          <th style={{ border: "1px solid #ddd", padding: "8px" }}>Role</th>
         </tr>
       </thead>
       <tbody>
-        {users.length > 0 ? (
-          users.map((u) => (
+        {safeUsers.length > 0 ? (
+          safeUsers.map((u) => (
             <tr key={u.id}>
-              <td>{u.id}</td>
-              <td>{u.name}</td>
-              <td>{u.email}</td>
-              <td>{u.role}</td>
+              <td style={{ border: "1px solid #ddd", padding: "8px" }}>{u.id}</td>
+              <td style={{ border: "1px solid #ddd", padding: "8px" }}>{u.name}</td>
+              <td style={{ border: "1px solid #ddd", padding: "8px" }}>{u.email}</td>
+              <td style={{ border: "1px solid #ddd", padding: "8px" }}>{u.role}</td>
             </tr>
           ))
         ) : (
           <tr>
-            <td colSpan="4" style={{ textAlign: "center" }}>
+            <td colSpan="4" style={{ textAlign: "center", padding: "8px" }}>
               No users found
             </td>
           </tr>

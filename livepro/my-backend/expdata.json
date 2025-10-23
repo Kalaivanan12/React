@@ -22,5 +22,11 @@
     "name": "Kalaivanan",
     "email": "kalaivanankarthi1531@gmail.com",
     "role": "Admin"
+  },
+  {
+    "id": "2",
+    "name": "bun",
+    "email": "bunkalai3101@gmail.com",
+    "role": "Admin"
   }
 ]

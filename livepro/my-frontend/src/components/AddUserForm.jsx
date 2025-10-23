@@ -1,66 +1,64 @@
 import React, { useState } from "react";
 
 function AddUserForm({ onUserAdded }) {
-  const [form, setForm] = useState({ id: "", name: "", email: "", role: "" });
+  const [formData, setFormData] = useState({
+    id: "",
+    name: "",
+    email: "",
+    role: "",
+  });
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
 
   const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const { id, name, email, role } = form;
 
-    if (!id || !name || !email || !role) {
-      alert("Please fill all fields!");
+    if (!formData.id || !formData.name || !formData.email || !formData.role) {
+      alert("Please fill in all fields");
       return;
     }
 
-    const res = await fetch(
-      `http://localhost:3101/write?id=${id}&name=${name}&email=${email}&role=${role}`
-    );
+    try {
+      setLoading(true);
+      setError(null);
 
-    if (res.ok) {
-      alert("✅ User added successfully!");
-      setForm({ id: "", name: "", email: "", role: "" });
-      onUserAdded();
-    } else {
-      alert("❌ Error adding user!");
+      const query = new URLSearchParams(formData).toString();
+      const res = await fetch(`http://localhost:3101/write?${query}`);
+      if (!res.ok) throw new Error("Failed to add user");
+
+      await res.json();
+      setFormData({ id: "", name: "", email: "", role: "" });
+      if (onUserAdded) onUserAdded();
+    } catch (err) {
+      console.error(err);
+      setError(err.message);
+    } finally {
+      setLoading(false);
     }
   };
 
   return (
-    <form onSubmit={handleSubmit} className="form">
-      <h2>Add New User</h2>
-      <input
-        type="number"
-        name="id"
-        placeholder="ID"
-        value={form.id}
-        onChange={handleChange}
-      />
-      <input
-        type="text"
-        name="name"
-        placeholder="Name"
-        value={form.name}
-        onChange={handleChange}
-      />
-      <input
-        type="email"
-        name="email"
-        placeholder="Email"
-        value={form.email}
-        onChange={handleChange}
-      />
-      <input
-        type="text"
-        name="role"
-        placeholder="Role (Admin/User)"
-        value={form.role}
-        onChange={handleChange}
-      />
-      <button type="submit">Add User</button>
+    <form
+      onSubmit={handleSubmit}
+      style={{ marginTop: "20px", display: "flex", gap: "10px", flexWrap: "wrap" }}
+    >
+      <input type="number" name="id" placeholder="ID" value={formData.id} onChange={handleChange} style={{ padding: "5px", width: "60px" }} />
+      <input type="text" name="name" placeholder="Name" value={formData.name} onChange={handleChange} style={{ padding: "5px", width: "150px" }} />
+      <input type="email" name="email" placeholder="Email" value={formData.email} onChange={handleChange} style={{ padding: "5px", width: "200px" }} />
+      <select name="role" value={formData.role} onChange={handleChange} style={{ padding: "5px" }}>
+        <option value="">Select Role</option>
+        <option value="Admin">Admin</option>
+        <option value="User">User</option>
+        <option value="Manager">Manager</option>
+      </select>
+      <button type="submit" style={{ padding: "5px 10px" }} disabled={loading}>
+        {loading ? "Adding..." : "Add User"}
+      </button>
+      {error && <p style={{ color: "red" }}>{error}</p>}
     </form>
   );
 }
