@@ -16,5 +16,11 @@
     "name": "Kala",
     "email": "Kala@gmail.com",
     "role": "CEO"
+  },
+  {
+    "id": "1",
+    "name": "Kalaivanan",
+    "email": "kalaivanankarthi1531@gmail.com",
+    "role": "Admin"
   }
 ]
