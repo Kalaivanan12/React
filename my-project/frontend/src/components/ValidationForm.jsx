@@ -172,7 +172,17 @@ function ValidationForm() {
                     style={styles.input}
                 />
                 {errors.phone && <p style={styles.error}>{errors.phone}</p>}
-                
+                {/* Date */}
+                <label>Date of Birth:</label>
+                <input
+                    type="date"
+                    name="date"
+                    value={formData.date}
+                    onChange={handleChange}
+                    style={styles.input}
+                />
+                {errors.date && <p style={styles.error}>{errors.date}</p>}
+
                 {/* Gender - Radio Buttons */}
                 <label>Gender:</label>
                 <div style={{ display: "flex", gap: "20px", alignItems: "center" }}>

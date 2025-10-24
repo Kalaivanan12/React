@@ -26,7 +26,8 @@ const userSchema = new mongoose.Schema({
   password: String,
   phone: String,
   gender: String,
-  file: String, 
+  file: String,
+  date: Date,
   terms: Boolean,
 });
 
@@ -62,6 +63,7 @@ app.post("/api/register", upload.single("file"), async (req, res) => {
       email,
       password,
       phone,
+      date: new Date(req.body.date),
       gender,
       file,
       terms: terms === "true" || terms === true,
