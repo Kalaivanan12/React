@@ -48,7 +48,7 @@ function Commercial() {
       {/* Commercial Section */}
       <section className="commercial-section">
         <div className="commercial-overlay"><br /><br />
-          <h1>Properties to Commercial in Cuddalore</h1>
+          <h1>Commercial Real Estate in Cuddalore</h1>
           {/* Tabs Navigation */}
           <div className="search-wrap css-nc7111">
             <nav className="css-koo8qs">

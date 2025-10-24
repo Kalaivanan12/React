@@ -55,7 +55,7 @@
 }
 
 .css-nc7111 {
-  width: 746px;
+  width: 650px;
   margin: 0 auto;
   position: relative;
   z-index: 1;
@@ -98,7 +98,7 @@
 =================================*/
 /* Container */
 .search-box {
-  height: 75px;
+  height: 70px;
   display: flex;
   align-items: center;
   background: #fff;

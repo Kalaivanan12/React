@@ -21,17 +21,17 @@
 
 .commercial-overlay h1 {
   font-size: 32px;
-  font-weight: 700;
+  font-weight: 500;
   margin-bottom: 10px;
   position: relative;
-  left: -45px;
+  left: -50px;
 }
 
 /* ===============================
    Search Box
 =================================*/
 .com-search-box {
-  height: 75px;
+  height: 60px;
   display: flex;
   align-items: center;
   background: #fff;
@@ -149,13 +149,14 @@
   }
 
   .commercial-overlay h1 {
-    font-size: 42px;
-    left: -30px;
+    font-size: 30px;
+    left: -110px;
+    
   }
 
   .com-search-box {
     max-width: 1100px;
-    height: 80px;
+    height: 70px;
   }
 
   .com-search-dropdown,
