@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./ValidationForm.css";
 
-// 🎨 Inline CSS
+// Inline CSS
 const styles = {
   container: {
     maxWidth: "450px",
@@ -54,7 +54,7 @@ function ValidationForm() {
 
   const [errors, setErrors] = useState({});
 
-  // ✅ Validation
+  // Validation
   const validate = () => {
     let newErrors = {};
 
@@ -73,7 +73,7 @@ function ValidationForm() {
     return Object.keys(newErrors).length === 0;
   };
 
-  // ✅ Input change handler
+  // Input change handler
   const handleChange = (e) => {
     const { name, value, type, checked, files } = e.target;
     setFormData({
@@ -82,10 +82,10 @@ function ValidationForm() {
     });
   };
 
-  // ✅ Submit handler
+  // Submit handler
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Submit clicked"); // Debug
+    console.log("Submit clicked"); 
 
     if (!validate()) return;
 
@@ -103,7 +103,7 @@ function ValidationForm() {
       const result = await response.json();
 
       if (response.ok) {
-        alert("✅ Form submitted successfully!");
+        alert("Form submitted successfully!");
         setFormData({
           name: "",
           email: "",
@@ -115,11 +115,11 @@ function ValidationForm() {
         });
         setErrors({});
       } else {
-        alert("❌ Error: " + (result.message || "Something went wrong"));
+        alert("Error: " + (result.message || "Something went wrong"));
       }
     } catch (err) {
       console.error(err);
-      alert("⚠️ Could not connect to backend");
+      alert("Could not connect to backend");
     }
   };
 
