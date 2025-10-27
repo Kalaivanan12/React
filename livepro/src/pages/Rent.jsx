@@ -57,7 +57,7 @@ function Rent() {
         <div className="rent-overlay"><br /><br /><br />
           <h1>Properties to rent in Cuddalore</h1>
           <p>
-            <span>9K+</span> listings added daily and <span>63K+</span> total
+            <span>5K+</span> listings added daily and <span>63K+</span> total
             verified
           </p>
 

@@ -150,7 +150,7 @@ function Hero() {
             <div className="card">
               <div className="icon">
                 <img
-                  src="https://cdn-icons-png.flaticon.com/512/1040/1040231.png"
+                  src="./src/logo/payRent.svg"
                   alt="Credit"
                 />
               </div>
@@ -161,7 +161,7 @@ function Hero() {
             <div className="card">
               <div className="icon">
                 <img
-                  src="https://cdn-icons-png.flaticon.com/512/889/889647.png"
+                  src="./src/logo/housingPremium.svg"
                   alt="Premium"
                 />
               </div>
@@ -172,7 +172,7 @@ function Hero() {
             <div className="card">
               <div className="icon">
                 <img
-                  src="https://cdn-icons-png.flaticon.com/512/484/484167.png"
+                  src="./src/logo/homeLoans.svg"
                   alt="Home Loans"
                 />
               </div>
@@ -183,7 +183,7 @@ function Hero() {
             <div className="card">
               <div className="icon">
                 <img
-                  src="https://cdn-icons-png.flaticon.com/512/942/942781.png"
+                  src="./src/logo/housingProtect.svg"
                   alt="Protect"
                 />
               </div>
@@ -191,6 +191,59 @@ function Hero() {
               <p>Protection against cyber frauds</p>
             </div>
           </div>
+        </div>
+
+        {/* Research Section */}
+        <div className="research-container">
+          <section className="research-section">
+            <h2>Research and Insights</h2>
+            <p>Explore useful real estate insights</p>
+            <div className="research-cards">
+              <div className="research-card">
+                <img
+                  src="./src/logo/priceTrends.svg"
+                  alt="Price Trends"
+                />
+                <h3>Price Trends ›</h3>
+                <p>Find property rates & price trends of top locations</p>
+              </div>
+
+              <div className="research-card">
+                <img
+                  src="./src/logo/cityInsights.svg"
+                  alt="City Insights"
+                />
+                <h3>City Insights ›</h3>
+                <p>Get to know about top cities before you invest</p>
+              </div>
+
+              <div className="research-card">
+                <img
+                  src="./src/logo/housingResearch.svg"
+                  alt="Housing Research"
+                />
+                <h3>Housing Research ›</h3>
+                <p>Find reports on Indian residential market</p>
+              </div>
+            </div>
+          </section>
+          {/* sell-property section */}
+          <section className="sell-property-section">
+            <h2 className="sell-heading">Have a property to sell?</h2>
+
+            <div className="sell-banner-extended">
+              <img
+                src="/src/img/background.png"
+                alt="Sell property banner"
+                className="sell-banner-bg"
+              />
+
+              <div className="sell-banner-content">
+                <p>List your property & connect with clients faster!</p>
+                <button className="sell-btn">Sell your property</button>
+              </div>
+            </div>
+          </section>
         </div>
       </section>
     </>
