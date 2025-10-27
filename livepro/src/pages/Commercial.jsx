@@ -121,42 +121,85 @@ function Commercial() {
         </div>
       </section>
 
-      {/* Carousel Section */}
-      <section className="featured-section">
-        <h2>Recommendations for you</h2>
-        <p>Event special project attractions</p>
-        <Swiper
-          modules={[Navigation, Pagination, Autoplay]}
-          spaceBetween={20}
-          slidesPerView={3}
-          navigation
-          pagination={{ clickable: true }}
-          autoplay={{ delay: 4000 }}
-          loop={true}
-          breakpoints={{
-            320: { slidesPerView: 1 },
-            768: { slidesPerView: 2 },
-            1024: { slidesPerView: 3 },
-          }}
-        >
-          {properties.map((property, index) => (
-            <SwiperSlide key={index}>
-              <div className="property-card">
-                <img src={property.image} alt={property.name} className="property-img" />
-                <div className="property-info">
-                  <h3>{property.name}</h3>
-                  <p>{property.desc}</p>
-                  <p className="price">{property.price}</p>
-                </div>
-                <div className="property-footer">
-                  <img src={property.logo} alt={property.developer} className="dev-logo" />
-                  <button className="contact-btn">Contact</button>
-                </div>
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </section>
+      <section className="recent-properties">
+  {/* For Sale Section */}
+  <div className="property-section">
+    <h2 className="property-heading">
+      Recently Added Properties <strong>for Sale</strong>
+    </h2>
+
+    <div className="property-cards">
+      <div className="property-card">
+        <img src="./src/img/property-fallback.webp" alt="Commercial Plot" />
+        <div className="property-details">
+          <h3>Commercial Plot</h3>
+          <p>by Dinesh</p>
+          <p>640 sq.ft | 20% p.a. <br />Cuddalore, Cuddalore</p>
+          <h4>₹8.5 L</h4>
+        </div>
+      </div>
+
+      <div className="property-card">
+        <img src="./src/img/property-fallback.webp" alt="Shop" />
+        <div className="property-details">
+          <h3>Shop</h3>
+          <p>by Ashok Kumar Vasanthi</p>
+          <p>240 sq.ft | 2.4% p.a. <br />Vadalur R.F., Cuddalore</p>
+          <h4>₹50.0 L</h4>
+        </div>
+      </div>
+
+      <div className="property-card">
+        <img src="./src/img/property-fallback.webp" alt="Commercial Plot" />
+        <div className="property-details">
+          <h3>Commercial Plot</h3>
+          <p>by Devadas S</p>
+          <p>1600 sq.ft | 18% p.a. <br />Tottappattu, Cuddalore</p>
+          <h4>₹24.0 L</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {/* For Rent Section */}
+  <div className="property-section">
+    <h2 className="property-heading">
+      Recently Added Properties <strong>for Rent</strong>
+    </h2>
+
+    <div className="property-cards">
+      <div className="property-card">
+        <img src="./src/img/property-fallback.webp" alt="Shop" />
+        <div className="property-details">
+          <h3>Shop</h3>
+          <p>by Tharani</p>
+          <p>230 sq.ft <br />Cuddalore, Cuddalore</p>
+          <h4>₹10,000</h4>
+        </div>
+      </div>
+
+      <div className="property-card">
+        <img src="./src/img/property-fallback.webp" alt="Office Space" />
+        <div className="property-details">
+          <h3>Ready to use Office Space</h3>
+          <p>by Rajag</p>
+          <p>1000 sq.ft <br />Chidambaram, Cuddalore</p>
+          <h4>₹60,000</h4>
+        </div>
+      </div>
+
+      <div className="property-card">
+        <img src="./src/img/property-fallback.webp" alt="Office Space" />
+        <div className="property-details">
+          <h3>Ready to use Office Space</h3>
+          <p>by Veerappan</p>
+          <p>3200 sq.ft <br />Virudhachalam, Cuddalore</p>
+          <h4>₹2 Lacs</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
     </>
   );
 }

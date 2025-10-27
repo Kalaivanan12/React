@@ -131,6 +131,78 @@
 .com-search-btn:hover {
   background: #70e4b6;
 }
+.recent-properties {
+  width: 100%;
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+.property-heading {
+  font-size: 26px;
+  font-weight: 500;
+  margin-bottom: 25px;
+  color: #222;
+  text-align: left;
+}
+
+.property-heading strong {
+  font-weight: 600;
+}
+
+.property-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+  gap: 25px;
+  margin-bottom: 60px;
+}
+
+.property-card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05);
+}
+
+.property-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.property-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-bottom: 1px solid #eee;
+}
+
+.property-details {
+  padding: 14px 18px;
+}
+
+.property-details h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 4px;
+}
+
+.property-details p {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.4;
+  margin: 3px 0;
+}
+
+.property-details h4 {
+  margin-top: 10px;
+  font-size: 17px;
+  font-weight: 600;
+  color: #111;
+}
+
 
 /* ===============================
    Responsive Media Queries
