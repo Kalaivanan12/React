@@ -68,6 +68,8 @@ function ValidationForm() {
             newErrors.phone = "Enter a valid 10-digit phone number";
         if (!formData.gender) newErrors.gender = "Select gender";
         if (!formData.file) newErrors.file = "Please upload a file";
+        if (!formData.date) newErrors.date = "Select date of birth";
+        if (!formData.dropdown) newErrors.dropdown = "Select a Country";
         if (!formData.terms)
             newErrors.terms = "You must accept the terms & conditions";
 
@@ -210,6 +212,19 @@ function ValidationForm() {
                     style={styles.input}
                 />
                 {errors.file && <p style={styles.error}>{errors.file}</p>}
+                <label>Country</label>
+                <select
+                    name="dropdown"
+                    value={formData.dropdown}
+                    onChange={handleChange}
+                    style={styles.input}
+                >
+                    <option value="">Select a Country</option>
+                    <option value="option1">India</option>
+                    <option value="option2">USA</option>
+                    <option value="option3">Canada</option>
+                </select>
+                {errors.dropdown && <p style={styles.error}>{errors.dropdown}</p>}
 
                 {/* Terms */}
                 <label style={{ display: "flex", alignItems: "center" }}>

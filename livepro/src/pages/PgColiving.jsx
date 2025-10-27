@@ -48,7 +48,7 @@ function PgColiving() {
     <>
       {/* Hero Section */}
       <section className="pg-section">
-        <div className="pg-overlay">
+        <div className="pg-overlay"><br />
           <h1>PG/Co-Living in Cuddalore</h1>
           {/* Tabs Navigation */}
           <div className="search-wrap css-nc7111">

@@ -73,7 +73,6 @@
 }
 
 .com-search-input {
-  flex: 1;
   padding: 12px 100px 12px 15px;
   font-size: 14px;
   border: none;
@@ -163,6 +162,12 @@
   .com-search-input {
     font-size: 16px;
   }
+  .com-search-btn {
+    padding: 14px 35px;
+    font-size: 18px;
+    border-radius: 35px;
+    height: 60px;
+  }
 
   .radio-group label {
     font-size: 18px;
@@ -190,6 +195,12 @@
 
   .radio-group label {
     font-size: 15px;
+  }
+  .com-search-btn {
+    padding: 12px 30px;
+    font-size: 16px;
+    border-radius: 30px;
+    height: 55px;
   }
 }
 
@@ -246,6 +257,10 @@
     transform: none;
     margin-top: 10px;
     width: 100%;
+    padding: 12px 25px;
+    font-size: 15px;
+    border-radius: 25px;
+    height: 50px;
   }
 }
 
@@ -299,9 +314,11 @@
   }
 
   .com-search-btn {
-    width: 100%;
-    font-size: 13px;
-    padding: 12px;
+    width: 100px;
+    font-size: 14px;
+    padding: 10px 20px;
+    border-radius: 20px;
+    height: 45px;
   }
 }
 
@@ -320,29 +337,46 @@
     font-size: 20px;
   }
 
+  /* ✅ Keep search box in one line */
   .com-search-box {
-    padding: 10px;
+    display: flex;
+    flex-direction: row; /* force items side by side */
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
     border-radius: 15px;
+    gap: 8px; /* small space between elements */
+    flex-wrap: nowrap; /* prevent wrapping */
+    overflow-x: auto; /* allow scroll if screen too small */
   }
 
   .com-search-dropdown,
   .com-search-input {
+    flex: 1;
     font-size: 12px;
-    padding: 8px 12px;
+    padding: 8px 10px;
+    min-width: 0;
   }
 
+  /* ✅ Radio buttons inline */
   .radio-group {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 6px;
+    display: flex;
+    flex-direction: row; /* keep radios in one line */
+    align-items: center;
+    gap: 10px;
+    flex-wrap: nowrap;
   }
 
   .radio-group label {
     font-size: 12px;
+    white-space: nowrap; /* prevent text wrapping */
   }
 
   .com-search-btn {
-    padding: 10px;
+    padding: 8px 12px;
     font-size: 12px;
+    border-radius: 15px;
+    height: 40px;
+    flex-shrink: 0; /* prevent shrinking */
   }
 }

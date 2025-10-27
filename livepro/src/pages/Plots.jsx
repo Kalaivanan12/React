@@ -48,7 +48,7 @@ function Plots() {
     <>
       {/* Plots Section */}
       <section className="plots-section">
-        <div className="plots-overlay">
+        <div className="plots-overlay"><br />
           <h1>Plots for sale in Cuddalore</h1>
           {/* Tabs Navigation */}
           <div className="search-wrap css-nc7111">

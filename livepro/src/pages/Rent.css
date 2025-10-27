@@ -20,13 +20,13 @@
 }
 
 .rent-overlay h1 {
- font-size: 10px;
-  font-weight: 50;
+ /* font-size: 10px;
+  font-weight: 50; */
   margin-bottom: 10px;
 }
 
 .rent-overlay p {
-  font-size: 16px;
+  /* font-size: 5px; */
   margin-bottom: 25px;
 }
 
@@ -106,10 +106,11 @@
     padding: 60px 30px;
   }
   .rent-overlay h1 {
-    font-size: 42px;
+    font-size: 30px;
+    font-weight: 500;
   }
   .rent-overlay p {
-    font-size: 20px;
+    font-size: 15px;
   }
   .popular-localities-rent {
     padding: 10px 285px;
@@ -130,10 +131,10 @@
     height: 460px;
   }
   .rent-overlay h1 {
-    font-size: 36px;
+    font-size: 20px;
   }
   .rent-overlay p {
-    font-size: 18px;
+    font-size: 12px;
   }
   .popular-localities-rent {
     padding: 10px 300px;
@@ -157,7 +158,8 @@
     padding: 40px 20px;
   }
   .rent-overlay h1 {
-    font-size: 28px;
+    font-size: 30px;
+    font-weight:650;
   }
   .rent-overlay p {
     font-size: 15px;

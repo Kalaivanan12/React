@@ -3,7 +3,7 @@
 =================================*/
 .plots-section {
   background: url("/src/img/plotsbanner.webp") center / cover no-repeat;
-  height: 420px;
+  height: 490px;
   position: relative;
   display: flex;
   align-items: center;
@@ -33,9 +33,6 @@
 
 /* 4K & Extra Large Screens (≥1600px) */
 @media (max-width: 1600px) {
-  .plots-section {
-    height: 430px;
-  }
   .plots-overlay {
     width: 70%;
   }

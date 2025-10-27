@@ -55,10 +55,10 @@ function Hero() {
     <>
       {/* Hero Section */}
       <section className="hero-section">
-        <div className="hero-overlay">
+        <div className="hero-overlay"><br /><br /><br />
           <h1>Properties to buy in Cuddalore</h1>
           <p>
-            <span>9K+</span> listings added daily and <span>63K+</span> total
+            <span>5K+</span> listings added daily and <span>63K+</span> total
             verified
           </p>
 

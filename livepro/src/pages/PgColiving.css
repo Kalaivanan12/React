@@ -3,7 +3,7 @@
 =================================*/
 .pg-section {
   background: url("/src/img/pgbanner.webp") center/cover no-repeat;
-  height: 420px;
+  height: 490px;
   position: relative;
   display: flex;
   align-items: center;
@@ -33,9 +33,6 @@
 
 /* Extra Large Screens (≥1400px) */
 @media (max-width: 1400px) {
-  .pg-section {
-    height: 400px;
-  }
   .pg-overlay {
     width: 75%;
   }
