@@ -221,9 +221,9 @@ function ValidationForm() {
                     style={styles.input}
                 >
                     <option value="">Select a Country</option>
-                    <option value="option1">India</option>
-                    <option value="option2">USA</option>
-                    <option value="option3">Canada</option>
+                    <option value="India">India</option>
+                    <option value="USA">USA</option>
+                    <option value="Canada">Canada</option>
                 </select>
                 {errors.dropdown && <p style={styles.error}>{errors.dropdown}</p>}
 
