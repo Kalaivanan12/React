@@ -211,7 +211,7 @@ function ValidationForm() {
                     style={styles.input}
                 />
                 {errors.file && <p style={styles.error}>{errors.file}</p>}
-                
+
                 {/* Country */}
                 <label>Country</label>
                 <select
