@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-// import "./ValidationForm.css";
 
 // Inline CSS
 const styles = {
@@ -129,7 +128,7 @@ function ValidationForm() {
 
     return (
         <div className="form-container" style={styles.container}>
-            <h2 style={styles.heading}>Validation Form</h2>
+            <h2 style={styles.heading}>Registration Form</h2>
             <form onSubmit={handleSubmit} style={styles.form}>
                 {/* Name */}
                 <label>Name:</label>
@@ -212,6 +211,8 @@ function ValidationForm() {
                     style={styles.input}
                 />
                 {errors.file && <p style={styles.error}>{errors.file}</p>}
+                
+                {/* Country */}
                 <label>Country</label>
                 <select
                     name="dropdown"
