@@ -1,92 +1,73 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Autoplay } from "swiper/modules";
-import { ChevronRight } from "lucide-react";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import "./PgColiving.css";
 import "../App.css";
 
 function PgColiving() {
-  const properties = [
+  const partners = [
     {
-      price: "₹35.41 L - 74.77 L",
-      name: "Adhya",
-      developer: "Purnaya Developers Private Ltd",
-      desc: "1, 2, 3 BHK Apartments · Saravanampatty",
-      image: "./src/img/saravanampatty.avif",
-      logo: "./src/img/dev1.png",
+      id: 1,
+      name: "HelloWorld",
+      img: "./src/img/po-live/medium1.avif",
+      desc: "Enjoy high comfort & privacy without any compromise",
+      btn: "View Properties",
     },
     {
-      price: "₹3.48 Cr - 3.89 Cr",
-      name: "Sreevatsa Poorna",
-      developer: "Sreevatsa Real Estates Pvt Ltd",
-      desc: "3 BHK Villa · Thudiyalur, Coimbatore",
-      image: "./src/img/thudiyalur.avif",
-      logo: "./src/img/dev2.png",
+      id: 2,
+      name: "CoLive",
+      img: "./src/img/po-live/medium2.avif",
+      desc: "More than a home - Join The Party at CoLive",
+      btn: "View Properties",
     },
     {
-      price: "₹16.67 L - 77.75 L",
-      name: "Echo Valley",
-      developer: "Adissia Developers Pvt Ltd",
-      desc: "Residential Plots · Pannimadai",
-      image: "./src/img/kalapatti.avif",
-      logo: "./src/img/dev3.png",
+      id: 3,
+      name: "NestAway",
+      img: "./src/img/po-live/medium3.avif",
+      desc: "Aim beyond basic and create a platform that goes beyond & providing easy living",
+      btn: "View Properties",
     },
     {
-      price: "₹1.15 Cr - 1.4 Cr",
-      name: "Sreevatsa Viswa",
-      developer: "Sreevatsa Real Estates Pvt Ltd",
-      desc: "3 BHK Apartment · Villankurichi",
-      image: "./src/img/peelamedu.avif",
-      logo: "./src/img/dev2.png",
+      id: 4,
+      name: "EasyLiving",
+      img: "./src/img/po-live/medium4.avif",
+      desc: "Easy living for everyone with flexible options and comfort",
+      btn: "View Properties",
     },
   ];
+
+  const scrollRef = React.useRef(null);
+
+  const scrollLeft = () => {
+    if (scrollRef.current) scrollRef.current.scrollBy({ left: -300, behavior: "smooth" });
+  };
+
+  const scrollRight = () => {
+    if (scrollRef.current) scrollRef.current.scrollBy({ left: 300, behavior: "smooth" });
+  };
+
   return (
     <>
       {/* Hero Section */}
       <section className="pg-section">
-        <div className="pg-overlay"><br />
+        <div className="pg-overlay">
+          <br />
           <h1>PG/Co-Living in Cuddalore</h1>
-          {/* Tabs Navigation */}
+
           <div className="search-wrap css-nc7111">
             <nav className="css-koo8qs">
               <ul className="navlist">
-                  <li>
-                    <NavLink className={({ isActive }) => (isActive ? "active" : "")} to="/" end>
-                      BUY
-                    </NavLink>
-                  </li>
-                <li>
-                  <NavLink className={({ isActive }) => (isActive ? "active" : "")} to="/rent">
-                    RENT
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink className={({ isActive }) => (isActive ? "active" : "")} to="/commercial">
-                    COMMERCIAL
-                  </NavLink>
-                </li>
+                <li><NavLink to="/" end>BUY</NavLink></li>
+                <li><NavLink to="/rent">RENT</NavLink></li>
+                <li><NavLink to="/commercial">COMMERCIAL</NavLink></li>
                 <span className="custom-underline">
-                <li>
-                  <NavLink className={({ isActive }) => (isActive ? "active" : "")} to="/pg">
-                    PG/CO-LIVING
-                  </NavLink>
-                </li>
+                  <li><NavLink to="/pg">PG/CO-LIVING</NavLink></li>
                 </span>
-                <li>
-                  <NavLink className={({ isActive }) => (isActive ? "active" : "")} to="/plots">
-                    PLOTS
-                  </NavLink>
-                </li>
+                <li><NavLink to="/plots">PLOTS</NavLink></li>
               </ul>
             </nav>
 
-            {/* Search Box */}
             <div className="search-box">
-              {/* Dropdown */}
               <div className="search-section dropdown-sec">
                 <select className="search-dropdown">
                   <option>Cuddalore</option>
@@ -96,7 +77,6 @@ function PgColiving() {
                 </select>
               </div>
 
-              {/* Input + Button */}
               <div className="search-section input-sec">
                 <input
                   type="text"
@@ -110,41 +90,47 @@ function PgColiving() {
         </div>
       </section>
 
-      {/* Carousel Section */}
-      <section className="featured-section">
-        <h2>Recommendations for you</h2>
-        <p>Event special project attractions</p>
-        <Swiper
-          modules={[Navigation, Pagination, Autoplay]}
-          spaceBetween={20}
-          slidesPerView={3}
-          navigation
-          pagination={{ clickable: true }}
-          autoplay={{ delay: 4000 }}
-          loop={true}
-          breakpoints={{
-            320: { slidesPerView: 1 },
-            768: { slidesPerView: 2 },
-            1024: { slidesPerView: 3 },
-          }}
-        >
-          {properties.map((property, index) => (
-            <SwiperSlide key={index}>
-              <div className="property-card">
-                <img src={property.image} alt={property.name} className="property-img" />
-                <div className="property-info">
-                  <h3>{property.name}</h3>
-                  <p>{property.desc}</p>
-                  <p className="price">{property.price}</p>
+      {/* Partners Section */}
+      <section className="coliving-section">
+        <div className="coliving-container">
+          <h2>
+            Exclusive <span>Co-Living Partners</span>
+          </h2>
+          <p>Co-living is the new way of Urban Living</p>
+
+          <button onClick={scrollLeft} className="scroll-btn left">
+            <ChevronLeft />
+          </button>
+
+          <div ref={scrollRef} className="scroll-container">
+            {partners.map((partner) => (
+              <div key={partner.id} className="partner-card">
+                {/* Left 70% */}
+                <div className="partner-left">
+                  <div className="partner-logo">
+                    <img src="./src/img/po-live/" alt="" />
+                    <h3>{partner.img}</h3>
+                  </div>
+                  <div className="partner-desc">
+                    <p>{partner.desc}</p>
+                  </div>
+                  <div className="partner-btn">
+                    <button>{partner.btn}</button>
+                  </div>
                 </div>
-                <div className="property-footer">
-                  <img src={property.logo} alt={property.developer} className="dev-logo" />
-                  <button className="contact-btn">Contact</button>
+
+                {/* Right 30% */}
+                <div className="partner-right">
+                  <img src={partner.img} alt={partner.name} />
                 </div>
               </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
+            ))}
+          </div>
+
+          <button onClick={scrollRight} className="scroll-btn right">
+            <ChevronRight />
+          </button>
+        </div>
       </section>
     </>
   );
