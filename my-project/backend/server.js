@@ -21,7 +21,7 @@ mongoose
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
-  .then(() => console.log("✅ MongoDB connected"))
+  .then(() => console.log(" MongoDB connected"))
   .catch((err) => console.error("MongoDB connection error:", err));
 
 // Create uploads folder if it doesn't exist
@@ -61,7 +61,7 @@ app.post("/api/register", upload.single("file"), async (req, res) => {
   try {
     const { name, email, password, phone, gender, terms, date, dropdown } = req.body;
 
-    // ✅ Store full file path (relative to server)
+    // Store full file path (relative to server)
     const filePath = req.file ? `uploads/${req.file.filename}` : null;
 
     // Save user to MongoDB
@@ -73,7 +73,7 @@ app.post("/api/register", upload.single("file"), async (req, res) => {
       gender,
       date: date ? new Date(date) : new Date(),
       dropdown,
-      file: filePath, // <-- save full file path
+      file: filePath, 
       terms: terms === "true" || terms === true,
     });
 
@@ -84,12 +84,12 @@ app.post("/api/register", upload.single("file"), async (req, res) => {
       user: newUser,
     });
   } catch (err) {
-    console.error("❌ Error saving user:", err);
+    console.error(" Error saving user:", err);
     res.status(500).json({ message: "Server error" });
   }
 });
 
 // Start server
 app.listen(PORT, () => {
-  console.log(`🚀 Server running on http://localhost:${PORT}`);
+  console.log(` Server running on http://localhost:${PORT}`);
 });
