@@ -85,7 +85,8 @@
   font-weight: 600;
   color: #111;
 }
-.news{
+
+.news {
   width: 100%;
   max-width: 1024px;
   margin: 80px auto;
@@ -111,7 +112,10 @@
   }
 
   .plots-overlay h1 {
-    font-size: 40px;
+    font-weight: 500;
+    font-size: 30px;
+    position: relative;
+    right: 16%;
   }
 
   .plot-section {
