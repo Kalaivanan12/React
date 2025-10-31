@@ -4,132 +4,27 @@
 .plots-section {
   background: url("/src/img/plotsbanner.webp") center / cover no-repeat;
   height: 490px;
-  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   color: #fff;
+  position: relative;
 }
 
 .plots-overlay {
   padding: 50px 20px;
   border-radius: 20px;
-  width: 80%;
+  width: 85%;
   max-width: 1100px;
 }
 
 .plots-overlay h1 {
-  font-size: 30px;
-  font-weight: 500;
-  margin-bottom: 10px;
-  position: relative;
-  left: -155px;
+  font-size: 36px;
+  font-weight: 600;
+  margin-bottom: 20px;
 }
 
-/* ===============================
-   Responsive Styles
-=================================*/
-
-/* 4K & Extra Large Screens (≥1600px) */
-@media (max-width: 1600px) {
-  .plots-overlay {
-    width: 70%;
-  }
-  .plots-overlay h1 {
-    font-size: 34px;
-    left: -120px;
-  }
-}
-
-/* Large Desktops (≤1200px) */
-@media (max-width: 1200px) {
-  .plots-section {
-    height: 400px;
-  }
-  .plots-overlay {
-    width: 85%;
-    padding: 45px 20px;
-  }
-  .plots-overlay h1 {
-    font-size: 30px;
-    left: -100px;
-  }
-}
-
-/* Laptops / Medium Screens (≤992px) */
-@media (max-width: 992px) {
-  .plots-section {
-    height: 370px;
-  }
-  .plots-overlay {
-    width: 90%;
-    padding: 40px 18px;
-  }
-  .plots-overlay h1 {
-    font-size: 27px;
-    left: -70px;
-  }
-}
-
-/* Tablets (≤768px) */
-@media (max-width: 768px) {
-  .plots-section {
-    height: 340px;
-  }
-  .plots-overlay {
-    width: 95%;
-    padding: 35px 15px;
-  }
-  .plots-overlay h1 {
-    font-size: 24px;
-    left: -40px;
-  }
-}
-
-/* Large Mobiles (≤576px) */
-@media (max-width: 576px) {
-  .plots-section {
-    height: 320px;
-    padding: 0 10px;
-  }
-  .plots-overlay {
-    width: 95%;
-    padding: 30px 12px;
-  }
-  .plots-overlay h1 {
-    font-size: 22px;
-    left: -20px;
-  }
-}
-
-/* Small Mobiles (≤400px) */
-@media (max-width: 400px) {
-  .plots-section {
-    height: 300px;
-  }
-  .plots-overlay {
-    padding: 25px 10px;
-  }
-  .plots-overlay h1 {
-    font-size: 20px;
-    left: -5px;
-  }
-}
-
-/* Extra Small (≤320px) */
-@media (max-width: 320px) {
-  .plots-section {
-    height: 280px;
-  }
-  .plots-overlay {
-    padding: 20px 8px;
-  }
-  .plots-overlay h1 {
-    font-size: 18px;
-    left: 0;
-  }
-}
 /* ===============================
    Plot Collections Section
 =================================*/
@@ -139,73 +34,194 @@
   text-align: center;
 }
 
-/* Section Header */
 .plot-header h2 {
   position: relative;
-  right: 30%;
-  font-size: 30px;
+  right: 32%;
+  font-size: 32px;
   font-weight: 500;
-  margin-bottom: 10px;
   color: #222;
+  margin-bottom: 10px;
 }
 
 .plot-header h2 span {
-  font-weight: 700;
-  color: #0a0a0a;
+  font-weight: 600;
+  color: #040404;
 }
 
 .plot-header p {
   position: relative;
-  right: 28%;
-  font-size: 14px;
+  right: 29.3%;
+  font-size: 16px;
   color: #666;
-  margin-bottom: 40px;
+  margin-bottom: 50px;
 }
 
 /* Grid Layout */
 .plot-grid {
   display: inline-flex;
-  gap: 20px;
+  gap: 25px;
 }
 
 /* Plot Card */
 .plot-card {
   border-radius: 16px;
   text-align: center;
-  height: 100%;
+  height: 120%;
   width: 100%;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
 }
 
 .plot-card img {
-  position: relative;
-  height: 250px;
+  width: 100%;
+  height: 275px;
+  object-fit: cover;
   border-radius: 12px;
   margin-bottom: 15px;
 }
+
+.plot-card h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #111;
+}
+
 
 /* ===============================
    Responsive Styles
 =================================*/
 
-/* Tablets */
-@media (max-width: 768px) {
+/* 4K & Large Screens (≥1600px) */
+@media (max-width: 1600px) {
+  .plots-overlay {
+    width: 75%;
+  }
+
+  .plots-overlay h1 {
+    font-size: 40px;
+  }
+
   .plot-section {
-    padding: 60px 6%;
+    padding: 90px 8%;
+  }
+}
+
+/* Large Desktops (≤1200px) */
+@media (max-width: 1200px) {
+  .plots-section {
+    height: 420px;
+  }
+
+  .plots-overlay {
+    width: 85%;
+    padding: 45px 25px;
+  }
+
+  .plots-overlay h1 {
+    font-size: 34px;
+  }
+
+  .plot-section {
+    padding: 80px 8%;
+  }
+
+  .plot-header h2 {
+    font-size: 30px;
+  }
+
+  .plot-card img {
+    height: 210px;
+  }
+}
+
+/* Laptops (≤992px) */
+@media (max-width: 992px) {
+  .plots-section {
+    height: 380px;
+  }
+
+  .plots-overlay {
+    width: 90%;
+    padding: 40px 20px;
+  }
+
+  .plots-overlay h1 {
+    font-size: 30px;
+  }
+
+  .plot-section {
+    padding: 70px 6%;
   }
 
   .plot-header h2 {
     font-size: 28px;
   }
 
+  .plot-header p {
+    font-size: 15px;
+  }
+
   .plot-card img {
-    height: 160px;
+    height: 190px;
   }
 }
 
-/* Mobiles */
-@media (max-width: 480px) {
+/* Tablets (≤768px) */
+@media (max-width: 768px) {
+  .plots-section {
+    height: 340px;
+  }
+
+  .plots-overlay {
+    width: 95%;
+    padding: 35px 15px;
+  }
+
+  .plots-overlay h1 {
+    font-size: 26px;
+  }
+
+  .plot-section {
+    padding: 60px 5%;
+  }
+
+  .plot-header h2 {
+    font-size: 26px;
+  }
+
+  .plot-header p {
+    font-size: 14px;
+  }
+
+  .plot-grid {
+    gap: 20px;
+  }
+
+  .plot-card {
+    max-width: 240px;
+  }
+
+  .plot-card img {
+    height: 170px;
+  }
+}
+
+/* Large Mobiles (≤576px) */
+@media (max-width: 576px) {
+  .plots-section {
+    height: 320px;
+    padding: 0 10px;
+  }
+
+  .plots-overlay {
+    width: 95%;
+    padding: 30px 12px;
+  }
+
+  .plots-overlay h1 {
+    font-size: 22px;
+  }
+
   .plot-section {
     padding: 50px 5%;
   }
@@ -215,7 +231,7 @@
   }
 
   .plot-header p {
-    font-size: 14px;
+    font-size: 13px;
   }
 
   .plot-card {
@@ -224,7 +240,68 @@
   }
 
   .plot-card img {
-    height: 140px;
+    height: 160px;
   }
 
+  .plot-card h3 {
+    font-size: 16px;
+  }
+}
+
+/* Small Mobiles (≤400px) */
+@media (max-width: 400px) {
+  .plots-section {
+    height: 300px;
+  }
+
+  .plots-overlay {
+    padding: 25px 10px;
+  }
+
+  .plots-overlay h1 {
+    font-size: 20px;
+  }
+
+  .plot-section {
+    padding: 40px 4%;
+  }
+
+  .plot-header h2 {
+    font-size: 22px;
+  }
+
+  .plot-card img {
+    height: 140px;
+  }
+}
+
+/* Extra Small (≤320px) */
+@media (max-width: 320px) {
+  .plots-section {
+    height: 270px;
+  }
+
+  .plots-overlay {
+    padding: 20px 8px;
+  }
+
+  .plots-overlay h1 {
+    font-size: 18px;
+  }
+
+  .plot-section {
+    padding: 35px 3%;
+  }
+
+  .plot-header h2 {
+    font-size: 20px;
+  }
+
+  .plot-header p {
+    font-size: 12px;
+  }
+
+  .plot-card img {
+    height: 120px;
+  }
 }
