@@ -158,6 +158,11 @@ function Plots() {
             </div>
           ))}
         </div>
+        <div>
+          <div id="newsArticles" class="news">
+            <img className="newsimg" decoding="async" fetchPriority="low" src="./src/img/plots/gptw.png" alt="" />
+          </div>
+        </div>
       </section>
     </>
   );

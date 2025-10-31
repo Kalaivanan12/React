@@ -85,6 +85,19 @@
   font-weight: 600;
   color: #111;
 }
+.news{
+  width: 100%;
+  max-width: 1024px;
+  margin: 80px auto;
+}
+
+.newsimg {
+  animation: 300ms linear 0s 1 normal none running animation-1qbobka;
+  margin: 0px 200px 80px;
+  height: 440px;
+  width: calc(100% - 400px);
+  object-fit: contain;
+}
 
 
 /* ===============================
