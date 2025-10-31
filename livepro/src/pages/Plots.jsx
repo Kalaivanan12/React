@@ -2,13 +2,15 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
-import { ChevronRight } from "lucide-react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "./Plots.css";
 import "../App.css";
 
+// ===========================
+// Plots Component
+// ===========================
 function Plots() {
   const properties = [
     {
@@ -44,21 +46,48 @@ function Plots() {
       logo: "./src/img/dev2.png",
     },
   ];
+
+  const plots = [
+    {
+      title: "Corner Plots",
+      img: "./src/img/plots/cornerPlots.jpg",
+      bg: "#f2e5ff",
+    },
+    {
+      title: "Boundary Wall Plots",
+      img: "./src/img/plots/BoundaryWalls.jpg",
+      bg: "#fbe1ec",
+    },
+    {
+      title: "Below ₹30Lakhs Plots",
+      img: "./src/img/plots/below.jpg",
+      bg: "#cff7f3",
+    },
+    {
+      title: "East Facing Plots",
+      img: "./src/img/plots/eastFacing.jpg",
+      bg: "#fff0d6",
+    },
+  ];
+
   return (
     <>
-      {/* Plots Section */}
+      {/* ===========================
+          Hero + Search Tabs Section
+      =========================== */}
       <section className="plots-section">
-        <div className="plots-overlay"><br />
+        <div className="plots-overlay">
+          <br />
           <h1>Plots for sale in Cuddalore</h1>
-          {/* Tabs Navigation */}
+
           <div className="search-wrap css-nc7111">
             <nav className="css-koo8qs">
               <ul className="navlist">
-                  <li>
-                    <NavLink className={({ isActive }) => (isActive ? "active" : "")} to="/" end>
-                      BUY
-                    </NavLink>
-                  </li>
+                <li>
+                  <NavLink className={({ isActive }) => (isActive ? "active" : "")} to="/" end>
+                    BUY
+                  </NavLink>
+                </li>
                 <li>
                   <NavLink className={({ isActive }) => (isActive ? "active" : "")} to="/rent">
                     RENT
@@ -75,18 +104,17 @@ function Plots() {
                   </NavLink>
                 </li>
                 <span className="custom-underline">
-                <li>
-                  <NavLink className={({ isActive }) => (isActive ? "active" : "")} to="/plots">
-                    PLOTS
-                  </NavLink>
-                </li>
+                  <li>
+                    <NavLink className={({ isActive }) => (isActive ? "active" : "")} to="/plots">
+                      PLOTS
+                    </NavLink>
+                  </li>
                 </span>
               </ul>
             </nav>
 
             {/* Search Box */}
             <div className="search-box">
-              {/* Dropdown */}
               <div className="search-section dropdown-sec">
                 <select className="search-dropdown">
                   <option>Cuddalore</option>
@@ -96,7 +124,6 @@ function Plots() {
                 </select>
               </div>
 
-              {/* Input + Button */}
               <div className="search-section input-sec">
                 <input
                   type="text"
@@ -110,41 +137,27 @@ function Plots() {
         </div>
       </section>
 
-      {/* Carousel Section */}
-      <section className="featured-section">
-        <h2>Recommendations for you</h2>
-        <p>Event special project attractions</p>
-        <Swiper
-          modules={[Navigation, Pagination, Autoplay]}
-          spaceBetween={20}
-          slidesPerView={3}
-          navigation
-          pagination={{ clickable: true }}
-          autoplay={{ delay: 4000 }}
-          loop={true}
-          breakpoints={{
-            320: { slidesPerView: 1 },
-            768: { slidesPerView: 2 },
-            1024: { slidesPerView: 3 },
-          }}
-        >
-          {properties.map((property, index) => (
-            <SwiperSlide key={index}>
-              <div className="property-card">
-                <img src={property.image} alt={property.name} className="property-img" />
-                <div className="property-info">
-                  <h3>{property.name}</h3>
-                  <p>{property.desc}</p>
-                  <p className="price">{property.price}</p>
-                </div>
-                <div className="property-footer">
-                  <img src={property.logo} alt={property.developer} className="dev-logo" />
-                  <button className="contact-btn">Contact</button>
-                </div>
-              </div>
-            </SwiperSlide>
+      {/* ===========================
+          Plot Collections Section
+      =========================== */}
+      <section className="plot-section">
+        <div className="plot-header">
+          <h2>
+            Plot <span>Collections</span>
+          </h2>
+          <p>Exclusive showcase of categorized plots</p>
+        </div>
+
+        <div className="plot-grid">
+          {plots.map((plot, index) => (
+            <div
+              key={index}
+              className="plot-card"
+            >
+              <img src={plot.img} alt={plot.title} />
+            </div>
           ))}
-        </Swiper>
+        </div>
       </section>
     </>
   );
