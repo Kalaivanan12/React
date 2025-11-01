@@ -103,7 +103,7 @@
 }
 
 .rent-container {
-  max-width: 1200px;
+  max-width: 1000px;
   margin: auto;
 }
 
@@ -145,7 +145,7 @@
 
 /* Cards Section */
 .rent-cards {
-  display: grid;
+  display: flex;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 25px;
 }
@@ -165,13 +165,17 @@
 }
 
 .rent-icon {
-  margin-bottom: 20px;
+  margin-bottom: -20px;
 }
 
 .rent-icon img {
+  position: relative;
+  top: -30px;
+  right: 20px;
   width: 60px;
   height: 60px;
   object-fit: contain;
+  overflow: hidden;
 }
 
 .rent-card h3 {
@@ -273,9 +277,10 @@
 
 .rent-sell-banner-extended {
   position: relative;
+  right: 0px;
   margin: 0 auto;
-  width: 100%;
-  height: 200px;
+  width: 103%;
+  height: 130px;
   border-radius: 18px;
   overflow: hidden;
   box-shadow: 0 4px 25px rgba(0, 0, 0, 0.05);

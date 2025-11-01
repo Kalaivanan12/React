@@ -41,7 +41,7 @@
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 1000px;
   margin: auto;
 }
 
@@ -78,7 +78,7 @@
 
 /* ===== Cards Grid ===== */
 .cards {
-  display: grid;
+  display: flex;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 25px;
 }
@@ -93,28 +93,31 @@
 }
 
 .card:hover {
-  transform: translateY(-5px);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
 }
 
 .icon {
-  margin-bottom: 20px;
+  margin-bottom: -20px;
 }
 
 .icon img {
+  position: relative;
+  top: -30px;
+  right: 20px;
   width: 60px;
   height: 60px;
   object-fit: contain;
+  overflow: hidden;
 }
 
 .card h3 {
-  font-size: 18px;
+  font-size: 12px;
   color: #222;
-  margin-bottom: 8px;
+  /* margin-bottom: 8px; */
 }
 
 .card p {
-  font-size: 15px;
+  font-size: 12px;
   color: #666;
 }
 
@@ -204,9 +207,9 @@
 
 .sell-banner-extended {
   position: relative;
-  right: 55px;
+  right: 0px;
   margin: 0 auto;
-  width: 113%;
+  width: 103%;
   height: 130px;
   border-radius: 18px;
   overflow: hidden;
