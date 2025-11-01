@@ -403,7 +403,7 @@
     padding: 60px 60px;
   }
   .popular-localities {
-    padding: 10px 250px;
+    padding: 0px 230px;
   }
 }
 
@@ -433,9 +433,9 @@
     width: 48%;
   }
 
-  .popular-localities {
-    padding: 10px 180px;
-  }
+   .popular-localities {
+        padding: 0px 130px;
+    }
 
   .mega-logo {
     left: 180px;
@@ -549,7 +549,7 @@
   }
 
   .popular-localities {
-    padding: 10px 40px;
+    padding: 0px 100px;
   }
 
   .heading {
@@ -663,7 +663,7 @@
   }
 
   .popular-localities {
-    padding: 10px 20px;
+    padding: 17px 20px;
   }
 
   .heading {
