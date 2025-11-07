@@ -1,15 +1,28 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Navbar.css";
 import { FaMobileAlt, FaHeart, FaBars } from "react-icons/fa";
 import { MdOutlineLibraryBooks } from "react-icons/md";
-import { CgProfile } from "react-icons/cg";
 import Dashboard from "./Dashboard";
 
 function Navbar() {
   const [isDashboardOpen, setIsDashboardOpen] = useState(false);
+  const [isSticky, setIsSticky] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 500) {
+        setIsSticky(true);
+      } else {
+        setIsSticky(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <header className="navbar">
+    <header className={`navbar ${isSticky ? "sticky" : ""}`}>
       <div className="navbar-left">
         <img src="./src/img/navlogo.webp" alt="Housing.com" className="logo" />
       </div>
