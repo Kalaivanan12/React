@@ -20,7 +20,7 @@
 }
 
 .rent-overlay h1 {
- /* font-size: 10px;
+  /* font-size: 10px;
   font-weight: 50; */
   margin-bottom: 10px;
 }
@@ -66,11 +66,11 @@
   gap: 12px;
   overflow-x: auto;
   padding-bottom: 5px;
-  scrollbar-width: none; 
+  scrollbar-width: none;
 }
 
 .rent-localities-scroll::-webkit-scrollbar {
-  display: none; 
+  display: none;
 }
 
 .rent-locality-btn {
@@ -91,6 +91,7 @@
 .rent-locality-btn:hover {
   background: rgba(255, 255, 255, 0.3);
 }
+
 /* ===============================
    RENT SECTION — Housing Edge, Research & Sell Property
 =================================*/
@@ -237,6 +238,7 @@
   text-align: center;
   transition: all 0.3s ease;
 }
+
 .rent-research-section h4 {
   position: relative;
   right: 29%;
@@ -384,24 +386,30 @@
   .rent-section {
     height: 500px;
   }
+
   .rent-overlay {
     max-width: 1300px;
     padding: 60px 30px;
   }
+
   .rent-overlay h1 {
     font-size: 30px;
     font-weight: 500;
   }
+
   .rent-overlay p {
     font-size: 15px;
   }
+
   .popular-localities-rent {
     padding: 10px 285px;
   }
+
   .rent-heading {
     font-size: 15px;
     left: 180px;
   }
+
   .rent-locality-btn {
     font-size: 14px;
     padding: 10px 20px;
@@ -413,19 +421,24 @@
   .rent-section {
     height: 460px;
   }
+
   .rent-overlay h1 {
     font-size: 20px;
   }
+
   .rent-overlay p {
     font-size: 12px;
   }
+
   .popular-localities-rent {
     padding: 10px 300px;
   }
+
   .rent-heading {
     font-size: 14px;
     left: 120px;
   }
+
   .rent-locality-btn {
     font-size: 13px;
   }
@@ -436,21 +449,26 @@
   .rent-section {
     height: 400px;
   }
+
   .rent-overlay {
     width: 90%;
     padding: 40px 20px;
   }
+
   .rent-overlay h1 {
     font-size: 30px;
-    font-weight:650;
+    font-weight: 650;
   }
+
   .rent-overlay p {
     font-size: 15px;
   }
+
   .popular-localities-rent {
     padding: 10px 100px;
     text-align: center;
   }
+
   .rent-heading {
     left: 0;
     top: 0;
@@ -459,6 +477,7 @@
     float: none;
     margin-bottom: 10px;
   }
+
   .rent-localities-scroll {
     float: none;
     justify-content: center;
@@ -471,20 +490,25 @@
     height: 340px;
     padding: 0 10px;
   }
+
   .rent-overlay {
     width: 95%;
     padding: 30px 15px;
   }
+
   .rent-overlay h1 {
     font-size: 24px;
   }
+
   .rent-overlay p {
     font-size: 14px;
   }
+
   .popular-localities-rent {
     padding: 10px 20px;
     text-align: center;
   }
+
   .rent-heading {
     font-size: 12px;
     position: static;
@@ -492,11 +516,13 @@
     margin-bottom: 10px;
     justify-content: center;
   }
+
   .rent-localities-scroll {
     float: none;
     justify-content: flex-start;
     gap: 10px;
   }
+
   .rent-locality-btn {
     font-size: 11px;
     padding: 6px 12px;
@@ -508,31 +534,39 @@
   .rent-section {
     height: 300px;
   }
+
   .rent-overlay {
     width: 100%;
     padding: 25px 10px;
   }
+
   .rent-overlay h1 {
     font-size: 20px;
     line-height: 1.2;
   }
+
   .rent-overlay p {
     font-size: 13px;
   }
+
   .popular-localities-rent {
     padding: 10px;
   }
+
   .rent-heading {
     font-size: 11px;
   }
+
   .rent-localities-scroll {
     gap: 8px;
   }
+
   .rent-locality-btn {
     font-size: 10px;
     padding: 5px 10px;
   }
 }
+
 /* ===============================
    Additional Responsive Fixes (Rent Page)
 =================================*/
@@ -542,24 +576,30 @@
   .rent-section {
     height: 540px;
   }
+
   .rent-overlay {
     max-width: 1400px;
     padding: 70px 40px;
   }
+
   .rent-overlay h1 {
     font-size: 34px;
     font-weight: 600;
   }
+
   .rent-overlay p {
     font-size: 17px;
   }
+
   .popular-localities-rent {
     padding: 10px 360px;
   }
+
   .rent-heading {
     font-size: 16px;
     left: 220px;
   }
+
   .rent-locality-btn {
     font-size: 15px;
     padding: 10px 22px;
@@ -571,29 +611,37 @@
   .rent-section {
     height: 420px;
   }
+
   .rent-overlay {
     width: 85%;
   }
+
   .rent-overlay h1 {
     font-size: 26px;
   }
+
   .rent-overlay p {
     font-size: 14px;
   }
+
   .rent-locality-btn {
     font-size: 12px;
     padding: 7px 14px;
   }
+
   .rent-cards {
     flex-wrap: wrap;
     justify-content: center;
   }
+
   .rent-card {
     width: 45%;
   }
+
   .rent-research-cards {
     justify-content: center;
   }
+
   .rent-research-card {
     width: 46%;
   }
@@ -605,26 +653,33 @@
     width: 90%;
     padding: 40px 18px;
   }
+
   .rent-overlay h1 {
     font-size: 24px;
   }
+
   .rent-overlay p {
     font-size: 13px;
   }
+
   .popular-localities-rent {
     padding: 10px 60px;
   }
+
   .rent-locality-btn {
     font-size: 11px;
     padding: 6px 12px;
   }
+
   .rent-cards {
     flex-wrap: wrap;
     justify-content: center;
   }
+
   .rent-card {
     width: 48%;
   }
+
   .rent-research-card {
     width: 48%;
   }
@@ -635,35 +690,44 @@
   .rent-section {
     height: 320px;
   }
+
   .rent-overlay {
     width: 95%;
     padding: 25px 12px;
   }
+
   .rent-overlay h1 {
     font-size: 22px;
   }
+
   .rent-overlay p {
     font-size: 13px;
   }
+
   .popular-localities-rent {
     padding: 10px 15px;
   }
+
   .rent-heading {
     font-size: 11px;
   }
+
   .rent-locality-btn {
     font-size: 10px;
     padding: 5px 10px;
   }
+
   .rent-cards,
   .rent-research-cards {
     flex-direction: column;
     align-items: center;
   }
+
   .rent-card,
   .rent-research-card {
     width: 90%;
   }
+
   .rent-sell-banner-extended {
     width: 100%;
   }
@@ -674,29 +738,37 @@
   .rent-section {
     height: 280px;
   }
+
   .rent-overlay h1 {
     font-size: 18px;
   }
+
   .rent-overlay p {
     font-size: 12px;
   }
+
   .rent-heading {
     font-size: 10px;
   }
+
   .rent-locality-btn {
     font-size: 9px;
     padding: 4px 8px;
   }
+
   .rent-card,
   .rent-research-card {
     width: 100%;
   }
-  .rent-cards{
+
+  .rent-cards {
     display: flow-root;
   }
+
   .rent-sell-banner-content p {
     font-size: 13px;
   }
+
   .rent-sell-btn {
     font-size: 12px;
     padding: 8px 18px;
@@ -708,20 +780,24 @@
   .rent-overlay {
     padding: 20px 10px;
   }
+
   .rent-overlay h1 {
     position: relative;
     top: 23px;
     font-size: 16px;
   }
+
   .rent-overlay p {
     position: relative;
     top: 15px;
     font-size: 10px;
   }
+
   .rent-locality-btn {
     font-size: 8px;
     padding: 3px 6px;
   }
+
   .rent-sell-btn {
     font-size: 11px;
     padding: 6px 14px;

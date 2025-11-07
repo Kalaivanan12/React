@@ -280,6 +280,7 @@
   .research-cards {
     gap: 20px;
   }
+
   .research-card {
     width: 280px;
   }
@@ -289,6 +290,7 @@
   .research-section h2 {
     font-size: 24px;
   }
+
   .research-card {
     width: 100%;
   }
@@ -427,29 +429,34 @@
     font-size: 10px;
   }
 }
+
 /* ===============================
    Additional Responsive Fixes
 =================================*/
 
 /* ----------- Large Screens (1200px+) ----------- */
 @media (max-width: 1600px) {
-    .popular-localities {
-        padding: 0px 230px;
-    }
+  .popular-localities {
+    padding: 0px 230px;
+  }
 }
+
 @media (min-width: 1200px) {
   .hero-overlay h1 {
     font-size: 36px;
   }
+
   .hero-overlay p {
     font-size: 18px;
   }
+
   .cards {
     justify-content: center;
   }
+
   .popular-localities {
-        padding: 0px 130px;
-    }
+    padding: 0px 130px;
+  }
 }
 
 /* ----------- Laptop / Tablet Landscape (992px–1199px) ----------- */
@@ -459,16 +466,19 @@
     justify-content: center;
     gap: 20px;
   }
+
   .card {
     width: 45%;
   }
+
   .research-cards {
     justify-content: center;
   }
+
   .research-card {
     width: 45%;
   }
-  
+
   .sell-banner-extended {
     width: 100%;
   }
@@ -480,21 +490,26 @@
     width: 90%;
     padding: 40px 20px;
   }
+
   .cards {
     flex-wrap: wrap;
     gap: 18px;
     justify-content: center;
   }
+
   .card {
     width: 48%;
   }
+
   .research-cards {
     flex-direction: row;
     justify-content: center;
   }
+
   .research-card {
     width: 46%;
   }
+
   .sell-banner-content p {
     font-size: 15px;
   }
@@ -506,23 +521,29 @@
     flex-direction: column;
     align-items: center;
   }
+
   .cards {
     flex-direction: column;
     align-items: center;
   }
+
   .card {
     width: 90%;
   }
+
   .research-cards {
     flex-direction: column;
     align-items: center;
   }
+
   .research-card {
     width: 90%;
   }
+
   .sell-banner-extended {
     height: 180px;
   }
+
   .sell-banner-content p {
     font-size: 14px;
   }
@@ -533,41 +554,51 @@
   .hero-section {
     height: 300px;
   }
+
   .hero-overlay h1 {
     position: relative;
     top: 20px;
     font-size: 15px;
     font-weight: 900;
   }
+
   .hero-overlay p {
     position: relative;
     top: 10px;
     font-size: 10px;
   }
+
   .header h2 {
     font-size: 22px;
   }
+
   .header p {
     font-size: 14px;
   }
+
   .cards {
     flex-direction: column;
     align-items: center;
     gap: 15px;
   }
+
   .card {
     width: 100%;
   }
+
   .research-card {
     width: 100%;
   }
+
   .sell-banner-content p {
     font-size: 13px;
   }
+
   .sell-btn {
     font-size: 13px;
     padding: 8px 18px;
   }
+
   .popular-localities {
     position: relative;
     padding: 8px 20px;
@@ -580,16 +611,19 @@
   .hero-overlay {
     padding: 20px 10px;
   }
+
   .hero-overlay h1 {
     position: relative;
     top: 20px;
     font-size: 16px;
   }
+
   .hero-overlay p {
     font-size: 10px;
     position: relative;
     top: 15px;
   }
+
   .sell-btn {
     font-size: 12px;
     padding: 7px 15px;

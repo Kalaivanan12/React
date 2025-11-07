@@ -65,17 +65,17 @@ function Rent() {
           <div className="search-wrap css-nc7111">
             <nav className="css-koo8qs">
               <ul className="navlist">
-                  <li>
-                    <NavLink className={({ isActive }) => (isActive ? "active" : "")} to="/" end>
-                      BUY
-                    </NavLink>
-                  </li>
-                <span className="custom-underline">
                 <li>
-                  <NavLink className={({ isActive }) => (isActive ? "active" : "")} to="/rent">
-                    RENT
+                  <NavLink className={({ isActive }) => (isActive ? "active" : "")} to="/" end>
+                    BUY
                   </NavLink>
                 </li>
+                <span className="custom-underline">
+                  <li>
+                    <NavLink className={({ isActive }) => (isActive ? "active" : "")} to="/rent">
+                      RENT
+                    </NavLink>
+                  </li>
                 </span>
                 <li>
                   <NavLink className={({ isActive }) => (isActive ? "active" : "")} to="/commercial">
@@ -133,98 +133,98 @@ function Rent() {
 
       {/* Carousel Section */}
       <section className="rent-housing-edge">
-  <div className="rent-container">
-    <div className="rent-header">
-      <div>
-        <h2>Housing Edge</h2>
-        <p>Explore property related services</p>
-      </div>
-      <a href="#" className="rent-btn">
-        Explore Services →
-      </a>
-    </div>
+        <div className="rent-container">
+          <div className="rent-header">
+            <div>
+              <h2>Housing Edge</h2>
+              <p>Explore property related services</p>
+            </div>
+            <a href="#" className="rent-btn">
+              Explore Services →
+            </a>
+          </div>
 
-    <div className="rent-cards">
-      <div className="rent-card">
-        <div className="rent-icon">
-          <img src="./src/logo/payRent.svg" alt="Credit" />
-        </div>
-        <h3>Pay on Credit</h3>
-        <p>Pay your rent using Credit Card</p>
-      </div>
+          <div className="rent-cards">
+            <div className="rent-card">
+              <div className="rent-icon">
+                <img src="./src/logo/payRent.svg" alt="Credit" />
+              </div>
+              <h3>Pay on Credit</h3>
+              <p>Pay your rent using Credit Card</p>
+            </div>
 
-      <div className="rent-card">
-        <div className="rent-icon">
-          <img src="./src/logo/housingPremium.svg" alt="Premium" />
-        </div>
-        <h3>Housing Premium</h3>
-        <p>Instant access to zero brokerage properties</p>
-      </div>
+            <div className="rent-card">
+              <div className="rent-icon">
+                <img src="./src/logo/housingPremium.svg" alt="Premium" />
+              </div>
+              <h3>Housing Premium</h3>
+              <p>Instant access to zero brokerage properties</p>
+            </div>
 
-      <div className="rent-card">
-        <div className="rent-icon">
-          <img src="./src/logo/homeLoans.svg" alt="Home Loans" />
-        </div>
-        <h3>Home Loans</h3>
-        <p>Lowest Interest rate offers</p>
-      </div>
+            <div className="rent-card">
+              <div className="rent-icon">
+                <img src="./src/logo/homeLoans.svg" alt="Home Loans" />
+              </div>
+              <h3>Home Loans</h3>
+              <p>Lowest Interest rate offers</p>
+            </div>
 
-      <div className="rent-card">
-        <div className="rent-icon">
-          <img src="./src/logo/housingProtect.svg" alt="Protect" />
-        </div>
-        <h3>Housing Protect</h3>
-        <p>Protection against cyber frauds</p>
-      </div>
-    </div>
-  </div>
-
-  {/* Research Section */}
-  <div className="rent-research-container">
-    <section className="rent-research-section">
-      <h2>Research and Insights</h2>
-      <h4>Explore useful real estate insights</h4>
-
-      <div className="rent-research-cards">
-        <div className="rent-research-card">
-          <img src="./src/logo/priceTrends.svg" alt="Price Trends" />
-          <h3>Price Trends ›</h3>
-          <p>Find property rates & price trends of top locations</p>
+            <div className="rent-card">
+              <div className="rent-icon">
+                <img src="./src/logo/housingProtect.svg" alt="Protect" />
+              </div>
+              <h3>Housing Protect</h3>
+              <p>Protection against cyber frauds</p>
+            </div>
+          </div>
         </div>
 
-        <div className="rent-research-card">
-          <img src="./src/logo/cityInsights.svg" alt="City Insights" />
-          <h3>City Insights ›</h3>
-          <p>Get to know about top cities before you invest</p>
+        {/* Research Section */}
+        <div className="rent-research-container">
+          <section className="rent-research-section">
+            <h2>Research and Insights</h2>
+            <h4>Explore useful real estate insights</h4>
+
+            <div className="rent-research-cards">
+              <div className="rent-research-card">
+                <img src="./src/logo/priceTrends.svg" alt="Price Trends" />
+                <h3>Price Trends ›</h3>
+                <p>Find property rates & price trends of top locations</p>
+              </div>
+
+              <div className="rent-research-card">
+                <img src="./src/logo/cityInsights.svg" alt="City Insights" />
+                <h3>City Insights ›</h3>
+                <p>Get to know about top cities before you invest</p>
+              </div>
+
+              <div className="rent-research-card">
+                <img src="./src/logo/housingResearch.svg" alt="Housing Research" />
+                <h3>Housing Research ›</h3>
+                <p>Find reports on Indian residential market</p>
+              </div>
+            </div>
+          </section>
+
+          {/* Sell Property Section */}
+          <section className="rent-sell-property-section">
+            <h2 className="rent-sell-heading">Have a property to sell?</h2>
+
+            <div className="rent-sell-banner-extended">
+              <img
+                src="/src/img/background.png"
+                alt="Sell property banner"
+                className="rent-sell-banner-bg"
+              />
+
+              <div className="rent-sell-banner-content">
+                <p>List your property & connect with clients faster!</p>
+                <button className="rent-sell-btn">Sell your property</button>
+              </div>
+            </div>
+          </section>
         </div>
-
-        <div className="rent-research-card">
-          <img src="./src/logo/housingResearch.svg" alt="Housing Research" />
-          <h3>Housing Research ›</h3>
-          <p>Find reports on Indian residential market</p>
-        </div>
-      </div>
-    </section>
-
-    {/* Sell Property Section */}
-    <section className="rent-sell-property-section">
-      <h2 className="rent-sell-heading">Have a property to sell?</h2>
-
-      <div className="rent-sell-banner-extended">
-        <img
-          src="/src/img/background.png"
-          alt="Sell property banner"
-          className="rent-sell-banner-bg"
-        />
-
-        <div className="rent-sell-banner-content">
-          <p>List your property & connect with clients faster!</p>
-          <button className="rent-sell-btn">Sell your property</button>
-        </div>
-      </div>
-    </section>
-  </div>
-</section>
+      </section>
 
     </>
   );
