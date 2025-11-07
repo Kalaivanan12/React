@@ -8,13 +8,11 @@ function Navbar() {
   const [isDashboardOpen, setIsDashboardOpen] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
 
+  // ✅ Handle scroll event
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 500) {
-        setIsSticky(true);
-      } else {
-        setIsSticky(false);
-      }
+      if (window.scrollY > 500) setIsSticky(true);
+      else setIsSticky(false);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -53,7 +51,9 @@ function Navbar() {
         </button>
 
         {isDashboardOpen && (
-          <Dashboard onClose={() => setIsDashboardOpen(false)} />
+          <div className="dashboard-container">
+            <Dashboard onClose={() => setIsDashboardOpen(false)} />
+          </div>
         )}
       </div>
     </header>
