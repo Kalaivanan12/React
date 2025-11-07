@@ -200,12 +200,13 @@
 .sell-property-section {
   font-family: "Poppins", sans-serif;
   text-align: center;
-  padding: 50px 8%;
+  padding: 50px 9%;
   color: #333;
 }
 
 .sell-heading {
-  text-align: left;
+  position: relative;
+  right: 32%;
   font-size: 28px;
   font-weight: 600;
   margin-bottom: 30px;
