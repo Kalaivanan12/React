@@ -183,7 +183,7 @@ function Rent() {
   <div className="rent-research-container">
     <section className="rent-research-section">
       <h2>Research and Insights</h2>
-      <p>Explore useful real estate insights</p>
+      <h4>Explore useful real estate insights</h4>
 
       <div className="rent-research-cards">
         <div className="rent-research-card">
