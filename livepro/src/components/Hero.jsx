@@ -197,7 +197,7 @@ function Hero() {
         <div className="research-container">
           <section className="research-section">
             <h2>Research and Insights</h2>
-            <p>Explore useful real estate insights</p>
+            <h4>Explore useful real estate insights</h4>
             <div className="research-cards">
               <div className="research-card">
                 <img

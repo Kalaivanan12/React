@@ -137,13 +137,18 @@
 }
 
 .research-section h2 {
+  position: relative;
+  right: 27%;
   font-size: 28px;
   font-weight: 600;
   margin-bottom: 10px;
 }
 
-.research-section p {
+.research-section h4 {
+  position: relative;
+  right: 29.7%;
   font-size: 15px;
+  font-weight: 500;
   color: #666;
   margin-bottom: 40px;
 }
@@ -157,7 +162,7 @@
 
 .research-card {
   background: #fff;
-  border: 1px solid #eee;
+  border: 1px solid #837b7b;
   border-radius: 15px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
   width: 300px;
@@ -200,6 +205,7 @@
 }
 
 .sell-heading {
+  text-align: left;
   font-size: 28px;
   font-weight: 600;
   margin-bottom: 30px;
