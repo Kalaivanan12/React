@@ -36,7 +36,7 @@
 
 .plot-header h2 {
   position: relative;
-  right: 32%;
+  right: 25%;
   font-size: 32px;
   font-weight: 500;
   color: #222;
@@ -50,7 +50,7 @@
 
 .plot-header p {
   position: relative;
-  right: 29.3%;
+  right: 22%;
   font-size: 16px;
   color: #666;
   margin-bottom: 50px;
@@ -58,8 +58,9 @@
 
 /* Grid Layout */
 .plot-grid {
+  width: 70%;
   display: inline-flex;
-  gap: 25px;
+  gap: 15px;
 }
 
 /* Plot Card */
@@ -93,11 +94,12 @@
 }
 
 .newsimg {
+  position: relative;
+  right: 125px;
   animation: 300ms linear 0s 1 normal none running animation-1qbobka;
   margin: 0px 200px 80px;
-  height: 440px;
-  width: calc(100% - 400px);
-  object-fit: contain;
+  height: 400px;
+  width: 85%;
 }
 
 
