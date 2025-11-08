@@ -107,7 +107,7 @@
   accent-color: #6a0dad;
 }
 
-.radio-group input[type="radio"]:checked + span,
+.radio-group input[type="radio"]:checked+span,
 .radio-group input[type="radio"]:checked {
   color: #6a0dad;
 }
@@ -131,6 +131,7 @@
 .com-search-btn:hover {
   background: #70e4b6;
 }
+
 .recent-properties {
   width: 100%;
   max-width: 1200px;
@@ -222,7 +223,7 @@
   .commercial-overlay h1 {
     font-size: 30px;
     left: -110px;
-    
+
   }
 
   .com-search-box {
@@ -234,6 +235,7 @@
   .com-search-input {
     font-size: 16px;
   }
+
   .com-search-btn {
     padding: 14px 35px;
     font-size: 18px;
@@ -268,6 +270,7 @@
   .radio-group label {
     font-size: 15px;
   }
+
   .com-search-btn {
     padding: 12px 30px;
     font-size: 16px;
@@ -412,14 +415,18 @@
   /* ✅ Keep search box in one line */
   .com-search-box {
     display: flex;
-    flex-direction: row; /* force items side by side */
+    flex-direction: row;
+    /* force items side by side */
     align-items: center;
     justify-content: center;
     padding: 8px;
     border-radius: 15px;
-    gap: 8px; /* small space between elements */
-    flex-wrap: nowrap; /* prevent wrapping */
-    overflow-x: auto; /* allow scroll if screen too small */
+    gap: 8px;
+    /* small space between elements */
+    flex-wrap: nowrap;
+    /* prevent wrapping */
+    overflow-x: auto;
+    /* allow scroll if screen too small */
   }
 
   .com-search-dropdown,
@@ -433,7 +440,8 @@
   /* ✅ Radio buttons inline */
   .radio-group {
     display: flex;
-    flex-direction: row; /* keep radios in one line */
+    flex-direction: row;
+    /* keep radios in one line */
     align-items: center;
     gap: 10px;
     flex-wrap: nowrap;
@@ -441,7 +449,8 @@
 
   .radio-group label {
     font-size: 12px;
-    white-space: nowrap; /* prevent text wrapping */
+    white-space: nowrap;
+    /* prevent text wrapping */
   }
 
   .com-search-btn {
@@ -449,6 +458,7 @@
     font-size: 12px;
     border-radius: 15px;
     height: 40px;
-    flex-shrink: 0; /* prevent shrinking */
+    flex-shrink: 0;
+    /* prevent shrinking */
   }
 }

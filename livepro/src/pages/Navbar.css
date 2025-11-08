@@ -87,6 +87,7 @@ body {
   transition: 0.3s;
   white-space: nowrap;
 }
+
 .nav-link:hover {
   color: #ffd700;
 }
@@ -107,6 +108,7 @@ body {
   cursor: pointer;
   letter-spacing: 0.3px;
 }
+
 .pay-btn:hover {
   background: #46468a87;
 }
@@ -184,7 +186,7 @@ body {
    Dashboard Panel (Fixed Overlay)
 =================================*/
 .dashboard-container {
-  position: fixed; 
+  position: fixed;
   top: 70px;
   right: 20px;
   background: #fff;
@@ -205,6 +207,7 @@ body {
 .dashboard-container::-webkit-scrollbar {
   width: 6px;
 }
+
 .dashboard-container::-webkit-scrollbar-thumb {
   background: #ccc;
   border-radius: 6px;
@@ -219,10 +222,12 @@ body {
   .navbar {
     padding: 18px 60px;
   }
+
   .logo {
     left: 60px;
     height: 25px;
   }
+
   .nav-link,
   .pay-btn {
     font-size: 14px;
@@ -234,10 +239,12 @@ body {
   .navbar {
     padding: 14px 40px;
   }
+
   .nav-link {
     font-size: 13px;
     right: 20px;
   }
+
   .pay-btn {
     font-size: 13px;
   }
@@ -250,26 +257,32 @@ body {
     justify-content: center;
     padding: 10px 20px;
   }
+
   .logo {
     left: 0;
   }
+
   .navbar-center {
     justify-content: center;
     margin-top: 8px;
     gap: 15px;
   }
+
   .nav-link {
     right: 0;
     font-size: 12px;
   }
+
   .pay-btn {
     right: 0;
     font-size: 12px;
   }
+
   .profile-btn {
     right: 0;
     padding: 5px 8px;
   }
+
   .dashboard-container {
     right: 10px;
     top: 65px;
@@ -283,25 +296,30 @@ body {
     align-items: flex-start;
     padding: 10px 15px;
   }
+
   .logo {
     left: 0;
     margin-bottom: 10px;
   }
+
   .navbar-center {
     width: 100%;
     justify-content: space-around;
     gap: 10px;
     flex-wrap: wrap;
   }
+
   .nav-link {
     font-size: 11px;
     right: 0;
   }
+
   .pay-btn {
     font-size: 11px;
     padding: 5px 12px;
     right: 0;
   }
+
   .profile-btn {
     padding: 5px 10px;
     right: 0;
@@ -325,29 +343,36 @@ body {
     align-items: center;
     padding: 8px 10px;
   }
+
   .logo {
     height: 18px;
     margin-bottom: 8px;
   }
+
   .navbar-center {
     flex-direction: column;
     align-items: center;
     gap: 8px;
   }
+
   .nav-link {
     font-size: 10px;
   }
+
   .pay-btn {
     font-size: 10px;
     padding: 4px 10px;
   }
+
   .profile-btn {
     padding: 4px 8px;
     font-size: 10px;
   }
+
   .free-badge {
     font-size: 8px;
   }
+
   .dashboard-container {
     width: 100%;
     top: 60px;
@@ -357,6 +382,7 @@ body {
 
 /* Hide middle section on tablet/mobile */
 @media (max-width: 992px) {
+
   .navbar-center,
   .nav-link,
   .pay-btn,
@@ -374,14 +400,17 @@ body {
     align-items: center;
     padding: 8px 12px;
   }
+
   .logo {
     height: 16px;
     left: 0;
   }
+
   .profile-btn {
     padding: 5px 8px;
     font-size: 11px;
   }
+
   .dashboard-container {
     width: 100%;
     top: 60px;
@@ -395,9 +424,11 @@ body {
   .navbar {
     padding: 6px 10px;
   }
+
   .logo {
     height: 15px;
   }
+
   .profile-btn {
     padding: 4px 7px;
     font-size: 10px;
@@ -409,9 +440,11 @@ body {
   .navbar {
     padding: 5px 8px;
   }
+
   .logo {
     height: 14px;
   }
+
   .profile-btn {
     padding: 3px 6px;
     font-size: 9px;

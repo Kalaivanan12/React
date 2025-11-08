@@ -198,9 +198,11 @@
   .partner-card {
     flex: 0 0 80%;
   }
+
   .partner-left {
     padding: 24px;
   }
+
   .partner-logo h3 {
     font-size: 1.4rem;
   }
@@ -234,9 +236,11 @@
   .partner-card {
     flex: 0 0 95%;
   }
+
   .partner-logo h3 {
     font-size: 1.2rem;
   }
+
   .partner-desc p {
     font-size: 0.9rem;
   }
@@ -246,6 +250,7 @@
   .coliving-container h2 {
     font-size: 1.6rem;
   }
+
   .partner-card {
     flex: 0 0 100%;
   }

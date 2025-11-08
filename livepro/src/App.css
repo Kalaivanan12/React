@@ -398,9 +398,11 @@
   .css-nc7111 {
     width: 70%;
   }
+
   .featured-section {
     padding: 60px 60px;
   }
+
   .popular-localities {
     padding: 0px 230px;
   }
@@ -432,9 +434,9 @@
     width: 48%;
   }
 
-   .popular-localities {
-        padding: 0px 130px;
-    }
+  .popular-localities {
+    padding: 0px 130px;
+  }
 
   .mega-logo {
     left: 180px;
@@ -612,6 +614,7 @@
     height: 125px;
     border-radius: 12px;
   }
+
   .search-box {
     display: flex;
     flex-direction: row;
@@ -620,21 +623,21 @@
     height: auto;
     margin: 15px auto;
     padding: 10px;
-    gap: 8px; 
+    gap: 8px;
     flex-wrap: nowrap;
   }
 
   .search-input {
-    flex: 1; 
+    flex: 1;
     padding: 8px 12px;
     border-radius: 20px;
-    min-width: 0; 
+    min-width: 0;
   }
 
   .search-btn {
     padding: 8px 15px;
-    width: auto; 
-    margin-top: 0; 
+    width: auto;
+    margin-top: 0;
   }
 
   .featured-section {

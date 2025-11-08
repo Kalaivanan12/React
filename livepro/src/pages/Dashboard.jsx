@@ -101,7 +101,7 @@ function Dashboard({ onClose }) {
   return (
     <div className="dashboard-backdrop" onClick={onClose}>
       <div className="dashboard" onClick={(e) => e.stopPropagation()}>
-        
+
         {/* Profile Card */}
         <div className="profile-card">
           <div className="profile-info">
