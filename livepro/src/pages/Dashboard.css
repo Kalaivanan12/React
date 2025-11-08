@@ -317,6 +317,28 @@
   background: transparent;
   color: #333;
 }
+.continue-btn {
+  width: 100%;
+  padding: 12px;
+  background: #d0c8f3;
+  border: none;
+  color: #666;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: not-allowed;
+  transition: all 0.3s ease;
+}
+
+.continue-btn.active {
+  background: #2cd689;
+  color: #fff;
+  cursor: pointer;
+}
+
+.continue-btn.active:hover {
+  background: #27c07a;
+}
+
 
 .continue-btn {
   width: 100%;

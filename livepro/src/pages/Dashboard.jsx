@@ -42,6 +42,17 @@ const MenuItem = ({ item }) => {
 // Login Modal Component
 // =============================
 const LoginModal = ({ onClose }) => {
+  const [phone, setPhone] = useState("");
+  const [countryCode, setCountryCode] = useState("+91");
+
+  // Handle numeric input only
+  const handlePhoneChange = (e) => {
+    const value = e.target.value.replace(/\D/g, ""); // remove non-numeric
+    if (value.length <= 10) setPhone(value);
+  };
+
+  const isValid = phone.length === 10;
+
   return (
     <div className="login-modal-backdrop" onClick={onClose}>
       <div className="login-modal-wrapper" onClick={(e) => e.stopPropagation()}>
@@ -53,16 +64,32 @@ const LoginModal = ({ onClose }) => {
 
           <label className="input-label">Enter Phone Number</label>
           <div className="input-group">
-            <select className="country-code-select" defaultValue="+91">
+            <select
+              className="country-code-select"
+              value={countryCode}
+              onChange={(e) => setCountryCode(e.target.value)}
+            >
               <option value="+91">+91 🇮🇳</option>
               <option value="+1">+1 🇺🇸</option>
               <option value="+44">+44 🇬🇧</option>
               <option value="+61">+61 🇦🇺</option>
               <option value="+971">+971 🇦🇪</option>
             </select>
-            <input type="text" placeholder="Enter your number" />
+            <input
+              type="text"
+              placeholder="Enter your number"
+              value={phone}
+              onChange={handlePhoneChange}
+              maxLength={10}
+            />
           </div>
-          <button className="continue-btn">Continue</button>
+
+          <button
+            className={`continue-btn ${isValid ? "active" : ""}`}
+            disabled={!isValid}
+          >
+            Continue
+          </button>
         </div>
       </div>
     </div>
