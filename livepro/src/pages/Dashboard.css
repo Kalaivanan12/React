@@ -360,6 +360,45 @@
 }
 
 /* ===============================
+   Country Code Dropdown Styles
+=================================*/
+.country-code-select {
+  border: none;
+  background: transparent;
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+  margin-right: 10px;
+  outline: none;
+  appearance: none;
+  cursor: pointer;
+}
+
+/* Make select dropdown look consistent */
+.country-code-select option {
+  color: #333;
+  background: #fff;
+}
+
+/* Small arrow styling for dropdown */
+.country-code-select::-ms-expand {
+  display: none; /* Remove default arrow for IE */
+}
+
+/* Make dropdown text aligned properly */
+.input-group select,
+.input-group input {
+  font-family: inherit;
+}
+
+/* Responsive tweak */
+@media (max-width: 480px) {
+  .country-code-select {
+    font-size: 13px;
+  }
+}
+
+/* ===============================
    Floating Close Button (Outside Modal)
 =================================*/
 .login-modal-wrapper {

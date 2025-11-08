@@ -53,10 +53,15 @@ const LoginModal = ({ onClose }) => {
 
           <label className="input-label">Enter Phone Number</label>
           <div className="input-group">
-            <span className="country-code">+91</span>
+            <select className="country-code-select" defaultValue="+91">
+              <option value="+91">+91 🇮🇳</option>
+              <option value="+1">+1 🇺🇸</option>
+              <option value="+44">+44 🇬🇧</option>
+              <option value="+61">+61 🇦🇺</option>
+              <option value="+971">+971 🇦🇪</option>
+            </select>
             <input type="text" placeholder="Enter your number" />
           </div>
-
           <button className="continue-btn">Continue</button>
         </div>
       </div>
