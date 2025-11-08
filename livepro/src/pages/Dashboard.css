@@ -243,6 +243,174 @@
 .submenu li:hover {
   color: #007bff;
 }
+/* ===============================
+   Login Modal Styles
+=================================*/
+.login-modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  animation: fadeIn 0.3s ease;
+}
+
+.login-modal {
+  position: relative;
+  background: #fff;
+  border-radius: 6px;
+  width: 380px;
+  padding: 40px 30px;
+  text-align: center;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.25);
+  animation: scaleUp 0.25s ease-out;
+}
+
+.modal-logo {
+  width: 180px;
+  margin-bottom: 12px;
+}
+
+.login-modal h3 {
+  font-size: 20px;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 25px;
+  border-bottom: 1px solid transparent;
+  text-decoration: underline;
+  text-decoration-color: #c3c2c696;
+}
+
+.input-label {
+  display: block;
+  font-size: 13px;
+  color: #6a3ecf;
+  text-align: left;
+  margin-bottom: 6px;
+}
+
+.input-group {
+  display: flex;
+  align-items: center;
+  border-bottom: 1.5px solid #6a3ecf;
+  padding-bottom: 4px;
+  margin-bottom: 25px;
+}
+
+.country-code {
+  font-weight: 500;
+  color: #333;
+  margin-right: 8px;
+}
+
+.input-group input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  padding: 4px;
+  background: transparent;
+  color: #333;
+}
+
+.continue-btn {
+  width: 100%;
+  padding: 12px;
+  background: #d0c8f3;
+  border: none;
+  color: #666;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: not-allowed;
+}
+
+.close-modal {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  color: #444;
+  cursor: pointer;
+}
+
+/* Animation effects */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleUp {
+  from { transform: scale(0.9); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+/* Responsive Fix */
+@media (max-width: 480px) {
+  .login-modal {
+    width: 90%;
+    padding: 25px 20px;
+  }
+}
+
+/* ===============================
+   Floating Close Button (Outside Modal)
+=================================*/
+.login-modal-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.login-modal {
+  position: relative;
+  background: #fff;
+  border-radius: 6px;
+  width: 380px;
+  padding: 40px 30px;
+  text-align: center;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.25);
+  animation: scaleUp 0.25s ease-out;
+}
+
+/* Move close button outside modal */
+.close-modal {
+  position: absolute;
+  top: 20px;
+  left: 102%;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  font-size: 25px;
+  color: #f0eaea;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  z-index: 10001;
+}
+
+.close-modal:hover {
+  color:#f4f4f4;
+  transform: scale(1.05);
+}
+
+/* Responsive adjustment */
+@media (max-width: 480px) {
+  .close-modal {
+    top: -12px;
+    right: -10px;
+    width: 26px;
+    height: 26px;
+    font-size: 16px;
+  }
+}
 
 /* ========== RESPONSIVE FIX ========== */
 @media (max-width: 768px) {
