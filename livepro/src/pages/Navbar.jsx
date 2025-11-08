@@ -8,7 +8,7 @@ function Navbar() {
   const [isDashboardOpen, setIsDashboardOpen] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
 
-  // ✅ Handle scroll event
+  // Handle scroll event
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 500) setIsSticky(true);
