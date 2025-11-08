@@ -42,16 +42,41 @@ const MenuItem = ({ item }) => {
 // Login Modal Component
 // =============================
 const LoginModal = ({ onClose }) => {
+  const [step, setStep] = useState("phone"); // phone → otp
   const [phone, setPhone] = useState("");
   const [countryCode, setCountryCode] = useState("+91");
+  const [otp, setOtp] = useState("");
+  const [sentOtp, setSentOtp] = useState("");
+  const [message, setMessage] = useState("");
 
-  // Handle numeric input only
+  // Handle only numbers
   const handlePhoneChange = (e) => {
-    const value = e.target.value.replace(/\D/g, ""); // remove non-numeric
+    const value = e.target.value.replace(/\D/g, "");
     if (value.length <= 10) setPhone(value);
   };
 
   const isValid = phone.length === 10;
+
+  // Simulate OTP send
+  const handleContinue = () => {
+    if (!isValid) return;
+    const generatedOtp = Math.floor(1000 + Math.random() * 9000).toString();
+    setSentOtp(generatedOtp);
+    setMessage(`OTP sent to ${countryCode} ${phone}`);
+    setStep("otp");
+
+    console.log("📩 OTP sent:", generatedOtp); // for testing
+  };
+
+  // Verify OTP
+  const handleVerify = () => {
+    if (otp === sentOtp) {
+      setMessage("✅ OTP verified successfully!");
+      setTimeout(onClose, 1500); // close after 1.5 sec
+    } else {
+      setMessage("❌ Invalid OTP. Please try again.");
+    }
+  };
 
   return (
     <div className="login-modal-backdrop" onClick={onClose}>
@@ -62,34 +87,70 @@ const LoginModal = ({ onClose }) => {
           <img src="./src/img/home.png" alt="Housing.com" className="modal-logo" />
           <h3>Your Trusted Real Estate Partner</h3>
 
-          <label className="input-label">Enter Phone Number</label>
-          <div className="input-group">
-            <select
-              className="country-code-select"
-              value={countryCode}
-              onChange={(e) => setCountryCode(e.target.value)}
-            >
-              <option value="+91">+91 🇮🇳</option>
-              <option value="+1">+1 🇺🇸</option>
-              <option value="+44">+44 🇬🇧</option>
-              <option value="+61">+61 🇦🇺</option>
-              <option value="+971">+971 🇦🇪</option>
-            </select>
-            <input
-              type="text"
-              placeholder="Enter your number"
-              value={phone}
-              onChange={handlePhoneChange}
-              maxLength={10}
-            />
-          </div>
+          {/* === Step 1: Enter Phone === */}
+          {step === "phone" && (
+            <>
+              <label className="input-label">Enter Phone Number</label>
+              <div className="input-group">
+                <select
+                  className="country-code-select"
+                  value={countryCode}
+                  onChange={(e) => setCountryCode(e.target.value)}
+                >
+                  <option value="+91">+91 🇮🇳</option>
+                  <option value="+1">+1 🇺🇸</option>
+                  <option value="+44">+44 🇬🇧</option>
+                  <option value="+61">+61 🇦🇺</option>
+                  <option value="+971">+971 🇦🇪</option>
+                </select>
+                <input
+                  type="text"
+                  placeholder="Enter your number"
+                  value={phone}
+                  onChange={handlePhoneChange}
+                  maxLength={10}
+                />
+              </div>
 
-          <button
-            className={`continue-btn ${isValid ? "active" : ""}`}
-            disabled={!isValid}
-          >
-            Continue
-          </button>
+              <button
+                className={`continue-btn ${isValid ? "active" : ""}`}
+                disabled={!isValid}
+                onClick={handleContinue}
+              >
+                Continue
+              </button>
+            </>
+          )}
+
+          {/* === Step 2: Enter OTP === */}
+          {step === "otp" && (
+            <>
+              <label className="input-label">Enter OTP</label>
+              <div className="input-group">
+                <input
+                  type="text"
+                  placeholder="Enter 4-digit OTP"
+                  value={otp}
+                  onChange={(e) => setOtp(e.target.value.replace(/\D/g, ""))}
+                  maxLength={4}
+                />
+              </div>
+
+              <button
+                className={`continue-btn ${otp.length === 4 ? "active" : ""}`}
+                disabled={otp.length !== 4}
+                onClick={handleVerify}
+              >
+                Verify OTP
+              </button>
+
+              <p className="otp-info">
+                Didn’t receive OTP? <span onClick={handleContinue}>Resend</span>
+              </p>
+            </>
+          )}
+
+          {message && <p className="otp-message">{message}</p>}
         </div>
       </div>
     </div>

@@ -362,6 +362,29 @@
   cursor: pointer;
 }
 
+/* ========== OTP MESSAGE & INFO ========== */
+.otp-message {
+  font-size: 13px;
+  margin-top: 15px;
+  color: #555;
+}
+
+.otp-info {
+  font-size: 13px;
+  color: #777;
+  margin-top: 10px;
+}
+
+.otp-info span {
+  color: #6a3ecf;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.otp-info span:hover {
+  text-decoration: underline;
+}
+
 /* Animation effects */
 @keyframes fadeIn {
   from { opacity: 0; }
