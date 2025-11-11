@@ -357,6 +357,28 @@
   background: #f7f5ff;
 }
 
+/* ===============================
+   REA Group Section
+=================================*/
+.rea-group-section {
+  background: #fff;
+  text-align: center;
+  padding: 30px 0;
+  border-top: 1px solid #eee;
+}
+.rea-logo {
+  width: 30%;
+  height: 30%;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .rea-logo {
+    width: 28px;
+    height: 28px;
+  }
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .browse-column {

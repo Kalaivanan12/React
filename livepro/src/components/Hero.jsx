@@ -349,6 +349,17 @@ function Hero() {
               </button>
             </div>
           </section>
+          {/* REA Group Section */}
+<section className="rea-group-section">
+  <div className="rea-container">
+      <img
+        src="./src/img/reagroup.png"
+        alt="REA Group Logo"
+        className="rea-logo"
+      />
+  </div>
+</section>
+
         </div>
       </section>
     </>
