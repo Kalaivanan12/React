@@ -16,6 +16,7 @@
     border-bottom: 1px solid #222;
     padding-bottom: 12px;
     margin-bottom: 25px;
+    flex-wrap: wrap;
 }
 
 .footer-tabs li {
@@ -24,6 +25,7 @@
     color: #b5b5b5;
     cursor: pointer;
     transition: color 0.3s;
+    font-size: 15px;
 }
 
 .footer-tabs li:hover {
@@ -60,6 +62,7 @@
     margin-bottom: 10px;
     cursor: pointer;
     font-size: 14px;
+    transition: color 0.3s;
 }
 
 .footer-grid li:hover {
@@ -68,29 +71,36 @@
 
 /* ====== Banner ====== */
 .footer-banner {
-    width: 10%;
-    height: 20%;
+    margin: 40px auto;
+    width: 70%;
+    max-width: 600px;
     background: #1e1e1e;
+    border-radius: 8px;
     overflow: hidden;
+    display: flex;
+    justify-content: center;
 }
 
-.footer-bottom img {
-    width: 30%;
-    display: block;
-}
 
 /* ====== Bottom Section ====== */
+.footer-bottom img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
 .footer-bottom {
-    position: relative;
-    display: inline-flex;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
     padding: 40px 8%;
     border-top: 1px solid #222;
+    gap: 40px;
 }
 
 .footer-column {
     flex: 1;
     min-width: 220px;
-    margin-bottom: 20px;
 }
 
 .footer-column h4 {
@@ -123,6 +133,7 @@
     display: flex;
     gap: 10px;
     margin-bottom: 15px;
+    flex-wrap: wrap;
 }
 
 .app-buttons img {
@@ -154,6 +165,7 @@
     gap: 15px;
     margin-top: 10px;
     font-size: 18px;
+    flex-wrap: wrap;
 }
 
 .social-icons svg {
@@ -175,23 +187,157 @@
     font-size: 12px;
 }
 
-/* Responsive */
+/* ===============================
+   RESPONSIVE DESIGN
+=================================*/
+
+/* Large Tablets (≤1024px) */
+@media (max-width: 1024px) {
+    .footer-tabs ul {
+        gap: 40px;
+    }
+
+    .footer-links {
+        padding: 0 5%;
+    }
+
+    .footer-grid {
+        gap: 30px;
+    }
+
+    .footer-bottom {
+        padding: 30px 5%;
+    }
+}
+
+/* Tablets (≤768px) */
 @media (max-width: 768px) {
     .footer-tabs ul {
         flex-wrap: wrap;
-        gap: 20px;
+        gap: 25px;
+        text-align: center;
     }
 
     .footer-grid {
         flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .footer-grid ul {
+        margin-bottom: 15px;
+    }
+
+    .footer-banner {
+        width: 90%;
     }
 
     .footer-bottom {
         flex-direction: column;
+        align-items: flex-start;
+        gap: 25px;
+        padding: 30px 6%;
+    }
+
+    .footer-column {
+        width: 100%;
     }
 
     .app-buttons {
-        flex-direction: column;
+        flex-direction: row;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+
+    .qr-section {
+        flex-direction: row;
         align-items: flex-start;
+    }
+}
+
+/* Mobile (≤576px) */
+@media (max-width: 576px) {
+    .footer-tabs ul {
+        gap: 15px;
+        justify-content: center;
+    }
+
+    .footer-tabs li {
+        font-size: 13px;
+    }
+
+    .footer-links h3 {
+        font-size: 16px;
+    }
+
+    .footer-grid li {
+        font-size: 13px;
+    }
+
+    .footer-banner {
+        width: 100%;
+        margin: 30px 0;
+    }
+
+    .footer-bottom {
+        padding: 25px 5%;
+    }
+
+    .footer-column h4 {
+        font-size: 13px;
+    }
+
+    .footer-column li {
+        font-size: 12px;
+    }
+
+    .app-buttons img {
+        width: 100px;
+    }
+
+    .qr-img {
+        width: 70px;
+        height: 70px;
+    }
+
+    .qr-section p {
+        font-size: 11px;
+    }
+
+    .social-icons {
+        font-size: 16px;
+        gap: 12px;
+    }
+}
+
+/* Small Phones (≤375px) */
+@media (max-width: 375px) {
+    .footer-tabs ul {
+        gap: 10px;
+        font-size: 12px;
+    }
+
+    .footer-links {
+        padding: 0 4%;
+    }
+
+    .footer-banner {
+        width: 100%;
+    }
+
+    .footer-bottom {
+        padding: 20px 4%;
+    }
+
+    .footer-copy {
+        font-size: 11px;
+    }
+
+    .app-buttons img {
+        width: 90px;
+    }
+
+    .qr-img {
+        width: 60px;
+        height: 60px;
     }
 }
