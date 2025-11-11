@@ -262,6 +262,7 @@
   cursor: pointer;
   transition: 0.3s ease;
 }
+
 /* ===============================
    Browse Top Links Carousel
 =================================*/
@@ -293,11 +294,11 @@
   gap: 15px;
   overflow-x: auto;
   scroll-behavior: smooth;
-  scrollbar-width: none; 
+  scrollbar-width: none;
 }
 
 .browse-links-carousel::-webkit-scrollbar {
-  display: none; 
+  display: none;
 }
 
 .browse-column {
@@ -366,6 +367,7 @@
   padding: 30px 0;
   border-top: 1px solid #eee;
 }
+
 .rea-logo {
   width: 30%;
   height: 30%;
