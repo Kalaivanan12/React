@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
@@ -45,17 +45,42 @@ function Hero() {
     },
   ];
 
-  // ✅ define localities
-  const localities = [
-    "Manjakuppam",
-    "Koothapakkam",
-  ];
+  const localities = ["Manjakuppam", "Koothapakkam"];
+
+  // 🎯 useEffect to enable carousel scroll with arrow
+  useEffect(() => {
+    const carousel = document.getElementById("browseLinksCarousel");
+    const scrollBtn = document.getElementById("scrollRightBtn");
+
+    if (carousel && scrollBtn) {
+      scrollBtn.addEventListener("click", () => {
+        carousel.scrollBy({ left: 300, behavior: "smooth" });
+
+        // Optional: loop back to start when end reached
+        if (
+          carousel.scrollLeft + carousel.clientWidth >=
+          carousel.scrollWidth - 10
+        ) {
+          setTimeout(() => {
+            carousel.scrollTo({ left: 0, behavior: "smooth" });
+          }, 400);
+        }
+      });
+    }
+
+    return () => {
+      if (scrollBtn) scrollBtn.removeEventListener("click", () => {});
+    };
+  }, []);
 
   return (
     <>
       {/* Hero Section */}
       <section className="hero-section">
-        <div className="hero-overlay"><br /><br /><br />
+        <div className="hero-overlay">
+          <br />
+          <br />
+          <br />
           <h1>Properties to buy in Cuddalore</h1>
           <p>
             <span>5K+</span> listings added daily and <span>63K+</span> total
@@ -68,28 +93,54 @@ function Hero() {
               <ul className="navlist">
                 <span className="custom-underline">
                   <li>
-                    <NavLink className={({ isActive }) => (isActive ? "active" : "")} to="/" end>
+                    <NavLink
+                      className={({ isActive }) =>
+                        isActive ? "active" : ""
+                      }
+                      to="/"
+                      end
+                    >
                       BUY
                     </NavLink>
                   </li>
                 </span>
                 <li>
-                  <NavLink className={({ isActive }) => (isActive ? "active" : "")} to="/rent">
+                  <NavLink
+                    className={({ isActive }) =>
+                      isActive ? "active" : ""
+                    }
+                    to="/rent"
+                  >
                     RENT
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink className={({ isActive }) => (isActive ? "active" : "")} to="/commercial">
+                  <NavLink
+                    className={({ isActive }) =>
+                      isActive ? "active" : ""
+                    }
+                    to="/commercial"
+                  >
                     COMMERCIAL
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink className={({ isActive }) => (isActive ? "active" : "")} to="/pg">
+                  <NavLink
+                    className={({ isActive }) =>
+                      isActive ? "active" : ""
+                    }
+                    to="/pg"
+                  >
                     PG/CO-LIVING
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink className={({ isActive }) => (isActive ? "active" : "")} to="/plots">
+                  <NavLink
+                    className={({ isActive }) =>
+                      isActive ? "active" : ""
+                    }
+                    to="/plots"
+                  >
                     PLOTS
                   </NavLink>
                 </li>
@@ -98,7 +149,6 @@ function Hero() {
 
             {/* Search Box */}
             <div className="search-box">
-              {/* Dropdown */}
               <div className="search-section dropdown-sec">
                 <select className="search-dropdown">
                   <option>Cuddalore</option>
@@ -109,7 +159,6 @@ function Hero() {
                 </select>
               </div>
 
-              {/* Input + Button */}
               <div className="search-section input-sec">
                 <input
                   type="text"
@@ -121,19 +170,21 @@ function Hero() {
             </div>
           </div>
 
-          {/*Popular Localities Section */}
+          {/* Popular Localities */}
           <div className="popular-localities">
             <h3 className="heading">Popular Localities</h3>
             <div className="localities-scroll">
-              {localities.map((loc, index) => (<button key={index} className="locality-btn">
-                {loc} <ChevronRight size={16} />
-              </button>))}
+              {localities.map((loc, index) => (
+                <button key={index} className="locality-btn">
+                  {loc} <ChevronRight size={16} />
+                </button>
+              ))}
             </div>
           </div>
         </div>
       </section>
 
-      {/* Carousel Section */}
+      {/* Housing Edge Section */}
       <section className="housing-edge">
         <div className="container">
           <div className="header">
@@ -149,10 +200,7 @@ function Hero() {
           <div className="cards">
             <div className="card">
               <div className="icon">
-                <img
-                  src="./src/logo/payRent.svg"
-                  alt="Credit"
-                />
+                <img src="./src/logo/payRent.svg" alt="Credit" />
               </div>
               <h3>Pay on Credit</h3>
               <p>Pay your rent using Credit Card</p>
@@ -160,10 +208,7 @@ function Hero() {
 
             <div className="card">
               <div className="icon">
-                <img
-                  src="./src/logo/housingPremium.svg"
-                  alt="Premium"
-                />
+                <img src="./src/logo/housingPremium.svg" alt="Premium" />
               </div>
               <h3>Housing Premium</h3>
               <p>Instant access to zero brokerage properties</p>
@@ -171,10 +216,7 @@ function Hero() {
 
             <div className="card">
               <div className="icon">
-                <img
-                  src="./src/logo/homeLoans.svg"
-                  alt="Home Loans"
-                />
+                <img src="./src/logo/homeLoans.svg" alt="Home Loans" />
               </div>
               <h3>Home Loans</h3>
               <p>Lowest Interest rate offers</p>
@@ -182,10 +224,7 @@ function Hero() {
 
             <div className="card">
               <div className="icon">
-                <img
-                  src="./src/logo/housingProtect.svg"
-                  alt="Protect"
-                />
+                <img src="./src/logo/housingProtect.svg" alt="Protect" />
               </div>
               <h3>Housing Protect</h3>
               <p>Protection against cyber frauds</p>
@@ -227,21 +266,87 @@ function Hero() {
               </div>
             </div>
           </section>
-          {/* sell-property section */}
+
+          {/* Sell Property Section */}
           <section className="sell-property-section">
             <h2 className="sell-heading">Have a property to sell?</h2>
-
             <div className="sell-banner-extended">
               <img
                 src="/src/img/background.png"
                 alt="Sell property banner"
                 className="sell-banner-bg"
               />
-
               <div className="sell-banner-content">
                 <p>List your property & connect with clients faster!</p>
                 <button className="sell-btn">Sell your property</button>
               </div>
+            </div>
+          </section>
+
+          {/* Browse Links Section (Carousel) */}
+          <section className="browse-links-section">
+            <h2 className="browse-heading">
+              Browse top links to search your home
+            </h2>
+
+            <div className="browse-carousel-wrapper">
+              <div
+                className="browse-links-carousel"
+                id="browseLinksCarousel"
+              >
+                {/* Column 1 */}
+                <div className="browse-column">
+                  <h3>People Also Search For</h3>
+                  <ul>
+                    <li>Resale Flats in Cuddalore</li>
+                    <li>Ready to Move Flats in Cuddalore</li>
+                    <li>
+                      Flats for Sale in Cuddalore Without Brokerage
+                    </li>
+                    <li>Resale House in Cuddalore</li>
+                  </ul>
+                </div>
+
+                {/* Column 2 */}
+                <div className="browse-column">
+                  <h3>City Collections</h3>
+                  <ul>
+                    <li>Ready to Move Projects in Cuddalore</li>
+                    <li>Properties for Sale in Cuddalore</li>
+                  </ul>
+                </div>
+
+                {/* Column 3 */}
+                <div className="browse-column">
+                  <h3>Filter Your Search</h3>
+                  <ul>
+                    <li>
+                      House for Sale Without Brokerage in Cuddalore
+                    </li>
+                    <li>
+                      Under Construction Apartments in Cuddalore
+                    </li>
+                  </ul>
+                </div>
+
+                {/* Column 4 */}
+                <div className="browse-column">
+                  <h3>Filter by BHK</h3>
+                  <ul>
+                    <li>1 BHK Flats for sale in Cuddalore</li>
+                    <li>2 BHK Flats for sale in Cuddalore</li>
+                    <li>3 BHK Flats for sale in Cuddalore</li>
+                    <li>1 BHK Houses in Cuddalore</li>
+                    <li>2 BHK Houses in Cuddalore</li>
+                    <li>3 BHK Houses in Cuddalore</li>
+                  </ul>
+                </div>
+              </div>
+
+              {/* Scroll Arrow */}
+              <button className="arrow-btn" id="scrollRightBtn">
+                →
+              </button>
             </div>
           </section>
         </div>
