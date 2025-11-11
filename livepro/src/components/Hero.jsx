@@ -8,6 +8,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "./Hero.css";
 import "../App.css";
+import Footer from "../components/Footer";
 
 function Hero() {
   const properties = [
@@ -69,7 +70,7 @@ function Hero() {
     }
 
     return () => {
-      if (scrollBtn) scrollBtn.removeEventListener("click", () => {});
+      if (scrollBtn) scrollBtn.removeEventListener("click", () => { });
     };
   }, []);
 
@@ -350,18 +351,18 @@ function Hero() {
             </div>
           </section>
           {/* REA Group Section */}
-<section className="rea-group-section">
-  <div className="rea-container">
-      <img
-        src="./src/img/reagroup.png"
-        alt="REA Group Logo"
-        className="rea-logo"
-      />
-  </div>
-</section>
-
+          <section className="rea-group-section">
+            <div className="rea-container">
+              <img
+                src="./src/img/reagroup.png"
+                alt="REA Group Logo"
+                className="rea-logo"
+              />
+            </div>
+          </section>
         </div>
       </section>
+      <Footer />
     </>
   );
 }
