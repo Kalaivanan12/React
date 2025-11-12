@@ -3,12 +3,12 @@ import { NavLink } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import { ChevronRight } from "lucide-react";
+import Footer from "../components/Footer";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "./Hero.css";
 import "../App.css";
-import Footer from "../components/Footer";
 
 function Hero() {
   const properties = [
