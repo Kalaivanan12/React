@@ -48,7 +48,7 @@ function Hero() {
 
   const localities = ["Manjakuppam", "Koothapakkam"];
 
-  // 🎯 useEffect to enable carousel scroll with arrow
+  // useEffect to enable carousel scroll with arrow
   useEffect(() => {
     const carousel = document.getElementById("browseLinksCarousel");
     const scrollBtn = document.getElementById("scrollRightBtn");
@@ -348,16 +348,6 @@ function Hero() {
               <button className="arrow-btn" id="scrollRightBtn">
                 →
               </button>
-            </div>
-          </section>
-          {/* REA Group Section */}
-          <section className="rea-group-section">
-            <div className="rea-container">
-              <img
-                src="./src/img/reagroup.png"
-                alt="REA Group Logo"
-                className="rea-logo"
-              />
             </div>
           </section>
         </div>

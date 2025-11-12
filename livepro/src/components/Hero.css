@@ -360,47 +360,6 @@
 }
 
 /* ===============================
-   REA Group Section
-=================================*/
-.rea-group-section {
-  position: relative;
-  bottom: 70px;
-  background: #fff;
-  text-align: center;
-  border-top: 1px solid #eee;
-}
-
-.rea-logo {
-  width: 30%;
-  height: 30%;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .rea-logo {
-    width: 28px;
-    height: 28px;
-  }
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .browse-column {
-    min-width: 200px;
-    padding: 20px;
-  }
-
-  .arrow-btn {
-    right: 1%;
-    width: 40px;
-    height: 40px;
-    font-size: 18px;
-  }
-}
-
-
-
-/* ===============================
    Responsive Styles
 =================================*/
 
