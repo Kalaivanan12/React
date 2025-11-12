@@ -1,21 +1,26 @@
 /* ===============================
-   FOOTER MAIN STYLES
+   FOOTER BASE STYLES
 =================================*/
 .footer {
     background: #111;
     color: #d1d1d1;
-    font-family: "Inter", sans-serif;
+    font-family: "Inter", Arial, sans-serif;
     padding-top: 40px;
+    width: 100%;
+    overflow-x: hidden;
 }
 
-/* ====== Top Tabs ====== */
+/* ===============================
+   TOP MENU TABS
+=================================*/
 .footer-tabs ul {
     display: flex;
     justify-content: center;
-    gap: 60px;
+    align-items: center;
+    gap: 182px;
     border-bottom: 1px solid #222;
-    padding-bottom: 12px;
-    margin-bottom: 25px;
+    padding-bottom: 15px;
+    margin-bottom: 35px;
     flex-wrap: wrap;
 }
 
@@ -26,29 +31,33 @@
     cursor: pointer;
     transition: color 0.3s;
     font-size: 15px;
+    letter-spacing: 0.5px;
 }
 
 .footer-tabs li:hover {
     color: #fff;
 }
 
-/* ====== Links Grid ====== */
+/* ===============================
+   PROPERTY LINKS GRID
+=================================*/
 .footer-links {
     padding: 0 8%;
+    margin-bottom: 50px;
 }
 
 .footer-links h3 {
     font-size: 18px;
     font-weight: 700;
     color: #fff;
-    margin-bottom: 15px;
+    margin-bottom: 25px;
 }
 
 .footer-grid {
     display: flex;
     justify-content: space-between;
-    flex-wrap: wrap;
     gap: 40px;
+    flex-wrap: wrap;
 }
 
 .footer-grid ul {
@@ -58,49 +67,49 @@
 }
 
 .footer-grid li {
+    font-size: 14px;
     color: #bfbfbf;
     margin-bottom: 10px;
     cursor: pointer;
-    font-size: 14px;
-    transition: color 0.3s;
+    transition: color 0.3s ease;
 }
 
 .footer-grid li:hover {
     color: #fff;
 }
 
-/* ====== Banner ====== */
+/* ===============================
+   GREAT PLACE TO WORK BANNER
+=================================*/
 .footer-banner {
-    margin: 40px auto;
-    width: 70%;
-    max-width: 600px;
-    background: #1e1e1e;
-    border-radius: 8px;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
+    position: relative;
+    left: 2%;
+    width: 35%;
 }
 
-
-/* ====== Bottom Section ====== */
-.footer-bottom img {
+.footer-banner img {
     width: 100%;
+    max-width: 900px;
     height: auto;
     display: block;
 }
+
+/* ===============================
+   BOTTOM SECTION (4 COLUMNS)
+=================================*/
 .footer-bottom {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
     flex-wrap: wrap;
+    gap: 40px;
     padding: 40px 8%;
     border-top: 1px solid #222;
-    gap: 40px;
 }
 
 .footer-column {
     flex: 1;
-    min-width: 220px;
+    min-width: 200px;
 }
 
 .footer-column h4 {
@@ -108,6 +117,7 @@
     font-size: 14px;
     margin-bottom: 14px;
     font-weight: 600;
+    text-transform: uppercase;
 }
 
 .footer-column ul {
@@ -121,14 +131,20 @@
     font-size: 13px;
     margin-bottom: 8px;
     cursor: pointer;
-    transition: color 0.3s;
+    transition: color 0.3s ease;
 }
 
 .footer-column li:hover {
     color: #fff;
 }
 
-/* ====== App + QR + Social ====== */
+/* ===============================
+   APP DOWNLOAD + QR + SOCIAL
+=================================*/
+.app-section {
+    max-width: 280px;
+}
+
 .app-buttons {
     display: flex;
     gap: 10px;
@@ -139,12 +155,17 @@
 .app-buttons img {
     width: 120px;
     cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.app-buttons img:hover {
+    transform: scale(1.05);
 }
 
 .qr-section {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
     margin-bottom: 15px;
 }
 
@@ -153,11 +174,20 @@
     height: 80px;
     background: #fff;
     border-radius: 4px;
+    object-fit: cover;
 }
 
 .qr-section p {
     font-size: 12px;
     color: #aaa;
+    line-height: 1.4;
+}
+
+.follow-text {
+    margin-top: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #fff;
 }
 
 .social-icons {
@@ -165,52 +195,54 @@
     gap: 15px;
     margin-top: 10px;
     font-size: 18px;
-    flex-wrap: wrap;
 }
 
 .social-icons svg {
     color: #bfbfbf;
     cursor: pointer;
-    transition: color 0.3s;
+    transition: color 0.3s ease;
 }
 
 .social-icons svg:hover {
     color: #fff;
 }
 
-/* ====== Copyright ====== */
+/* ===============================
+   COPYRIGHT
+=================================*/
 .footer-copy {
     text-align: center;
-    padding: 15px 0;
-    border-top: 1px solid #1c1c1c;
+    padding: 20px 0;
     color: #aaa;
     font-size: 12px;
+    border-top: 1px solid #1c1c1c;
+    margin-top: 30px;
 }
 
 /* ===============================
    RESPONSIVE DESIGN
 =================================*/
 
-/* Large Tablets (≤1024px) */
+/* ---------- Tablets (≤1024px) ---------- */
 @media (max-width: 1024px) {
     .footer-tabs ul {
         gap: 40px;
     }
 
     .footer-links {
-        padding: 0 5%;
-    }
-
-    .footer-grid {
-        gap: 30px;
+        padding: 0 6%;
     }
 
     .footer-bottom {
-        padding: 30px 5%;
+        padding: 30px 6%;
+    }
+
+    .footer-banner {
+        margin: 30px 6%;
     }
 }
 
-/* Tablets (≤768px) */
+/* ---------- Tablets / Small Laptops (≤768px) ---------- */
 @media (max-width: 768px) {
     .footer-tabs ul {
         flex-wrap: wrap;
@@ -218,55 +250,69 @@
         text-align: center;
     }
 
-    .footer-grid {
-        flex-direction: column;
-        align-items: flex-start;
+    .footer-links {
+        padding: 0 5%;
     }
 
-    .footer-grid ul {
-        margin-bottom: 15px;
+    .footer-grid {
+        flex-direction: column;
+        gap: 20px;
     }
 
     .footer-banner {
         width: 90%;
+        margin: 30px auto;
     }
 
     .footer-bottom {
         flex-direction: column;
         align-items: flex-start;
-        gap: 25px;
-        padding: 30px 6%;
+        gap: 30px;
+        padding: 30px 5%;
     }
 
     .footer-column {
         width: 100%;
     }
 
+    .app-section {
+        max-width: 100%;
+    }
+
     .app-buttons {
-        flex-direction: row;
         justify-content: flex-start;
-        flex-wrap: wrap;
     }
 
     .qr-section {
-        flex-direction: row;
-        align-items: flex-start;
+        justify-content: flex-start;
+    }
+
+    .social-icons {
+        justify-content: flex-start;
     }
 }
 
-/* Mobile (≤576px) */
+/* ---------- Mobile (≤576px) ---------- */
 @media (max-width: 576px) {
+    .footer {
+        padding-top: 25px;
+    }
+
     .footer-tabs ul {
         gap: 15px;
-        justify-content: center;
     }
 
     .footer-tabs li {
         font-size: 13px;
     }
 
+    .footer-links {
+        padding: 0 4%;
+    }
+
     .footer-links h3 {
         font-size: 16px;
+        margin-bottom: 18px;
     }
 
     .footer-grid li {
@@ -275,11 +321,7 @@
 
     .footer-banner {
         width: 100%;
-        margin: 30px 0;
-    }
-
-    .footer-bottom {
-        padding: 25px 5%;
+        margin: 20px 0;
     }
 
     .footer-column h4 {
@@ -307,17 +349,20 @@
         font-size: 16px;
         gap: 12px;
     }
+
+    .footer-copy {
+        font-size: 11px;
+    }
 }
 
-/* Small Phones (≤375px) */
+/* ---------- Small Phones (≤375px) ---------- */
 @media (max-width: 375px) {
     .footer-tabs ul {
         gap: 10px;
-        font-size: 12px;
     }
 
     .footer-links {
-        padding: 0 4%;
+        padding: 0 3%;
     }
 
     .footer-banner {
@@ -329,7 +374,7 @@
     }
 
     .footer-copy {
-        font-size: 11px;
+        font-size: 10px;
     }
 
     .app-buttons img {
