@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 import "./App.css";
-import loveSong from "./assets/music/love.mp3";
+import loveSong from "./assets/music/Nee.mp3";
 
 import img1 from "./assets/bun1.png";
 import img2 from "./assets/bun2.jpeg";
@@ -41,18 +41,6 @@ export default function Valentine() {
     }, 400);
 
     return () => clearInterval(heartInterval);
-  }, []);
-
-  // ✅ Stop music after 15 seconds
-  useEffect(() => {
-    if (audioRef.current) {
-      const timer = setTimeout(() => {
-        audioRef.current.pause();
-        audioRef.current.currentTime = 0;
-      }, 15000);
-
-      return () => clearTimeout(timer);
-    }
   }, []);
 
   // ✅ Swipe support
@@ -129,28 +117,7 @@ export default function Valentine() {
           <div className="question-box">
             <h3>Will you stay with me forever? 💕</h3>
             <button onClick={() => setStep(3)}>Yes always 😍</button>
-          </div>
-        )}
-
-        {step === 3 && (
-          <div className="question-box">
-            <h3>Will you fight with me but still love me? 😜</h3>
-            <button onClick={() => setStep(4)}>Obviously 😂❤️</button>
-          </div>
-        )}
-
-        {step === 4 && (
-          <div className="question-box">
-            <h3>Will you grow old with me? 👵👴</h3>
-            <button onClick={() => setStep(5)}>Forever & Ever 💞</button>
-          </div>
-        )}
-
-        {step === 5 && (
-          <div className="question-box">
-            <h3>So finally... will you marry me someday? 💍</h3>
-            <button onClick={burstHearts}>YESSS 😍💖</button>
-            <button
+             <button
               className="no-btn"
               onMouseEnter={(e) => {
                 const btn = e.target;
@@ -164,10 +131,54 @@ export default function Valentine() {
           </div>
         )}
 
+        {step === 3 && (
+          <div className="question-box">
+            <h3>Will you fight with me but still love me? 😜</h3>
+            <button onClick={() => setStep(4)}>Obviously 😂❤️</button>
+             <button
+              className="no-btn"
+              onMouseEnter={(e) => {
+                const btn = e.target;
+                btn.style.position = "fixed";
+                btn.style.left = Math.random() * 80 + "vw";
+                btn.style.top = Math.random() * 80 + "vh";
+              }}
+            >
+              No 🙈
+            </button>
+          </div>
+        )}
+
+        {step === 4 && (
+          <div className="question-box">
+            <h3>Will you grow old with me? 👵👴</h3>
+            <button onClick={() => setStep(5)}>Forever & Ever 💞</button>
+             <button
+              className="no-btn"
+              onMouseEnter={(e) => {
+                const btn = e.target;
+                btn.style.position = "fixed";
+                btn.style.left = Math.random() * 80 + "vw";
+                btn.style.top = Math.random() * 80 + "vh";
+              }}
+            >
+              No 🙈
+            </button>
+          </div>
+        )}
+
+        {step === 5 && (
+          <div className="question-box">
+            <h3>So finally... will you marry me someday? 💍</h3>
+            <button onClick={burstHearts}>YESSS 😍💖</button>
+          </div>
+        )}
+
         {step === 6 && (
           <div className="final-msg">
            <h1>Forever Us 💍❤️</h1>
-            <p>You are My Everything LOVE❤️🫧 </p>
+           <p>You are My Everything LOVE❤️🫧 </p>
+           <p>Thanks You for Coming into My Life Dear❤️🫧 </p>
           </div>
         )}
       </div>

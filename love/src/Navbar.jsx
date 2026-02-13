@@ -10,14 +10,7 @@ export default function Navbar() {
         to="/" 
         className={location.pathname === "/" ? "active" : ""}
       >
-        Home
-      </Link>
-
-      <Link 
-        to="/valentine" 
-        className={location.pathname === "/valentine" ? "active" : ""}
-      >
-        Valentine 💖
+        Are U be My Valentine❤️🫧?
       </Link>
     </nav>
   );
