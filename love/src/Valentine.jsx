@@ -24,7 +24,7 @@ export default function Valentine() {
   useEffect(() => {
     const interval = setInterval(() => {
       setSlide((prev) => (prev + 1) % photos.length);
-    }, 2500);
+    }, 3000);
 
     return () => clearInterval(interval);
   }, [photos.length]);
