@@ -62,7 +62,7 @@ export default function Valentine() {
     for (let i = 0; i < 20; i++) {
       const heart = document.createElement("div");
       heart.className = "burst";
-      heart.innerHTML = "💖";
+      heart.innerHTML = "🧬❤️🫧";
       heart.style.left = 50 + Math.random() * 20 + "%";
       heart.style.top = "60%";
       document.body.appendChild(heart);
