@@ -5,7 +5,7 @@ export default function Home() {
 
   return (
     <div className="page">
-      <h1>Welcome My Love ❤️</h1>
+      <h1>Welcome My Dear Love ❤️</h1>
       <p>Something special is waiting for you...</p>
       <button onClick={() => navigate("/valentine")}>
         Enter Surprise 💌
