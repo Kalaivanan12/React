@@ -8,7 +8,7 @@ function Hero() {
 
       <div className="hero-buttons">
         <a href="#projects" className="btn">View My Work</a>
-        <a href="/resume.pdf" download className="btn resume-btn">
+        <a href="/Resume1.pdf" download className="btn resume-btn">
           📄 Download Resume
         </a>
       </div>

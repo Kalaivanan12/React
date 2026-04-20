@@ -267,17 +267,16 @@
    Browse Top Links Carousel
 =================================*/
 .browse-links-section {
-  /* background: #fafafa; */
   padding: 60px 5%;
   position: relative;
 }
 
 .browse-heading {
   position: relative;
-  right: 27%;
+  right: 15%;
   font-size: 25px;
   font-weight: 600;
-  color: #514e4e;
+  color: #0a0a0a;
   margin-bottom: 40px;
   text-align: center;
 }

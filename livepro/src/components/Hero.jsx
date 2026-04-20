@@ -287,7 +287,7 @@ function Hero() {
           {/* Browse Links Section (Carousel) */}
           <section className="browse-links-section">
             <h2 className="browse-heading">
-              Browse top links to search your home
+              Browse top links to search your homes
             </h2>
 
             <div className="browse-carousel-wrapper">
