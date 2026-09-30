@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from './components/Header';
+import Form from './components/Form';
 import FilterSection from "./components/FilterSection";
 import CarouselComponent from './components/CarouselComponent';
 import CardGroupComponent from './components/CardGroupComponent';
@@ -15,6 +16,7 @@ function App() {
     <div>
       {/* <DarkModeToggle /> */}
       <Header />
+       <Form />
        <FilterSection />
         <CardGroupComponent />
          <CarouselComponent />
